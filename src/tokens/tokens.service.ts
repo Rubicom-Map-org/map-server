@@ -1,18 +1,20 @@
-import { Injectable } from '@nestjs/common';
-import {User} from "../users/users.entity";
+import {forwardRef, Inject, Injectable} from '@nestjs/common';
+import {User} from "../entities/users.entity";
 import {JwtService} from "@nestjs/jwt";
 import {InjectRepository} from "@nestjs/typeorm";
-import {Token} from "./tokens.entity";
+import {Token} from "../entities/tokens.entity";
 import {Repository} from "typeorm";
-import {UsersService} from "../users/users.service";
+import {UsersService} from "./users.service";
 
 @Injectable()
 export class TokensService {
 
     constructor(@InjectRepository(Token)
                 private readonly tokenRepository: Repository<Token>,
-                private readonly jwtService: JwtService,
-                private readonly usersService: UsersService) {
+                @Inject(forwardRef(() => UsersService))
+                private readonly usersService: UsersService,
+                private readonly jwtService: JwtService)
+    {
     }
 
     async generateToken(userData?: User) {
@@ -60,8 +62,14 @@ export class TokensService {
     }
 
     async deleteToken(token: Token): Promise<Token> {
-
         return await this.tokenRepository.remove(token)
+    }
+
+    async getToken(userId: string): Promise<Token> {
+        const user = await this.usersService.getUserById(userId)
+        return await this.tokenRepository.findOne({
+            where: { user: user }
+        })
     }
 
 }

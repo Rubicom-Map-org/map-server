@@ -1,17 +1,20 @@
-import {Get, Injectable, NotFoundException} from '@nestjs/common';
+import {BadRequestException, forwardRef, Get, Inject, Injectable, NotFoundException} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
-import {User} from "./users.entity";
+import {User} from "../entities/users.entity";
 import {Repository} from "typeorm";
-import {RegisterDto} from "../auth/dto/register.dto";
-import {Token} from "../tokens/tokens.entity";
-import {GetUserProfileDto} from "./dto/get-user-profile.dto";
+import { Connection } from "typeorm";
+import {RegisterDto} from "../../auth/dto/register.dto";
+import {Token} from "../entities/tokens.entity";
+import {GetUserProfileDto} from "../dto/get-user-profile.dto";
 import * as stream from "node:stream";
+import {TokensService} from "./tokens.service";
 
 @Injectable()
 export class UsersService {
 
     constructor(@InjectRepository(User)
-                private usersRepository: Repository<User>) {
+                private readonly usersRepository: Repository<User>,
+                private readonly connection: Connection) {
     }
 
     NOT_FOUND_USER_MESSAGE = "user was not found"
@@ -63,14 +66,14 @@ export class UsersService {
         return await this.usersRepository.save(userData)
     }
 
-    async getUserProfile(userEmail: string, getUserProfileDto: GetUserProfileDto): Promise<GetUserProfileDto> {
+    async getUserProfile(userEmail: string): Promise<GetUserProfileDto> {
         const user = await this.getUserByEmail(userEmail)
 
         if (!user) {
             throw new NotFoundException(this.NOT_FOUND_USER_MESSAGE)
         }
 
-        getUserProfileDto = {
+        const getUserProfileDto = {
             username: user.username,
             email: user.email,
             avatarImageUrl: user.avatarImageUrl
@@ -78,5 +81,6 @@ export class UsersService {
 
         return getUserProfileDto
     }
+
 
 }

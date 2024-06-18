@@ -1,5 +1,5 @@
 import {Column, Entity, JoinColumn, JoinTable, OneToOne, PrimaryGeneratedColumn} from "typeorm";
-import {User} from "../users/users.entity";
+import {User} from "./users.entity";
 import {ApiProperty} from "@nestjs/swagger";
 
 

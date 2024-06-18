@@ -1,10 +1,10 @@
-import {Body, Controller, Get, HttpException, HttpStatus, Param, Req, UseGuards} from '@nestjs/common';
-import {UsersService} from "./users.service";
-import {JwtAuthGuard} from "../auth/dto/jwt-auth.guard";
-import {User} from "./users.entity";
-import {AuthGuard} from "../auth/auth.guard";
+import {Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Req, Res, UseGuards} from '@nestjs/common';
+import {UsersService} from "../services/users.service";
+import {User} from "../entities/users.entity";
+import {AuthGuard} from "../../auth/auth.guard";
 import {ApiOperation, ApiResponse} from "@nestjs/swagger";
-import {GetUserProfileDto} from "./dto/get-user-profile.dto";
+import {GetUserProfileDto} from "../dto/get-user-profile.dto";
+import {Token} from "../entities/tokens.entity";
 
 @Controller('users')
 export class UsersController {
@@ -69,15 +69,25 @@ export class UsersController {
     @ApiResponse({type: User, status: 200})
     @UseGuards(AuthGuard)
     @Get("/get-user-profile")
-    async getUserProfile(@Req() request,
-                         @Body() getUserProfileDto: GetUserProfileDto): Promise<Partial<User>>
+    async getUserProfile(@Req() request): Promise<Partial<User>>
     {
         try {
             const email = request.user.email
-            return this.usersService.getUserProfile(email, getUserProfileDto)
+            return this.usersService.getUserProfile(email)
         } catch (error) {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
+
+    // @UseGuards(AuthGuard)
+    // @Delete("/delete-account")
+    // async deleteUserAccount(@Req() request): Promise<[User, Token]> {
+    //     try {
+    //         const userId = request.user.id
+    //         return this.usersService.deleteUserAccount(userId)
+    //     } catch (error) {
+    //         throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    //     }
+    // }
 
 }

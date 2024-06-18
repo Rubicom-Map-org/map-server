@@ -1,7 +1,8 @@
-import {Column, Entity, JoinColumn, JoinTable, OneToOne, PrimaryGeneratedColumn} from "typeorm";
-import {Token} from "../tokens/tokens.entity";
+import {Column, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryGeneratedColumn} from "typeorm";
+import {Token} from "./tokens.entity";
 import {ApiProperty} from "@nestjs/swagger";
-import {GetUserProfileDto} from "./dto/get-user-profile.dto";
+import {GetUserProfileDto} from "../dto/get-user-profile.dto";
+import {SavedPlace} from "../../saved-places/saved-places.entity";
 
 
 @Entity()
@@ -32,6 +33,9 @@ export class User {
 
     @OneToOne(() => Token, token => token.user)
     token: Token
+
+    @OneToMany(() => SavedPlace, savedPlaces => savedPlaces.user)
+    savedPlaces: SavedPlace[]
 
     getUserProfile(getUserProfileDto: GetUserProfileDto) {
         const user = new User()

@@ -1,0 +1,156 @@
+{
+  "Lviv": {
+    "type": "FeatureCollection",
+    "generator": "overpass-turbo",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made av ailable under ODbL.",
+    "timestamp": "2023-11-16T15:39:10Z",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "@id": "node/1271420138",
+          "category": "restaurant",
+          "check_date": "2022-05-12",
+          "cuisine": "pizza",
+          "indoor_seating": "yes",
+          "name": "New-York-Street Pizza",
+          "name:uk": "New-York-Street Pizza",
+          "opening_hours": "--Su 10:00-21:00",
+          "outdoor_seating": "yes",
+          "website": "https://pizza-nys.com.ua/",
+          "wheelchair": "yes",
+          "street": "Ivana Vuhovskoho 100"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.0015915,
+            49.8099377
+          ]
+        },
+        "id": "node/1271420138"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "@id": "node/1344988612",
+          "category": "fuel",
+          "brand": "ANP",
+          "name": "ANP",
+          "name:uk": "ANP",
+          "opening_hours": "24/7",
+          "wheelchair": "yes"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.0534745,
+            49.7958968
+          ]
+        },
+        "id": "node/1344988612"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "@id": "node/1416585893",
+          "category": "fuel",
+          "brand": "ОККО",
+          "brand:en": "OKKO",
+          "brand:wikidata": "Q7072617",
+          "brand:wikipedia": "en:OKKO",
+          "check_date": "2022-08-02",
+          "fuel:diesel": "yes",
+          "fuel:octane_92": "yes",
+          "fuel:octane_95": "yes",
+          "name": "ОККО №05",
+          "name:en": "OKKO №05",
+          "name:uk": "ОККО №05",
+          "ref": "5",
+          "wheelchair": "yes"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.0147597,
+            49.8535367
+          ]
+        },
+        "id": "node/1416585893"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "@id": "node/1523509997",
+          "category": "postoffice",
+          "addr:housenumber": "113",
+          "addr:postcode": "79049",
+          "addr:street": "проспект Червоної Калини",
+          "brand": "Укрпошта",
+          "brand:en": "Ukrposhta",
+          "brand:uk": "Укрпошта",
+          "brand:wikidata": "Q2470783",
+          "brand:wikipedia": "uk:Укрпошта",
+          "contact:facebook": "https://www.facebook.com/ukrposhta",
+          "contact:instagram": "https://www.instagram.com/ukrposhta/",
+          "contact:linkedin": "https://www.linkedin.com/company/ukrposhta",
+          "contact:phone": "+380 322 22 1895",
+          "contact:telegram": "ukrposhta_chatbot",
+          "contact:twitter": "https://twitter.com/ukrposhta",
+          "contact:viber": "https://chats.viber.com/ukrposhta",
+          "contact:website": "https://www.ukrposhta.ua",
+          "contact:youtube": "https://www.youtube.com/channel/UCKRVreLLQ-gbc6vrdgF9uEA",
+          "indoor": "yes",
+          "level": "1",
+          "name": "Відділення поштового зв’язку №49",
+          "name:ru": "Отделение почтовой связи №49",
+          "name:uk": "Відділення поштового зв’язку №49",
+          "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-16:00; Su 09:00-15:00",
+          "operator": "Укрпошта",
+          "operator:en": "Ukrposhta",
+          "operator:ru": "Укрпочта",
+          "operator:uk": "Укрпошта",
+          "operator:wikidata": "Q2470783",
+          "operator:wikipedia": "uk:Укрпошта",
+          "ref": "79049",
+          "wheelchair": "yes"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.0604187,
+            49.7840984
+          ]
+        },
+        "id": "node/1523509997"
+      },
+      {
+        "type": "Feature",
+        "properties": {
+
+          "@id": "node/1526037457",
+          "category": "foodmarket",
+          "check_date": "2023-05-01",
+          "designation": "Виномаркет",
+          "level": "0",
+          "name": "WineTime",
+          "name:uk": "WineTime",
+          "opening_hours": "11:00-21:00",
+          "payment:mastercard": "yes",
+          "payment:visa": "yes",
+          "shop": "wine",
+          "survey:date": "2022-04-28",
+          "wheelchair": "yes"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            24.0217699,
+            49.8554072
+          ]
+        },
+        "id": "node/1526037457"
+      }
+    ]
+  }
+}

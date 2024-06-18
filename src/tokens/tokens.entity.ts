@@ -1,5 +1,5 @@
-import {Column, Entity, JoinColumn, JoinTable, OneToOne, PrimaryGeneratedColumn} from "typeorm";
-import {User} from "./users.entity";
+import {Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn} from "typeorm";
+import {User} from "../users/users.entity";
 import {ApiProperty} from "@nestjs/swagger";
 
 
@@ -18,7 +18,7 @@ export class Token {
     @Column({type: "varchar", nullable: false})
     token: string
 
-    @OneToOne(() => User, user => user.token)
+    @OneToOne(() => User, user => user.token, { onDelete: "CASCADE"})
     @JoinColumn()
     user: User
 

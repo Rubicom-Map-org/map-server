@@ -34,8 +34,14 @@ export class OpenAiController {
     {
         try {
             const userId = request.user.id
+            let isChatNewlyCreated: boolean;
+            const chatRequests = await this.chatManagerService.getChatRequests(userId, chatId)
+            if (chatRequests.length > 0) isChatNewlyCreated = true
             const getMessages = (await this.openAiService.getMessagesData(
-                userId, chatRequest,
+                userId,
+                chatId,
+                chatRequest,
+                isChatNewlyCreated
             )) as OpenAI.ChatCompletion;
             console.log("GET MESSAGES: ", getMessages)
             const requestAndResponse = {
@@ -51,29 +57,29 @@ export class OpenAiController {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-
-    @UsePipes(ValidationPipe)
-    @ApiResponse({status: HttpStatus.CREATED})
-    @UseGuards(AuthGuard)
-    @Post("/chat-prompt")
-    async getChatOpenaiPromptResponse(@Req() request,
-                                      @Body() chatRequest: ChatRequest): Promise<ChatResponse>
-    {
-        try {
-            const userId = request.user.id
-            const getMessages = (await this.openAiService.getMessagesData(
-                userId, chatRequest
-            )) as OpenAI.ChatCompletion
-            console.log(getMessages)
-            const requestAndResponse = {
-                request: chatRequest.messages[0].content,
-                response: getMessages.choices[0].message.content
-            }
-            console.log(requestAndResponse)
-            return await this.openAiService.getChatOpenaiResponse(getMessages)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
-    }
+    //
+    // @UsePipes(ValidationPipe)
+    // @ApiResponse({status: HttpStatus.CREATED})
+    // @UseGuards(AuthGuard)
+    // @Post("/chat-prompt")
+    // async getChatOpenaiPromptResponse(@Req() request,
+    //                                   @Body() chatRequest: ChatRequest): Promise<ChatResponse>
+    // {
+    //     try {
+    //         const userId = request.user.id
+    //         const getMessages = (await this.openAiService.getMessagesData(
+    //             userId, chatRequest
+    //         )) as OpenAI.ChatCompletion
+    //         console.log(getMessages)
+    //         const requestAndResponse = {
+    //             request: chatRequest.messages[0].content,
+    //             response: getMessages.choices[0].message.content
+    //         }
+    //         console.log(requestAndResponse)
+    //         return await this.openAiService.getChatOpenaiResponse(getMessages)
+    //     } catch (error) {
+    //         throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    //     }
+    // }
 
 }

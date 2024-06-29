@@ -1,7 +1,11 @@
-import {Column, Entity, JoinColumn, JoinTable, OneToOne, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryGeneratedColumn} from "typeorm";
 import {Token} from "../tokens/tokens.entity";
 import {ApiProperty} from "@nestjs/swagger";
 import {GetUserProfileDto} from "./dto/get-user-profile.dto";
+import {SavedPlace} from "../saved-places/saved-places.entity";
+import {Chat} from "../chat-manager/enitities/chat.entity";
+import {ChatRequest} from "../chat-manager/enitities/chat-request.entity";
+import {DatabaseFile} from "../files/files.entity";
 
 
 @Entity()
@@ -21,17 +25,40 @@ export class User {
 
     @ApiProperty({example: "favok3kockwrk0a3rpka;kr;oc3w;klklkewlkflkasdfa4f"})
     @Column({type: "varchar", nullable: false})
-    password: string
+    password: string;
 
     @ApiProperty({example: "kd0230d-0oo-3f-s0-f0oo023-20ro-03r.png"})
     @Column({type: "varchar", nullable: true})
-    avatarImageUrl: string
+    avatarImageUrl: string;
 
     @Column({type: "boolean", default: false})
-    isAvatarSet: string
+    isAvatarSet: boolean;
 
-    @OneToOne(() => Token, token => token.user)
-    token: Token
+    @OneToOne(() => Token, token => token.user, {
+        cascade: true
+    })
+    token: Token;
+
+    @OneToMany(() => SavedPlace, savedPlaces => savedPlaces.user, {
+        cascade: true
+    })
+    savedPlaces: SavedPlace[];
+
+    @OneToMany(() => Chat, chat => chat.user, {
+        cascade: true
+    })
+    chats: Chat[];
+
+    @OneToMany(() => ChatRequest, chatRequests => chatRequests.user, {
+        cascade: true
+    })
+    chatRequests: ChatRequest[];
+
+    @OneToOne(() => DatabaseFile, file => file.user, {
+        cascade: true
+    })
+    @JoinColumn()
+    file: DatabaseFile
 
     getUserProfile(getUserProfileDto: GetUserProfileDto) {
         const user = new User()
@@ -41,5 +68,4 @@ export class User {
         console.log(user)
         return user
     }
-
 }

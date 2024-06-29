@@ -5,8 +5,7 @@ import {JwtService} from "@nestjs/jwt";
 
 export class JwtTokenMiddleware implements NestMiddleware {
 
-    constructor(private readonly jwtService: JwtService) {
-    }
+    constructor(private readonly jwtService: JwtService) {}
 
     use(request: Request, response: Response, next: NextFunction) {
 

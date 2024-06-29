@@ -1,4 +1,4 @@
-import {BadRequestException, HttpException, Injectable, NotFoundException, UnauthorizedException} from '@nestjs/common';
+import {BadRequestException, Injectable, UnauthorizedException} from '@nestjs/common';
 import {UsersService} from "../users/users.service";
 import {RegisterDto} from "./dto/register.dto";
 import {TokensService} from "../tokens/tokens.service";
@@ -6,28 +6,24 @@ import {User} from "../users/users.entity";
 import {LoginDto} from "./dto/login.dto";
 import * as bcrypt from "bcrypt"
 import {Token} from "../tokens/tokens.entity";
-import {InjectRepository} from "@nestjs/typeorm";
-import {Repository} from "typeorm";
-import {getBuilder} from "@nestjs/cli/lib/compiler/helpers/get-builder";
 import {ChangePasswordDto} from "./dto/change-password.dto";
 
-
-export interface TokenInterface {
-    token: Token
+export interface AuthorizationResponse {
+    token: string,
+    user: User
 }
 
 @Injectable()
 export class AuthService {
 
-    constructor(private usersService: UsersService,
-                private tokensService: TokensService,
-                @InjectRepository(User)
-                private readonly usersRepository: Repository<User>) {
+    constructor(private readonly usersService: UsersService,
+                private readonly tokensService: TokensService)
+    {
     }
 
     UNAUTHORIZED_USER_MESSAGE = "user is not authorized"
 
-    async registration(registerDto: RegisterDto): Promise<[Token, User]> {
+    async registration(registerDto: RegisterDto): Promise<AuthorizationResponse> {
 
         const userCheckByEmail = await this.usersService.getUserByEmail(registerDto.email)
         const userCheckUsername = await this.usersService.getUserByUsername(registerDto.username)
@@ -51,7 +47,10 @@ export class AuthService {
         generatedToken.user = registeredUser
         await this.tokensService.saveToken(generatedToken)
 
-        return [ generatedToken, registeredUser ]
+        return {
+            token: generatedToken.token,
+            user: registeredUser
+        }
     }
 
     async validateUser(loginDto: LoginDto): Promise<User> {
@@ -69,11 +68,14 @@ export class AuthService {
         throw new UnauthorizedException({message: this.UNAUTHORIZED_USER_MESSAGE})
     }
 
-    async login(loginDto: LoginDto): Promise<[Token, User]> {
+    async login(loginDto: LoginDto): Promise<AuthorizationResponse> {
         const user = await this.validateUser(loginDto)
 
         const generatedToken = await this.tokensService.updateToken(user)
-        return [ generatedToken, user ]
+        return {
+            token: generatedToken.token,
+            user: user
+        }
     }
 
     async deleteAccount(userId: string): Promise<[User, Token]> {

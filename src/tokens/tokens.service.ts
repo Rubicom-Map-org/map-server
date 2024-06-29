@@ -1,18 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 import {User} from "../users/users.entity";
 import {JwtService} from "@nestjs/jwt";
 import {InjectRepository} from "@nestjs/typeorm";
 import {Token} from "./tokens.entity";
 import {Repository} from "typeorm";
-import {UsersService} from "../users/users.service";
 
 @Injectable()
 export class TokensService {
 
     constructor(@InjectRepository(Token)
                 private readonly tokenRepository: Repository<Token>,
-                private readonly jwtService: JwtService,
-                private readonly usersService: UsersService) {
+                private readonly jwtService: JwtService)
+    {
     }
 
     async generateToken(userData?: User) {
@@ -52,7 +51,6 @@ export class TokensService {
     }
 
     async findToken(userData: User): Promise<Token> {
-
         return await this.tokenRepository.findOne({
             where: {user: userData}
         })
@@ -60,7 +58,6 @@ export class TokensService {
     }
 
     async deleteToken(token: Token): Promise<Token> {
-
         return await this.tokenRepository.remove(token)
     }
 

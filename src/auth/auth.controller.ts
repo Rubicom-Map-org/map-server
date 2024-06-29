@@ -6,26 +6,22 @@ import {
     HttpStatus, Patch,
     Post,
     Req,
-    UseGuards,
     UsePipes,
     ValidationPipe
 } from '@nestjs/common';
 import {RegisterDto} from "./dto/register.dto";
-import {AuthService, TokenInterface} from "./auth.service";
+import {AuthService} from "./auth.service";
 import {LoginDto} from "./dto/login.dto";
 import {User} from "../users/users.entity";
 import {ApiOperation, ApiResponse} from "@nestjs/swagger";
 import {Token} from "../tokens/tokens.entity";
-import {AuthGuard} from "./auth.guard";
 import {ChangePasswordDto} from "./dto/change-password.dto";
-// import nazara_nomer from 0633581135 // ts'om
 
 
 @Controller('auth')
 export class AuthController {
 
-    constructor(private authService: AuthService) {
-    }
+    constructor(private authService: AuthService) {}
 
     @ApiOperation({
         summary: "Registration",
@@ -39,6 +35,7 @@ export class AuthController {
         try {
             return this.authService.registration(registerDto)
         } catch (error) {
+            if (error instanceof HttpException) throw Error
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
@@ -57,6 +54,7 @@ export class AuthController {
         try {
             return this.authService.login(loginDto)
         } catch (error) {
+            if (error instanceof HttpException) throw Error
             throw new HttpException(error.message,HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
@@ -67,13 +65,13 @@ export class AuthController {
             ",AKA, from JWT token"
     })
     @ApiResponse({type: Token && User, status: 200})
-    @UseGuards(AuthGuard)
     @Delete("/delete-account")
     async deleteAccount(@Req() request): Promise<[User, Token]> {
         try {
             const userId = request.user.id
             return this.authService.deleteAccount(userId)
         } catch (error) {
+            if (error instanceof HttpException) throw Error
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
@@ -83,7 +81,6 @@ export class AuthController {
         description: ""
     })
     @ApiResponse({type: User, status: 200})
-    @UseGuards(AuthGuard)
     @UsePipes(ValidationPipe)
     @Patch("/change-password")
     async changePassword(@Body() changePasswordDto: ChangePasswordDto): Promise<User> {

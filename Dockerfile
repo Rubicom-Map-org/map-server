@@ -1,4 +1,3 @@
-
 FROM node:12.13-alpine
 
 WORKDIR /app
@@ -9,7 +8,8 @@ RUN npm install
 
 COPY . .
 
-COPY ./dist ./dist
+RUN npm run build
 
-CMD ["npm", "run", "start:dev"]
+EXPOSE 3000
 
+CMD ["node", "dist/main"]

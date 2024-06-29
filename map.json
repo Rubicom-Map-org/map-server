@@ -14,11 +14,10 @@
         "indoor_seating": "yes",
         "name": "New-York-Street Pizza",
         "name:uk": "New-York-Street Pizza",
-        "opening_hours": "--Su 10:00-21:00",
+        "opening_hours": "Mo-Su 10:00-21:00",
         "outdoor_seating": "yes",
         "website": "https://pizza-nys.com.ua/",
-        "wheelchair": "yes",
-        "street": "Ivana Vyhovskoho 100"
+        "wheelchair": "yes"
       },
       "geometry": {
         "type": "Point",
@@ -133,6 +132,4975 @@
         "coordinates": [24.0217699, 49.8554072]
       },
       "id": "node/1526037457"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1535175090",
+        "category": "bank",
+        "atm": "yes",
+        "brand": "Ощадбанк",
+        "brand:en": "Oschadbank",
+        "brand:uk": "Ощадбанк",
+        "brand:wikidata": "Q4340839",
+        "brand:wikipedia": "uk:Ощадбанк",
+        "contact:facebook": "https://www.facebook.com/oschadbank",
+        "contact:instagram": "https://www.instagram.com/oschadbank_official",
+        "contact:phone": "+380 3222 35 140",
+        "contact:twitter": "http://twitter.com/ua_oschadbank",
+        "contact:website": "https://www.oschadbank.ua/",
+        "contact:youtube": "http://www.youtube.com/channel/UCtA26dq4YyHMc0bMZfPIaXA",
+        "indoor": "yes",
+        "name": "Ощадбанк",
+        "name:de": "Oschtschadbank",
+        "name:en": "Oschadbank",
+        "name:hu": "Takarékbank",
+        "name:ru": "Ощадбанк",
+        "name:uk": "Ощадбанк",
+        "official_name": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "official_name:en": "Joint Stock Company \"State Savings Bank of Ukraine\"",
+        "official_name:uk": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "opening_hours": "Mo-Fr 09:00-13:00,14:00-17:30",
+        "ref": "10013/0340",
+        "short_name": "АТ \"Ощадбанк\"",
+        "short_name:en": "JSC \"Oschadbank\"",
+        "short_name:uk": "АТ \"Ощадбанк\"",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0600211, 49.7840143]
+      },
+      "id": "node/1535175090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1553881129",
+        "category": "postoffice",
+        "addr:housenumber": "4/1",
+        "addr:postcode": "79040",
+        "addr:street": "вулиця Євгена Патона",
+        "brand": "Укрпошта",
+        "brand:en": "Ukrposhta",
+        "brand:ru": "Укрпочта",
+        "brand:uk": "Укрпошта",
+        "brand:wikidata": "Q2470783",
+        "brand:wikipedia": "uk:Укрпошта",
+        "contact:facebook": "https://www.facebook.com/ukrposhta",
+        "contact:instagram": "https://www.instagram.com/ukrposhta/",
+        "contact:linkedin": "https://www.linkedin.com/company/ukrposhta",
+        "contact:telegram": "ukrposhta_chatbot",
+        "contact:twitter": "https://twitter.com/ukrposhta",
+        "contact:viber": "https://chats.viber.com/ukrposhta",
+        "contact:website": "https://www.ukrposhta.ua",
+        "contact:youtube": "https://www.youtube.com/channel/UCKRVreLLQ-gbc6vrdgF9uEA",
+        "name": "Відділення поштового зв’язку № 40",
+        "name:en": "Post Office 79040",
+        "name:ru": "Отделение почтовой связи №40",
+        "name:uk": "Відділення поштового зв’язку № 40",
+        "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-16:00",
+        "operator": "Укрпошта",
+        "operator:en": "Ukrposhta",
+        "operator:ru": "Укрпочта",
+        "operator:uk": "Укрпошта",
+        "operator:wikidata": "Q2470783",
+        "operator:wikipedia": "uk:Укрпошта",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone:UA": "0 800 300 545",
+        "ref": "79040",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9505687, 49.825769]
+      },
+      "id": "node/1553881129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1553995196",
+        "category": "pharmacy",
+        "addr:street": "вулиця Євгена Патона",
+        "healthcare": "pharmacy",
+        "name": "DS аптека",
+        "name:uk": "DS аптека",
+        "opening_hours": "Mo-Fr 08:00-20:30; Sa 09:00-19:00; Su 09:00-18:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9599163, 49.8234521]
+      },
+      "id": "node/1553995196"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1585564422",
+        "category": "pharmacy",
+        "brand": "Мед-сервіс",
+        "brand:wikidata": "Q117706878",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Мед-сервіс",
+        "name:uk": "Мед-сервіс",
+        "opening_hours": "24/7",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0601822, 49.7848408]
+      },
+      "id": "node/1585564422"
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1631324037",
+        "category": "entertaiment",
+        "bench": "yes",
+        "bus": "yes",
+        "description": "Сокільники, вул. Стрийська, 30",
+        "highway": "bus_stop",
+        "name": "Кінґ Кросс",
+        "name:en": "King Cross",
+        "name:ru": "Кинг Кросс",
+        "name:uk": "Кінґ Кросс",
+        "official_name": "Кінґ Кросс Леополіс",
+        "public_transport": "platform",
+        "ref": "328",
+        "shelter": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0139022, 49.7735972]
+      },
+      "id": "node/1631324037"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1852724195",
+        "air_conditioning": "yes",
+        "category": "restaurant",
+        "brand": "McDonald's",
+        "brand:en": "McDonald's",
+        "brand:ru": "МакДоналдс",
+        "brand:uk": "МакДональдз",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "name:en": "McDonald's",
+        "name:ru": "МакДоналдс",
+        "name:uk": "МакДональдз",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "smoking": "no",
+        "survey:date": "2020-07-15",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0313878, 49.8381108]
+      },
+      "id": "node/1852724195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1944290115",
+        "category": "postoffice",
+        "addr:street": "Валова вулиця",
+        "brand": "Укрпошта",
+        "brand:en": "Ukrposhta",
+        "brand:ru": "Укрпочта",
+        "brand:uk": "Укрпошта",
+        "brand:wikidata": "Q2470783",
+        "brand:wikipedia": "uk:Укрпошта",
+        "contact:facebook": "https://www.facebook.com/ukrposhta",
+        "contact:instagram": "https://www.instagram.com/ukrposhta/",
+        "contact:linkedin": "https://www.linkedin.com/company/ukrposhta",
+        "contact:telegram": "ukrposhta_chatbot",
+        "contact:twitter": "https://twitter.com/ukrposhta",
+        "contact:viber": "https://chats.viber.com/ukrposhta",
+        "contact:website": "https://www.ukrposhta.ua",
+        "contact:youtube": "https://www.youtube.com/channel/UCKRVreLLQ-gbc6vrdgF9uEA",
+        "name": "Відділення поштового зв’язку №8",
+        "name:ru": "Отделение почтовой связи №8",
+        "name:uk": "Відділення поштового зв’язку №8",
+        "opening_hours": "Mo-Fr 08:00-19:00; Sa 09:00-16:00; Su 09:00-15:00",
+        "operator": "Укрпошта",
+        "operator:en": "Ukrposhta",
+        "operator:ru": "Укрпочта",
+        "operator:uk": "Укрпошта",
+        "operator:wikidata": "Q2470783",
+        "operator:wikipedia": "uk:Укрпошта",
+        "postal_code": "79008",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.032881, 49.8398041]
+      },
+      "id": "node/1944290115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1977674876",
+        "category": "bank",
+        "brand": "ПриватБанк",
+        "brand:en": "PrivatBank",
+        "brand:uk": "ПриватБанк",
+        "brand:wikidata": "Q1515015",
+        "brand:wikipedia": "uk:ПриватБанк",
+        "check_date": "2021-10-11",
+        "contact:phone": "3700",
+        "currency:UAH": "yes",
+        "name": "ПриватБанк",
+        "name:en": "PrivatBank",
+        "name:ru": "ПриватБанк",
+        "name:uk": "ПриватБанк",
+        "network": "ПриватБанк",
+        "operator": "ПриватБанк",
+        "operator:en": "PrivatBank",
+        "operator:ru": "ПриватБанк",
+        "operator:uk": "ПриватБанк",
+        "operator:wikidata": "Q1515015",
+        "operator:wikipedia": "uk:ПриватБанк",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9984436, 49.8084193]
+      },
+      "id": "node/1977674876"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1977674880",
+        "category": "bank",
+        "brand": "ПриватБанк",
+        "brand:en": "PrivatBank",
+        "brand:uk": "ПриватБанк",
+        "brand:wikidata": "Q1515015",
+        "brand:wikipedia": "uk:ПриватБанк",
+        "check_date": "2021-10-11",
+        "contact:phone": "3700",
+        "currency:UAH": "yes",
+        "name": "ПриватБанк",
+        "name:en": "PrivatBank",
+        "name:ru": "ПриватБанк",
+        "name:uk": "ПриватБанк",
+        "network": "ПриватБанк",
+        "operator": "ПриватБанк",
+        "operator:en": "PrivatBank",
+        "operator:ru": "ПриватБанк",
+        "operator:uk": "ПриватБанк",
+        "operator:wikidata": "Q1515015",
+        "operator:wikipedia": "uk:ПриватБанк",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9983212, 49.8085502]
+      },
+      "id": "node/1977674880"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2043751164",
+        "category": "entertaiment",
+        "bus": "yes",
+        "description": "вул. Шпитальна (вул. Городоцька, 4)",
+        "highway": "bus_stop",
+        "name": "Маґнус",
+        "name:en": "Magnus",
+        "name:ru": "Магнус",
+        "name:uk": "Маґнус",
+        "public_transport": "stop_position",
+        "ref": "0082",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0243986, 49.844431]
+      },
+      "id": "node/2043751164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2055197966",
+        "category": "entertaiment",
+        "name": "ТЦ Скриня",
+        "name:uk": "ТЦ Скриня",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9951095, 49.8350697]
+      },
+      "id": "node/2055197966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2061558513",
+        "category": "pharmacy",
+        "addr:housenumber": "96",
+        "addr:street": "вулиця Тараса Шевченка",
+        "brand": "3і",
+        "brand:wikidata": "Q117705687",
+        "email": "office@3i.ua",
+        "healthcare": "pharmacy",
+        "name": "3і",
+        "name:uk": "3і",
+        "opening_hours": "Mo-Su 08:00-19:30",
+        "operator": "Лілея",
+        "phone:UA": "0 800 509 595",
+        "website": "https://3i.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0022819, 49.8475065]
+      },
+      "id": "node/2061558513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2117408562",
+        "category": "fuel",
+        "addr:city": "Солонка",
+        "addr:street": "автодорога Київ-Чоп, 548 км+300 м, ліворуч",
+        "brand": "ОККО",
+        "brand:en": "OKKO",
+        "brand:wikidata": "Q7072617",
+        "brand:wikipedia": "en:OKKO",
+        "fuel:diesel": "yes",
+        "fuel:electricity": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "name": "ОККО",
+        "name:en": "OKKO",
+        "name:uk": "ОККО",
+        "phone": "+380 67 676 4906",
+        "website": "https://www.okko.ua/",
+        "wheelchair": "yes",
+        "wheelchair:description": "Туалет, пристосований для людей у візках, зручний доступ до приміщення заправки та ресторану для людей у візках, парковка для людей з особливими потребами"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0138503, 49.7430037]
+      },
+      "id": "node/2117408562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2159881074",
+        "category": "restaurant",
+        "addr:housenumber": "1",
+        "addr:street": "Галицька вулиця",
+        "alt_name": "Celentano",
+        "contact:phone": "+380 32 236 7260;+380 67 327 4342",
+        "contact:website": "http://egoisty.com/restaurant-location/celentano/lviv-galicka-1-uk",
+        "cuisine": "pizza",
+        "int_name": "Celentano",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Челентано",
+        "name:uk": "Челентано",
+        "opening_hours": "10:00-23:00",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.031106, 49.841166]
+      },
+      "id": "node/2159881074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2197879848",
+        "category": "postoffice",
+        "brand": "Укрпошта",
+        "brand:en": "Ukrposhta",
+        "brand:ru": "Укрпочта",
+        "brand:uk": "Укрпошта",
+        "brand:wikidata": "Q2470783",
+        "brand:wikipedia": "uk:Укрпошта",
+        "check_date:opening_hours": "2021-11-27",
+        "contact:facebook": "https://www.facebook.com/ukrposhta",
+        "contact:instagram": "https://www.instagram.com/ukrposhta/",
+        "contact:linkedin": "https://www.linkedin.com/company/ukrposhta",
+        "contact:telegram": "ukrposhta_chatbot",
+        "contact:twitter": "https://twitter.com/ukrposhta",
+        "contact:viber": "https://chats.viber.com/ukrposhta",
+        "contact:website": "https://www.ukrposhta.ua",
+        "contact:youtube": "https://www.youtube.com/channel/UCKRVreLLQ-gbc6vrdgF9uEA",
+        "name": "Відділення поштового зв’язку № 70",
+        "name:ru": "Отделение почтовой связи № 70",
+        "name:uk": "Відділення поштового зв’язку № 70",
+        "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-16:00; Su 09:00-15:00",
+        "operator": "Укрпошта",
+        "operator:en": "Ukrposhta",
+        "operator:ru": "Укрпочта",
+        "operator:uk": "Укрпошта",
+        "operator:wikidata": "Q2470783",
+        "operator:wikipedia": "uk:Укрпошта",
+        "phone": "+380 322 22 2295",
+        "ref": "79070",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0543051, 49.7976822]
+      },
+      "id": "node/2197879848"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2331915348",
+        "category": "pharmacy",
+        "addr:housenumber": "1",
+        "addr:street": "вулиця Олександра Довженка",
+        "drive_through": "no",
+        "healthcare": "pharmacy",
+        "name": "Пульс",
+        "name:uk": "Пульс",
+        "opening_hours": "24/7",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0536164, 49.7981861]
+      },
+      "id": "node/2331915348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2349440982",
+        "category": "pharmacy",
+        "addr:housenumber": "212",
+        "addr:street": "Городоцька вулиця",
+        "brand": "3і",
+        "brand:wikidata": "Q117705687",
+        "healthcare": "pharmacy",
+        "name": "3і",
+        "name:uk": "3і",
+        "opening_hours": "24/7",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9603064, 49.8293962]
+      },
+      "id": "node/2349440982"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2798905981",
+        "category": "restaurant",
+        "addr:housenumber": "59",
+        "addr:street": "проспект Вʼячеслава Чорновола",
+        "capacity": "100",
+        "check_date": "2022-07-19",
+        "cuisine": "international",
+        "delivery": "yes",
+        "email": "zeppelin.lviv@gmail.com",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "0",
+        "name": "Цепелін",
+        "name:ru": "Цепеллин",
+        "name:uk": "Цепелін",
+        "opening_hours": "10:00-23:00",
+        "outdoor_seating": "yes",
+        "payment:coins": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "phone": "+380 67 992 2022",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.zeppelin.lviv.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0198241, 49.8569134]
+      },
+      "id": "node/2798905981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3025777703",
+        "category": "pharmacy",
+        "check_date": "2023-05-01",
+        "check_date:opening_hours": "2022-05-14",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Соціальна аптека",
+        "name:ru": "Социальная Аптека",
+        "name:uk": "Соціальна аптека",
+        "opening_hours": "Mo-Fr 08:00-21:00; Sa-Su 09:00-20:00",
+        "survey:date": "2022-05-17",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0225898, 49.8541054]
+      },
+      "id": "node/3025777703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3623843438",
+        "category": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "D.S.",
+        "name:uk": "D.S.",
+        "opening_hours": "08:00-20:00",
+        "phone": "+380 322 45 3884",
+        "website": "http://www.ds.lviv.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0634637, 49.7957261]
+      },
+      "id": "node/3623843438"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3623847958",
+        "category": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "D.S.",
+        "name:uk": "D.S.",
+        "opening_hours": "08:00-20:00",
+        "phone": "+380 322 23 5071",
+        "website": "http://www.ds.lviv.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0637307, 49.79616]
+      },
+      "id": "node/3623847958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3623916713",
+        "category": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Знахар",
+        "name:uk": "Знахар",
+        "opening_hours": "Mo-Sa 08:00-21:00; Su 09:00-20:00",
+        "operator": "ПП \"Дешева-Аптека\"",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0631717, 49.7946294]
+      },
+      "id": "node/3623916713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3717007107",
+        "category": "bank",
+        "access": "private",
+        "addr:housenumber": "26",
+        "addr:street": "вулиця Шептицьких",
+        "amenity": "atm",
+        "brand": "Укрсиббанк",
+        "name": "Укрсиббанк",
+        "name:uk": "Укрсиббанк",
+        "note": "Хол бізнес-центру",
+        "opening_hours": "Mo-Fr 08:00-20:00",
+        "operator": "Укрсиббанк",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0083701, 49.8382271]
+      },
+      "id": "node/3717007107"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3738934420",
+        "category": "foodmarket",
+        "addr:housenumber": "58",
+        "addr:street": "вулиця Володимира Великого",
+        "brand": "Ашан",
+        "brand:en": "Auchan",
+        "brand:uk": "Ашан",
+        "brand:wikidata": "Q4073419",
+        "brand:wikipedia": "en:Auchan",
+        "internet_access": "wlan",
+        "name": "Auchan",
+        "name:en": "Auchan",
+        "name:uk": "Ашан",
+        "opening_hours": "Mo-Su, PH 07:30-22:00",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9864521, 49.812416]
+      },
+      "id": "node/3738934420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3751391353",
+        "category": "pharmacy",
+        "check_date": "2022-07-19",
+        "healthcare": "pharmacy",
+        "name": "Аптека Пульс",
+        "name:uk": "Аптека Пульс",
+        "opening_hours": "24/7",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0183854, 49.8583273]
+      },
+      "id": "node/3751391353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3782330050",
+        "category": "pharmacy",
+        "check_date": "2023-01-05",
+        "healthcare": "pharmacy",
+        "name": "Знахар",
+        "name:uk": "Знахар",
+        "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-19:00; Su 09:00-18:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+380 322 97 5589;+380 322 64 5337",
+        "ref": "8",
+        "website": "http://apteka-znahar.com.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0233172, 49.8541932]
+      },
+      "id": "node/3782330050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3782335972",
+        "amenity": "cinema",
+        "check_date:opening_hours": "2020-12-15",
+        "level": "3",
+        "name": "Планета Кіно",
+        "name:en": "Planeta Kino",
+        "name:ru": "Планета Кино",
+        "name:uk": "Планета Кіно",
+        "opening_hours": "Mo-Su 10:00-02:00",
+        "website": "https://planetakino.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0222799, 49.8500455]
+      },
+      "id": "node/3782335972"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3782335973",
+        "category": "foodmarket",
+        "brand": "Сільпо",
+        "brand:en": "Silpo",
+        "brand:wikidata": "Q4419434",
+        "brand:wikipedia": "uk:Сільпо (торговельна мережа)",
+        "contact:email": "program@silpo.ua",
+        "contact:facebook": "https://www.facebook.com/silpo",
+        "contact:instagram": "https://www.instagram.com/silpoua/",
+        "contact:telegram": "https://t.me/silposilpo",
+        "contact:viber": "https://invite.viber.com/?g2=AQAt15SGGIlJkUpcckQJ1mAV5nsCAESEJ6JHLm0UCKWWPGQtSUDjRrHVW8Lmj4Xd&lang=uk",
+        "contact:website": "https://silpo.ua",
+        "level": "1",
+        "name": "Сільпо",
+        "name:en": "Silpo",
+        "name:uk": "Сільпо",
+        "opening_hours": "Mo-Su 8:00-23:00",
+        "phone:UA": "0 800 301 707",
+        "shop": "supermarket",
+        "website": "https://silpo.ua/stores/vul-pid-dubom-7b",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0212312, 49.8493368]
+      },
+      "id": "node/3782335973"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3948945668",
+        "category": "restaurant",
+        "brand": "McDonald's",
+        "brand:en": "McDonald's",
+        "brand:ru": "МакДоналдс",
+        "brand:uk": "МакДональдз",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "uk:McDonald's",
+        "cuisine": "burger",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "level": "3",
+        "name": "McDonald's",
+        "name:en": "McDonald's",
+        "name:ru": "МакДоналдс",
+        "name:uk": "МакДональдз",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0229861, 49.8498934]
+      },
+      "id": "node/3948945668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3967690978",
+        "category": "pharmacy",
+        "brand": "Аптека Доброго Дня",
+        "brand:en": "Pharmacy Good Day",
+        "brand:ru": "Аптека Доброго Дня",
+        "brand:uk": "Аптека Доброго Дня",
+        "brand:wikidata": "Q102174228",
+        "healthcare": "pharmacy",
+        "level": "1",
+        "name": "Аптека Доброго Дня",
+        "name:en": "Pharmacy Good Day",
+        "name:ru": "Аптека Доброго Дня",
+        "name:uk": "Аптека Доброго Дня",
+        "opening_hours": "Mo-Su 09:00-18:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0208423, 49.8495984]
+      },
+      "id": "node/3967690978"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3982400357",
+        "addr:housenumber": "1",
+        "addr:street": "Стара вулиця",
+        "category": "pharmacy",
+        "brand": "D.S.",
+        "brand:wikidata": "Q117706829",
+        "check_date": "2023-05-19",
+        "healthcare": "pharmacy",
+        "name": "D.S.",
+        "name:uk": "D.S.",
+        "opening_hours": "Mo-Fr 08:00-21:00; Sa 09:00-21:00; Su 10:00-20:00",
+        "survey:date": "2022-05-18",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0272248, 49.8449777]
+      },
+      "id": "node/3982400357"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4114264593",
+        "category": "restaurant",
+        "addr:housenumber": "2а",
+        "addr:street": "Козельницька вулиця",
+        "cuisine": "regional",
+        "internet_access": "wlan",
+        "name": "Трапезна УКУ",
+        "name:en": "UCU Trapezna",
+        "name:uk": "Трапезна УКУ",
+        "opening_hours": "09:00-20:00",
+        "smoking": "outside",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.023331, 49.8173028]
+      },
+      "id": "node/4114264593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4147256192",
+        "category": "foodmarket",
+        "brand": "Близенько",
+        "brand:wikidata": "Q117670418",
+        "contact:email": "blyzenko.marketing@gmail.com",
+        "contact:facebook": "https://www.facebook.com/blyzenko",
+        "contact:instagram": "https://www.instagram.com/blyzenko/",
+        "contact:phone": "+380 68 519 8686;+380 93 288 6709",
+        "contact:website": "https://blyzenko.com.ua/",
+        "name": "Близенько",
+        "name:ru": "Близенько",
+        "name:uk": "Близенько",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "Мережа-Сервіс-Львів",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0249171, 49.8453839]
+      },
+      "id": "node/4147256192"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4180490990",
+        "category": "fuel",
+        "compressed_air": "yes",
+        "name": "OKKO",
+        "name:uk": "OKKO",
+        "opening_hours": "24/7",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9754244, 49.7789098]
+      },
+      "id": "node/4180490990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4185318995",
+        "category": "bank",
+        "brand": "Альфа-Банк",
+        "brand:en": "Alfa-Bank",
+        "brand:ru": "Альфа-Банк",
+        "brand:uk": "Альфа-Банк",
+        "brand:wikidata": "Q16691757",
+        "brand:wikipedia": "uk:Альфа-Банк (Україна)",
+        "check_date": "2023-05-01",
+        "check_date:opening_hours": "2022-05-13",
+        "contact:email": "ccd@alfabank.kiev.ua",
+        "contact:facebook": "https://www.facebook.com/AlfaBankUkraine/",
+        "contact:phone": "+380 3222 95 371",
+        "contact:website": "https://alfabank.ua/",
+        "level": "0",
+        "name": "Sense bank",
+        "name:en": "Sense bank",
+        "name:ru": "Sense bank",
+        "name:uk": "Sense bank",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "operator": "Альфа-Банк",
+        "survey:date": "2020-07-05",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0222585, 49.8544546]
+      },
+      "id": "node/4185318995"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4371796395",
+        "addr:housenumber": "3",
+        "addr:postcode": "79005",
+        "addr:street": "вулиця Володимира Шухевича",
+        "category": "restaurant",
+        "contact:phone": "+380 32 254 6755",
+        "contact:website": "http://egoisty.com/restaurant-location/celentano/lviv-vul-shuhevicha-3-uk",
+        "cuisine": "pasta;italian;pizza",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "int_name": "Celentano",
+        "internet_access": "wlan",
+        "name": "Челентано",
+        "name:uk": "Челентано",
+        "opening_hours": "Mo-Th 08:00-22:00; Fr-Su 10:00-23:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0347683, 49.8372207]
+      },
+      "id": "node/4371796395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4411372890",
+        "category": "bank",
+        "brand": "ПриватБанк",
+        "brand:en": "PrivatBank",
+        "brand:wikidata": "Q1515015",
+        "brand:wikipedia": "uk:ПриватБанк",
+        "name": "ПриватБанк",
+        "name:en": "PrivatBank",
+        "name:uk": "ПриватБанк",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0289156, 49.8392983]
+      },
+      "id": "node/4411372890"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4428111592",
+        "category": "pharmacy",
+        "brand": "Пульс",
+        "brand:wikidata": "Q121898637",
+        "healthcare": "pharmacy",
+        "name": "Пульс",
+        "name:uk": "Пульс",
+        "opening_hours": "24/7",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9969858, 49.8103045]
+      },
+      "id": "node/4428111592"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4432379991",
+        "category": "postoffice",
+        "brand": "Нова Пошта",
+        "brand:en": "Nova Poshta",
+        "brand:uk": "Нова Пошта",
+        "brand:wikidata": "Q12133863",
+        "brand:wikipedia": "uk:Нова Пошта",
+        "contact:email": "info@novaposhta.ua",
+        "contact:facebook": "nova.poshta.official",
+        "contact:instagram": "https://www.instagram.com/novaposhta.official/",
+        "contact:twitter": "_novaposhta_",
+        "contact:website": "http://novaposhta.ua",
+        "contact:youtube": "https://www.youtube.com/channel/UCUgNSjGSiSdJBTjGG2IA4JA",
+        "description": "Відділення №16 (до 30 кг): просп. Червоної Калини, 76",
+        "name": "Нова Пошта №16",
+        "name:en": "Nova Poshta #16",
+        "name:ru": "Новая Почта №16",
+        "name:uk": "Нова Пошта №16",
+        "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-17:00",
+        "operator:uk": "Товариство з обмеженою відповідальністю \"Нова Пошта\"",
+        "phone:UA": "0 800 500 609",
+        "ref": "16",
+        "source": "novaposhta.ua",
+        "source:pkey": "01ae2642-e1c2-11e3-8c4a-0050568002cf",
+        "website": "https://novaposhta.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.058329, 49.7880365]
+      },
+      "id": "node/4432379991"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4452096589",
+        "category": "restaurant",
+        "brand": "Lviv Croissants",
+        "addr:housenumber": "9",
+        "addr:street": "проспект Свободи",
+        "brand:wikidata": "Q116871093",
+        "check_date:opening_hours": "2022-05-14",
+        "contact:facebook": "https://www.facebook.com/LvivCroissants/",
+        "contact:instagram": "https://www.instagram.com/LvivCroissants/",
+        "contact:phone": "+380 97 585 9194",
+        "contact:website": "https://www.lviv-croissants.com/",
+        "cuisine": "coffee_shop",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "level": "1",
+        "name": "Lviv Croissants",
+        "name:en": "Lviv Croissants",
+        "name:uk": "Львівські Круасани",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.02776, 49.8403761]
+      },
+      "id": "node/4452096589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4466953304",
+        "category": "foodmarket",
+        "brand": "Сім23",
+        "brand:wikidata": "Q107167415",
+        "name": "Сім23",
+        "name:uk": "Сім23",
+        "opening_hours": "Mo-Su 07:00-23:00",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0601934, 49.7846466]
+      },
+      "id": "node/4466953304"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4530674799",
+        "category": "bank",
+        "atm": "yes",
+        "brand": "Ощадбанк",
+        "brand:en": "Oschadbank",
+        "brand:uk": "Ощадбанк",
+        "brand:wikidata": "Q4340839",
+        "brand:wikipedia": "uk:Ощадбанк",
+        "contact:facebook": "https://www.facebook.com/oschadbank",
+        "contact:instagram": "https://www.instagram.com/oschadbank_official",
+        "contact:phone": "+380 322 67 4591",
+        "contact:twitter": "http://twitter.com/ua_oschadbank",
+        "contact:website": "https://www.oschadbank.ua/",
+        "contact:youtube": "http://www.youtube.com/channel/UCtA26dq4YyHMc0bMZfPIaXA",
+        "drive_through": "no",
+        "name": "Ощадбанк",
+        "name:de": "Oschtschadbank",
+        "name:en": "Oschadbank",
+        "name:hu": "Takarékbank",
+        "name:ru": "Ощадбанк",
+        "name:uk": "Ощадбанк",
+        "official_name": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "official_name:en": "Joint Stock Company \"State Savings Bank of Ukraine\"",
+        "official_name:uk": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "opening_hours": "Mo-Fr 08:30-13:00,14:00-19:00;Sa 09:30-15:00",
+        "short_name:en": "JSC \"Oschadbank\"",
+        "short_name:uk": "АТ \"Ощадбанк\"",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9660562, 49.8454765]
+      },
+      "id": "node/4530674799"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4550934976",
+        "category": "postoffice",
+        "brand": "Нова Пошта",
+        "brand:en": "Nova Poshta",
+        "brand:uk": "Нова Пошта",
+        "brand:wikidata": "Q12133863",
+        "brand:wikipedia": "uk:Нова Пошта",
+        "contact:email": "info@novaposhta.ua",
+        "contact:facebook": "nova.poshta.official",
+        "contact:instagram": "https://www.instagram.com/novaposhta.official/",
+        "contact:twitter": "_novaposhta_",
+        "contact:website": "http://novaposhta.ua",
+        "contact:youtube": "https://www.youtube.com/channel/UCUgNSjGSiSdJBTjGG2IA4JA",
+        "description": "Відділення №36 (до 30 кг) Міні-відділення: просп. Червоної Калини, 62а (ТЦ \"ІНТЕР СІТІ\")",
+        "name": "Нова Пошта",
+        "name:en": "Nova Poshta #36",
+        "name:ru": "Новая Почта №36",
+        "name:uk": "Нова Пошта №36",
+        "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-17:00; Su 11:00-18:00",
+        "operator": "Нова Пошта",
+        "operator:uk": "Товариство з обмеженою відповідальністю \"Нова Пошта\"",
+        "operator:wikidata": "Q12133863",
+        "phone:UA": "0 800 500 609",
+        "ref": "36",
+        "source": "novaposhta.ua",
+        "source:pkey": "dd0651c6-cbbe-11e4-a77a-005056887b8d",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0559157, 49.7921455]
+      },
+      "id": "node/4550934976"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4557750511",
+        "category": "pharmacy",
+        "check_date": "2023-05-31",
+        "healthcare": "pharmacy",
+        "name": "D.S.",
+        "name:uk": "D.S.",
+        "opening_hours": "Mo-Fr 08:00-21:00; Sa,Su 09:00-19:00",
+        "website": "https://apteka-ds.com.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0178856, 49.7967951]
+      },
+      "id": "node/4557750511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4574012769",
+        "addr:housenumber": "7",
+        "addr:street": "вулиця Під Дубом",
+        "category": "restaurant",
+        "contact:mobile": "+380 97 715 7157",
+        "cuisine": "georgian",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "int_name": "Hinkalnya",
+        "level": "3",
+        "name": "Хінкальня",
+        "name:en": "Khinkalnya",
+        "name:pl": "Chinkalnia",
+        "name:uk": "Хінкальня",
+        "opening_hours": "Mo-Th 10:00-22:00; Fr-Su 11:00-23:00",
+        "website": "https://hinkalnya.com.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0229923, 49.8498039]
+      },
+      "id": "node/4574012769"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4587727124",
+        "category": "restaurant",
+        "addr:city": "Львів",
+        "addr:housenumber": "62а",
+        "addr:street": "проспект Червоної Калини",
+        "diet:vegetarian": "no",
+        "level": "1",
+        "name": "Кримська перепічка",
+        "name:uk": "Кримська перепічка",
+        "opening_hours": "Mo-Sa 08:30-20:00; Su 10:00-20:00",
+        "outdoor_seating": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0560711, 49.7917352]
+      },
+      "id": "node/4587727124"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4587852994",
+        "category": "foodmarket",
+        "name": "Наш",
+        "name:uk": "Наш",
+        "opening_hours": "24/7",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0628918, 49.7958909]
+      },
+      "id": "node/4587852994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4615930790",
+        "category": "restaurant",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "name": "Express Buffet",
+        "name:uk": "Express Buffet",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "opening_hours:signed": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0589004, 49.7950834]
+      },
+      "id": "node/4615930790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4690653189",
+        "addr:housenumber": "57",
+        "addr:street": "вулиця Авраама Лінкольна",
+        "category": "bank",
+        "atm": "yes",
+        "brand": "Ощадбанк",
+        "brand:en": "Oschadbank",
+        "brand:uk": "Ощадбанк",
+        "brand:wikidata": "Q4340839",
+        "brand:wikipedia": "uk:Ощадбанк",
+        "contact:facebook": "https://www.facebook.com/oschadbank",
+        "contact:instagram": "https://www.instagram.com/oschadbank_official",
+        "contact:phone": "+380 322 93 8988",
+        "contact:twitter": "http://twitter.com/ua_oschadbank",
+        "contact:website": "https://www.oschadbank.ua/",
+        "contact:youtube": "http://www.youtube.com/channel/UCtA26dq4YyHMc0bMZfPIaXA",
+        "drive_through": "yes",
+        "level": "0",
+        "name": "Ощадбанк",
+        "name:de": "Oschtschadbank",
+        "name:en": "Oschadbank",
+        "name:hu": "Takarékbank",
+        "name:ru": "Ощадбанк",
+        "name:uk": "Ощадбанк",
+        "official_name": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "official_name:en": "Joint Stock Company \"State Savings Bank of Ukraine\"",
+        "official_name:uk": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "opening_hours": "Mo-Fr 09:00-13:00,14:00-17:30",
+        "short_name": "АТ \"Ощадбанк\"",
+        "short_name:en": "JSC \"Oschadbank\"",
+        "short_name:uk": "АТ \"Ощадбанк\"",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.043225, 49.8673879]
+      },
+      "id": "node/4690653189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4697935294",
+        "addr:housenumber": "218",
+        "addr:street": "Городоцька вулиця",
+        "category": "pharmacy",
+        "drive_through": "no",
+        "name": "DS",
+        "name:uk": "DS",
+        "opening_hours": "Mo-Su 00:00-24:00",
+        "phone": "+380 322 62 0071",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9593297, 49.8292403]
+      },
+      "id": "node/4697935294"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4719740394",
+        "category": "bank",
+        "brand": "Ощадбанк",
+        "brand:en": "Oschadbank",
+        "brand:uk": "Ощадбанк",
+        "brand:wikidata": "Q4340839",
+        "brand:wikipedia": "uk:Ощадбанк",
+        "contact:facebook": "https://www.facebook.com/oschadbank",
+        "contact:instagram": "https://www.instagram.com/oschadbank_official",
+        "contact:phone": "+380 322 63 1544",
+        "contact:twitter": "http://twitter.com/ua_oschadbank",
+        "contact:website": "https://www.oschadbank.ua/",
+        "contact:youtube": "http://www.youtube.com/channel/UCtA26dq4YyHMc0bMZfPIaXA",
+        "name": "Ощадбанк",
+        "name:de": "Oschtschadbank",
+        "name:en": "Oschadbank",
+        "name:hu": "Takarékbank",
+        "name:ru": "Ощадбанк",
+        "name:uk": "Ощадбанк",
+        "official_name": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "official_name:en": "Joint Stock Company \"State Savings Bank of Ukraine\"",
+        "official_name:uk": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "opening_hours": "Mo-Fr 09:00-13:00,14:00-17:30;Sa 09:00-13:30",
+        "short_name": "АТ \"Ощадбанк\"",
+        "short_name:en": "JSC \"Oschadbank\"",
+        "short_name:uk": "АТ \"Ощадбанк\"",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9967951, 49.8099686]
+      },
+      "id": "node/4719740394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4720234125",
+        "addr:housenumber": "257а",
+        "addr:street": "Городоцька вулиця",
+        "category": "bank",
+        "atm": "yes",
+        "brand": "Ощадбанк",
+        "brand:en": "Oschadbank",
+        "brand:uk": "Ощадбанк",
+        "brand:wikidata": "Q4340839",
+        "brand:wikipedia": "uk:Ощадбанк",
+        "contact:facebook": "https://www.facebook.com/oschadbank",
+        "contact:instagram": "https://www.instagram.com/oschadbank_official",
+        "contact:phone": "+380 322 55 6084",
+        "contact:twitter": "http://twitter.com/ua_oschadbank",
+        "contact:website": "https://www.oschadbank.ua/",
+        "contact:youtube": "http://www.youtube.com/channel/UCtA26dq4YyHMc0bMZfPIaXA",
+        "drive_through": "yes",
+        "name": "Ощадбанк",
+        "name:de": "Oschtschadbank",
+        "name:en": "Oschadbank",
+        "name:hu": "Takarékbank",
+        "name:ru": "Ощадбанк",
+        "name:uk": "Ощадбанк",
+        "official_name": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "official_name:en": "Joint Stock Company \"State Savings Bank of Ukraine\"",
+        "official_name:uk": "Акціонерне товариство \"Державний ощадний банк України\"",
+        "opening_hours": "Mo-Fr 09:00-13:00,14:00-17:30",
+        "short_name:en": "JSC \"Oschadbank\"",
+        "short_name:uk": "АТ \"Ощадбанк\"",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9673122, 49.8301607]
+      },
+      "id": "node/4720234125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4721607191",
+        "category": "bank",
+        "brand": "ПУМБ",
+        "brand:en": "First Ukrainian International Bank",
+        "brand:uk": "ПУМБ",
+        "brand:wikidata": "Q4341156",
+        "brand:wikipedia": "en:First Ukrainian International Bank",
+        "name": "ПУМБ",
+        "name:en": "First Ukrainian International Bank",
+        "name:uk": "ПУМБ",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "survey:date": "2022-06-13",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9892907, 49.8052648]
+      },
+      "id": "node/4721607191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4724456989",
+        "category": "electricshop",
+        "addr:flats": "3",
+        "addr:housenumber": "1",
+        "addr:street": "проспект Свободи",
+        "brand": "Алло",
+        "brand:wikidata": "Q18683057",
+        "brand:wikipedia": "uk:Алло (торгова мережа)",
+        "internet_access": "wlan",
+        "name": "Алло",
+        "name:en": "ALLO",
+        "name:ru": "АЛЛО",
+        "name:uk": "АЛЛО",
+        "opening_hours": "Sa-Su 10:00-20:00; Mo-Fr 10:00-21:00",
+        "phone": "+380 66 406 2511",
+        "shop": "mobile_phone",
+        "website": "https://allo.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0281765, 49.8398986]
+      },
+      "id": "node/4724456989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4745977017",
+        "category": "foodmarket",
+        "contact:email": "blyzenko.marketing@gmail.com",
+        "contact:facebook": "https://www.facebook.com/blyzenko",
+        "contact:instagram": "https://www.instagram.com/blyzenko/",
+        "contact:phone": "+380 93 288 6785",
+        "contact:website": "https://blyzenko.com.ua/",
+        "name": "Близенько",
+        "name:uk": "Близенько",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "\"Мережа-Сервіс-Львів\"",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0269695, 49.8261511]
+      },
+      "id": "node/4745977017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4754019721",
+        "category": "foodmarket",
+        "contact:email": "blyzenko.marketing@gmail.com",
+        "contact:facebook": "https://www.facebook.com/blyzenko",
+        "contact:instagram": "https://www.instagram.com/blyzenko/",
+        "contact:phone": "+380 68 519 8686;+380 93 288 6718",
+        "contact:website": "https://blyzenko.com.ua/",
+        "name": "Близенько",
+        "name:uk": "Близенько",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "Мережа-Сервіс-Львів",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0381022, 49.8260964]
+      },
+      "id": "node/4754019721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4841262490",
+        "category": "hospital",
+        "healthcare": "doctor",
+        "name": "Медичний центр Ехокор",
+        "name:uk": "Медичний центр Ехокор",
+        "opening_hours": "Mo-Sa 09:00-19:00, Sa 10:00-15:00",
+        "short_name": "Ехокор",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0424861, 49.8116926]
+      },
+      "id": "node/4841262490"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4841349023",
+        "category": "restaurant",
+        "cuisine": "sushi",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "internet_access": "wlan",
+        "level": "3",
+        "name": "Сушія",
+        "name:en": "Sushia",
+        "name:ru": "Сушия",
+        "name:uk": "Сушія",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0232382, 49.8497287]
+      },
+      "id": "node/4841349023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4844414282",
+        "category": "pharmacy",
+        "brand": "Подорожник",
+        "brand:wikidata": "Q117706903",
+        "healthcare": "pharmacy",
+        "name": "Подорожник",
+        "name:uk": "Подорожник",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.968524, 49.8298363]
+      },
+      "id": "node/4844414282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4847623221",
+        "category": "foodmarket",
+        "brand": "АТБ-маркет",
+        "brand:en": "ATB-Market",
+        "brand:uk": "АТБ-маркет",
+        "brand:wikidata": "Q4054103",
+        "brand:wikipedia": "uk:АТБ-Маркет",
+        "name": "АТБ-маркет",
+        "name:en": "ATB-Market",
+        "name:ru": "АТБ",
+        "name:uk": "АТБ-маркет",
+        "opening_hours": "24/7",
+        "shop": "supermarket",
+        "website": "http://m.atbmarket.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0570955, 49.7824413]
+      },
+      "id": "node/4847623221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4857790527",
+        "category": "hospital",
+        "addr:housenumber": "38",
+        "addr:postcode": "79070",
+        "addr:street": "вулиця Хуторівка",
+        "amenity": "social_facility",
+        "name": "Львівський міжрегіональний центр соціально-трудової, професійної та медичної реабілітації інвалідів",
+        "name:uk": "Львівський міжрегіональний центр соціально-трудової, професійної та медичної реабілітації інвалідів",
+        "phone": "+380 322 21 5908;+380 322 22 0944",
+        "social_facility": "nursing_home",
+        "toilets:wheelchair": "yes",
+        "website": "https://reabl.lviv.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0505636, 49.801828]
+      },
+      "id": "node/4857790527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4931273322",
+        "addr:street": "Любінська вулиця",
+        "category": "restaurant",
+        "cuisine": "sandwich",
+        "internet_access": "wlan",
+        "name": "Вероніка",
+        "name:en": "Veronica",
+        "name:uk": "Вероніка",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9598812, 49.8129663]
+      },
+      "id": "node/4931273322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5042236123",
+        "category": "foodmarket",
+        "check_date:opening_hours": "2022-06-22",
+        "name": "Хлібна корзина",
+        "name:en": "Italian products",
+        "name:uk": "Продукти з Італії",
+        "opening_hours:signed": "no",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.966, 49.8232003]
+      },
+      "id": "node/5042236123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5227885806",
+        "category": "restaurant",
+        "craft": "brewery",
+        "name": "Beer Set",
+        "name:uk": "Beer Set",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9683577, 49.8289287]
+      },
+      "id": "node/5227885806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5230727240",
+        "category": "pharmacy",
+        "brand": "Пульс",
+        "brand:wikidata": "Q121898637",
+        "healthcare": "pharmacy",
+        "name": "Пульс",
+        "name:uk": "Пульс",
+        "opening_hours": "24/7",
+        "website": "http://apteka-puls.com",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0481199, 49.7980621]
+      },
+      "id": "node/5230727240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5585755842",
+        "category": "foodmarket",
+        "check_date:opening_hours": "2022-04-19",
+        "name": "Рошен",
+        "name:uk": "Рошен",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "shop": "confectionery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.025072, 49.8455816]
+      },
+      "id": "node/5585755842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5607414525",
+        "category": "electricshop",
+        "brand": "Компʼютерний Всесвіт",
+        "brand:wikidata": "Q120678155",
+        "name": "Компʼютерний Всесвіт",
+        "name:en": "Komp’yuternyy Vsesvit",
+        "name:uk": "Комп’ютерний Всесвіт",
+        "opening_hours": "Mo-Su 10:00-20:00",
+        "phone": "+380 322 95 9841",
+        "shop": "computer",
+        "website": "http://www.kv-ua.net",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0571913, 49.7917933]
+      },
+      "id": "node/5607414525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5607424025",
+        "addr:housenumber": "105",
+        "addr:postcode": "79000",
+        "addr:street": "проспект Червоної Калини",
+        "category": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Аптека низьких цін",
+        "name:en": "Pharmacy low prices",
+        "name:uk": "Аптека низьких цін",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "phone": "+380 322 22 5755",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0600784, 49.785525]
+      },
+      "id": "node/5607424025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5630438445",
+        "category": "foodmarket",
+        "name": "Свій маркет",
+        "name:uk": "Свій маркет",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9683801, 49.8291007]
+      },
+      "id": "node/5630438445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5709572405",
+        "category": "foodmarket",
+        "name": "Продукти",
+        "name:uk": "Продукти",
+        "opening_hours": "Mo-Sa 08:30-20:00; Su 08:30-19:00",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.05952, 49.7968766]
+      },
+      "id": "node/5709572405"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5821308481",
+        "category": "pharmacy",
+        "check_date": "2023-05-01",
+        "level": "0",
+        "name": "Ortomedica",
+        "name:uk": "Ортомедіка",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa-Su 10:00-18:00",
+        "shop": "medical_supply",
+        "survey:date": "2020-07-14",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0222193, 49.8545613]
+      },
+      "id": "node/5821308481"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5852879087",
+        "category": "hospital",
+        "addr:housenumber": "9",
+        "addr:postcode": "79034",
+        "addr:street": "Тернопільська вулиця",
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;paediatrics",
+        "name": "Амбулаторія 4 клінічної міської лікарні",
+        "name:uk": "Амбулаторія 4 клінічної міської лікарні",
+        "opening_hours": "Mo-Sa 08:00-18:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0406437, 49.8161956]
+      },
+      "id": "node/5852879087"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5915884060",
+        "category": "bank",
+        "amenity": "atm",
+        "brand": "ПриватБанк",
+        "brand:en": "PrivatBank",
+        "brand:uk": "ПриватБанк",
+        "brand:wikidata": "Q1515015",
+        "brand:wikipedia": "uk:ПриватБанк",
+        "contact:phone": "3700",
+        "currency:UAH": "yes",
+        "name": "ПриватБанк",
+        "name:en": "PrivatBank",
+        "name:ru": "ПриватБанк",
+        "name:uk": "ПриватБанк",
+        "network": "ПриватБанк",
+        "opening_hours": "Mo-Fr 09:00-18:00",
+        "operator": "ПриватБанк",
+        "operator:en": "PrivatBank",
+        "operator:ru": "ПриватБанк",
+        "operator:uk": "ПриватБанк",
+        "operator:wikidata": "Q1515015",
+        "operator:wikipedia": "uk:ПриватБанк",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0261112, 49.8479759]
+      },
+      "id": "node/5915884060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5933349774",
+        "category": "restaurant",
+        "name": "Beer Set",
+        "name:uk": "Beer Set",
+        "opening_hours": "Mo-Su 12:00-21:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "alcohol",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9745064, 49.8224702]
+      },
+      "id": "node/5933349774"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6036097786",
+        "category": "postoffice",
+        "brand": "Нова Пошта",
+        "brand:en": "Nova Poshta",
+        "brand:uk": "Нова Пошта",
+        "brand:wikidata": "Q12133863",
+        "brand:wikipedia": "uk:Нова Пошта",
+        "contact:email": "info@novaposhta.ua",
+        "contact:facebook": "nova.poshta.official",
+        "contact:instagram": "https://www.instagram.com/novaposhta.official/",
+        "contact:twitter": "_novaposhta_",
+        "contact:website": "http://novaposhta.ua",
+        "contact:youtube": "https://www.youtube.com/channel/UCUgNSjGSiSdJBTjGG2IA4JA",
+        "internet_access": "wlan",
+        "name": "Нова пошта №67",
+        "name:ru": "Новая почта №67",
+        "name:uk": "Нова пошта №67",
+        "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-17:00",
+        "operator:uk": "Товариство з обмеженою відповідальністю \"Нова Пошта\"",
+        "website": "https://www.novaposhta.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0197481, 49.8024177]
+      },
+      "id": "node/6036097786"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6137489626",
+        "category": "foodmarket",
+        "brand": "Ашан",
+        "brand:en": "Auchan",
+        "brand:uk": "Ашан",
+        "brand:wikidata": "Q4073419",
+        "brand:wikipedia": "ru:Auchan",
+        "email": "service@auchan.ua",
+        "name": "Auchan",
+        "name:en": "Auchan",
+        "name:uk": "Ашан",
+        "opening_hours": "08:00-23:00",
+        "payment:coins": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone:UA": "0 800 300 551",
+        "shop": "supermarket",
+        "website": "https://www.auchan.ua/ua/store/chornovola",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0237549, 49.8555394]
+      },
+      "id": "node/6137489626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6282278885",
+        "category": "hospital",
+        "addr:housenumber": "68",
+        "addr:street": "проспект Червоної Калини",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Дитяча поліклініка \"ВЕСЕЛКА\"",
+        "name:uk": "Дитяча поліклініка \"ВЕСЕЛКА\"",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0581704, 49.7901333]
+      },
+      "id": "node/6282278885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6469708886",
+        "category": "postoffice",
+        "name": "Відділення Meest №125",
+        "name:en": "meest express",
+        "name:uk": "Відділення Meest №125",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa 09:00-15:00",
+        "operator": "Meest",
+        "operator:en": "Meest",
+        "operator:uk": "Міст",
+        "operator:wikidata": "Q25432124",
+        "operator:wikipedia": "uk:Meest",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0595067, 49.7963402]
+      },
+      "id": "node/6469708886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6517540940",
+        "category": "foodmarket",
+        "brand": "АТБ-Маркет",
+        "brand:en": "ATB-Market",
+        "brand:uk": "АТБ-Маркет",
+        "brand:wikidata": "Q4054103",
+        "brand:wikipedia": "uk:АТБ-Маркет",
+        "name": "АТБ-Маркет",
+        "name:en": "ATB-Market",
+        "name:ru": "АТБ-Маркет",
+        "name:uk": "АТБ-Маркет",
+        "opening_hours": "24/7",
+        "operator": "АТБ",
+        "shop": "supermarket",
+        "website": "https://www.atbmarket.com/uk",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9946167, 49.8299525]
+      },
+      "id": "node/6517540940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6536639579",
+        "category": "foodmarket",
+        "brand": "АТБ-Маркет",
+        "brand:en": "ATB-Market",
+        "brand:uk": "АТБ-Маркет",
+        "brand:wikidata": "Q4054103",
+        "brand:wikipedia": "uk:АТБ-Маркет",
+        "name": "АТБ-Маркет",
+        "name:en": "ATB-Market",
+        "name:ru": "АТБ-Маркет",
+        "name:uk": "АТБ-Маркет",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "operator": "АТБ",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "supermarket",
+        "website": "https://www.atbmarket.com/uk",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9678147, 49.8236075]
+      },
+      "id": "node/6536639579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6827060448",
+        "category": "foodmarket",
+        "brand": "АТБ-маркет",
+        "brand:en": "ATB-Market",
+        "brand:uk": "АТБ-маркет",
+        "brand:wikidata": "Q4054103",
+        "brand:wikipedia": "uk:АТБ-Маркет",
+        "diet:halal": "no",
+        "diet:kosher": "no",
+        "name": "АТБ-маркет",
+        "name:en": "ATB-Market",
+        "name:uk": "АТБ-маркет",
+        "opening_hours": "24/7",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0593929, 49.7952832]
+      },
+      "id": "node/6827060448"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6834941188",
+        "category": "hospital",
+        "addr:housenumber": "23",
+        "addr:postcode": "79052",
+        "addr:street": "вулиця Роксоляни",
+        "amenity": "social_facility",
+        "description": "Осередок денного перебування для осіб з інвалідністю, віком від 18 до 45 років.",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Навчально-реабілітаційний центр „Джерело“",
+        "name:uk": "Навчально-реабілітаційний центр „Джерело“",
+        "phone": "+380 322 27 3601",
+        "website": "https://www.dzherelocentre.org.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.964449, 49.84667]
+      },
+      "id": "node/6834941188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6918397580",
+        "category": "foodmarket",
+        "addr:housenumber": "17",
+        "addr:street": "вулиця Ярослава Гашека",
+        "contact:email": "off01@mail.sviymarket.com",
+        "contact:facebook": "https://www.facebook.com/sviymarket/",
+        "contact:instagram": "https://www.instagram.com/sviymarket/",
+        "contact:website": "https://sviymarket.com/",
+        "name": "Свій маркет",
+        "name:uk": "Свій маркет",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "Рітейл Україна",
+        "phone:UA": "0 800 501 966",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0206416, 49.7973244]
+      },
+      "id": "node/6918397580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6918539091",
+        "category": "restaurant",
+        "delivery": "Mo-Su 11:00-20:00",
+        "email": "ensaladacafe@gmail.com",
+        "internet_access": "yes",
+        "name": "Ен Салада",
+        "name:en": "En Salada",
+        "name:uk": "Ен Салада",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+380 96 857 3085",
+        "takeaway": "yes",
+        "website": "https://ensalada.com.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0402703, 49.8120366]
+      },
+      "id": "node/6918539091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6954439540",
+        "category": "pharmacy",
+        "brand": "D.S.",
+        "brand:wikidata": "Q117706829",
+        "healthcare": "pharmacy",
+        "name": "D.S.",
+        "name:uk": "DS",
+        "opening_hours": "Mo-Sa 09:00-20:00; Su 10:00-18:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0469201, 49.7983873]
+      },
+      "id": "node/6954439540"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7026403493",
+        "category": "foodmarket",
+        "name": "Фермерське м'яско",
+        "name:uk": "Фермерське м'яско",
+        "opening_hours": "Mo-Sa 08:00-20:00; Su 09:00-18:00",
+        "shop": "butcher",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0476286, 49.7980846]
+      },
+      "id": "node/7026403493"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7040340506",
+        "category":"bank",
+        "amenity": "atm",
+        "brand": "Банк Львів",
+        "brand:en": "Bank Lviv",
+        "brand:uk": "Банк Львів",
+        "brand:wikidata": "Q12119076",
+        "name:en": "Bank Lviv",
+        "name:uk": "Банк Львів",
+        "opening_hours": "24/7",
+        "operator": "Банк Львів",
+        "operator:wikidata": "Q12119076",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9984354, 49.8083758]
+      },
+      "id": "node/7040340506"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7083727732",
+        "category": "restaurant",
+        "cuisine": "sushi;pizza",
+        "drive_through": "yes",
+        "internet_access": "yes",
+        "internet_access:ssid": "celentano",
+        "level": "1",
+        "name": "Pizza Celentano Drive",
+        "name:uk": "Pizza Celentano Drive",
+        "opening_hours": "Mo-Su 12:00-21:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.983096, 49.8117017]
+      },
+      "id": "node/7083727732"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7549638228",
+        "category":"postoffice",
+        "addr:housenumber": "115В",
+        "addr:postcode": "79045",
+        "addr:street": "Стрийська вулиця",
+        "brand": "Укрпошта",
+        "brand:en": "Ukrposhta",
+        "brand:ru": "Укрпочта",
+        "brand:uk": "Укрпошта",
+        "brand:wikidata": "Q2470783",
+        "brand:wikipedia": "uk:Укрпошта",
+        "contact:facebook": "https://www.facebook.com/ukrposhta",
+        "contact:instagram": "https://www.instagram.com/ukrposhta/",
+        "contact:linkedin": "https://www.linkedin.com/company/ukrposhta",
+        "contact:telegram": "ukrposhta_chatbot",
+        "contact:twitter": "https://twitter.com/ukrposhta",
+        "contact:viber": "https://chats.viber.com/ukrposhta",
+        "contact:website": "https://www.ukrposhta.ua",
+        "contact:youtube": "https://www.youtube.com/channel/UCKRVreLLQ-gbc6vrdgF9uEA",
+        "name": "Відділення поштового зв’язку №45",
+        "name:uk": "Відділення поштового зв’язку №45",
+        "opening_hours": "Mo-Fr 09:00-20:00; Sa 09:00-16:00",
+        "operator": "Укрпошта",
+        "operator:en": "Ukrposhta",
+        "operator:ru": "Укрпочта",
+        "operator:uk": "Укрпошта",
+        "operator:wikidata": "Q2470783",
+        "operator:wikipedia": "uk:Укрпошта",
+        "ref": "79045",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0248774, 49.7857824]
+      },
+      "id": "node/7549638228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7562410214",
+        "category":"hotel",
+        "addr:housenumber": "8",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Листопадового Чину",
+        "internet_access": "yes",
+        "internet_access:fee": "no",
+        "name": "BANKHOTEL",
+        "name:uk": "BANKHOTEL",
+        "phone": "+380 68 297 5020",
+        "stars": "5",
+        "tourism": "hotel",
+        "website": "https://bankhotel.com.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.020998, 49.8409271]
+      },
+      "id": "node/7562410214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7595806616",
+        "category":"restaurant",
+        "check_date": "2022-05-11",
+        "contact:instagram": "https://www.instagram.com/mitte.coffee",
+        "cuisine": "coffee_shop",
+        "delivery": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:ssid": "_mitte.coffee_",
+        "name": "Mitte",
+        "name:ru": "Митте",
+        "name:uk": "Mitte",
+        "opening_hours": "08:30-21:30",
+        "outdoor_seating": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0034985, 49.8187504]
+      },
+      "id": "node/7595806616"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7650245535",
+        "category": "pharmacy",
+        "name": "Аптека Пульс",
+        "name:uk": "Аптека Пульс",
+        "opening_hours": "Mo-Sa 08:00-22:00; Su 09:00-21:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9660317, 49.8237027]
+      },
+      "id": "node/7650245535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7650245536",
+        "category": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Аптека Пульс",
+        "name:uk": "Аптека Пульс",
+        "opening_hours": "PH,Mo-Su 00:00-24:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9653967, 49.8223893]
+      },
+      "id": "node/7650245536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7650245550",
+        "category":"foodmarket",
+        "brand": "Родинна ковбаска",
+        "brand:en": "Rodynna kovbaska",
+        "brand:wikidata": "Q30969660",
+        "check_date:opening_hours": "2022-06-22",
+        "name": "Родинна ковбаска",
+        "name:en": "Rodynna kovbaska",
+        "name:uk": "Родинна Ковбаска",
+        "opening_hours": "Mo-Fr 08:00-21:00; Sa 08:00-20:00; Su 09:00-18:00",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "shop": "butcher",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9647624, 49.8226034]
+      },
+      "id": "node/7650245550"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7681090387",
+        "category":"electricshop",
+        "check_date": "2023-01-05",
+        "name": "Restinn",
+        "name:uk": "Restinn",
+        "opening_hours": "Mo-Fr 10:00-18:00",
+        "shop": "electronics",
+        "survey:date": "2022-05-14",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0204431, 49.8527792]
+      },
+      "id": "node/7681090387"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7699140086",
+        "category": "restaurant",
+        "check_date": "2022-09-06",
+        "cuisine": "sushi",
+        "level": "0",
+        "name": "Sushi master",
+        "name:uk": "Sushi master",
+        "opening_hours": "24/7",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "survey:date": "2022-05-17",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0250606, 49.8554852]
+      },
+      "id": "node/7699140086"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7699140686",
+        "category": "restaurant",
+        "check_date": "2023-01-05",
+        "cuisine": "kebab",
+        "level": "0",
+        "name": "Fermali Tantuni",
+        "name:uk": "Fermali Tantuni",
+        "opening_hours": "09:00-21:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "survey:date": "2020-07-09",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0247951, 49.8559563]
+      },
+      "id": "node/7699140686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7699140786",
+        "category": "restaurant",
+        "check_date": "2022-07-29",
+        "cuisine": "coffee_shop",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "level": "0",
+        "name": "Coq & Tail",
+        "name:uk": "Coq & Tail",
+        "opening_hours": "09:00-20:00",
+        "outdoor_seating": "yes",
+        "survey:date": "2022-04-28",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0261385, 49.8554908]
+      },
+      "id": "node/7699140786"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7712139070",
+        "category":"foodmarket",
+        "addr:housenumber": "21",
+        "addr:street": "Тернопільська вулиця",
+        "brand": "Близенько",
+        "brand:wikidata": "Q117670418",
+        "contact:email": "blyzenko.marketing@gmail.com",
+        "contact:facebook": "https://www.facebook.com/blyzenko",
+        "contact:instagram": "https://www.instagram.com/blyzenko/",
+        "contact:phone": "+380 68 519 8686;+380 93 288 6798",
+        "contact:website": "https://blyzenko.com.ua/",
+        "name": "Близенько",
+        "name:uk": "Близенько",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "Мережа-Сервіс-Львів",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0358409, 49.8114715]
+      },
+      "id": "node/7712139070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7733557630",
+        "name": "Продукти Напої Тютюн",
+        "category":"foodmarket",
+        "name:uk": "Продукти Напої Тютюн",
+        "opening_hours": "24/7",
+        "shop": "alcohol",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0484924, 49.7980118]
+      },
+      "id": "node/7733557630"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7760307639",
+        "category": "bank",
+        "brand": "Monobank",
+        "brand:wikidata": "Q44789053",
+        "brand:wikipedia": "uk:Monobank",
+        "contact:facebook": "https://www.facebook.com/monobank.ua",
+        "contact:instagram": "https://instagram.com/monobank.ua/",
+        "contact:twitter": "https://twitter.com/monobankua",
+        "contact:website": "https://www.monobank.ua/",
+        "contact:youtube": "https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg",
+        "name": "Monobank",
+        "name:uk": "Monobank",
+        "opening_hours": "Mo-Fr 9:00-18:00;Sa 10:00-14:00",
+        "phone:UA": "0 800 205 205",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0624541, 49.7945572]
+      },
+      "id": "node/7760307639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7760327597",
+        "category": "bank",
+        "brand": "Monobank",
+        "brand:wikidata": "Q44789053",
+        "brand:wikipedia": "uk:Monobank",
+        "contact:facebook": "https://www.facebook.com/monobank.ua",
+        "contact:instagram": "https://instagram.com/monobank.ua/",
+        "contact:twitter": "https://twitter.com/monobankua",
+        "contact:website": "https://www.monobank.ua/",
+        "contact:youtube": "https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg",
+        "name": "Monobank",
+        "name:uk": "Monobank",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "phone:UA": "0 800 205 205",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.062663, 49.7958809]
+      },
+      "id": "node/7760327597"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7760329949",
+        "category": "bank",
+        "brand": "Monobank",
+        "brand:wikidata": "Q44789053",
+        "brand:wikipedia": "uk:Monobank",
+        "contact:facebook": "https://www.facebook.com/monobank.ua",
+        "contact:instagram": "https://instagram.com/monobank.ua/",
+        "contact:twitter": "https://twitter.com/monobankua",
+        "contact:website": "https://www.monobank.ua/",
+        "contact:youtube": "https://www.youtube.com/channel/UClF9NLW6p4QZ28rGp8ExbAg",
+        "name": "Monobank",
+        "name:uk": "Monobank",
+        "opening_hours": "Mo-Su 10:00-21:00",
+        "phone:UA": "0 800 205 205",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0574649, 49.7918744]
+      },
+      "id": "node/7760329949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7853493943",
+        "category": "pharmacy",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "АПТЕКА24",
+        "name:uk": "АПТЕКА24",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "phone": "+380 67 568 0684",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0591773, 49.7952436]
+      },
+      "id": "node/7853493943"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7954922886",
+        "category":"foodmarket",
+        "brand": "Рукавичка",
+        "brand:en": "Rukavychka",
+        "brand:wikidata": "Q20092568",
+        "brand:wikipedia": "uk:Рукавичка (торгова мережа)",
+        "check_date": "2022-07-28",
+        "level": "0",
+        "name": "Рукавичка",
+        "name:en": "Rukavychka",
+        "name:uk": "Рукавичка",
+        "opening_hours": "08:00-21:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0279853, 49.8541865]
+      },
+      "id": "node/7954922886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8040004130",
+        "brand": "Рукавичка",
+        "category":"foodmarket",
+        "brand:en": "Rukavychka",
+        "brand:wikidata": "Q20092568",
+        "name": "Рукавичка",
+        "name:en": "Rukavychka",
+        "name:uk": "Рукавичка",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0026151, 49.8314918]
+      },
+      "id": "node/8040004130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8130595288",
+        "category":"hospital",
+        "healthcare": "dentist",
+        "healthcare:speciality": "stomatology",
+        "level": "1",
+        "name": "PLOSHCHYNSKYH",
+        "name:uk": "PLOSHCHYNSKYH",
+        "opening_hours": "Mo-Sa 10:00-20:00; PH closed",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0604453, 49.7945775]
+      },
+      "id": "node/8130595288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8134075527",
+        "category": "pharmacy",
+        "brand": "АНЦ",
+        "brand:wikidata": "Q100148965",
+        "check_date:opening_hours": "2023-02-13",
+        "healthcare": "pharmacy",
+        "level": "1",
+        "name": "АНЦ",
+        "name:uk": "Аптека Низьких Цін",
+        "opening_hours": "Mo-Su 08:00-21:30; PH closed",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0642962, 49.7933529]
+      },
+      "id": "node/8134075527"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8146162364",
+        "category":"electricshop",
+        "brand": "Фокстрот",
+        "brand:en": "Foxtrot",
+        "brand:uk": "Фокстрот",
+        "brand:wikidata": "Q16721578",
+        "brand:wikipedia": "uk:Фокстрот (торгова мережа)",
+        "contact:phone": "+380 322 95 6240;+380 50 468 8085",
+        "contact:website": "https://www.foxtrot.com.ua/",
+        "level": "2",
+        "name": "Фокстрот",
+        "name:en": "Foxtrot",
+        "name:uk": "Фокстрот",
+        "opening_hours": "Mo-Su 10:00-21:00",
+        "phone:UA": "0 800 300 353",
+        "shop": "electronics",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0574783, 49.79207]
+      },
+      "id": "node/8146162364"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8276558525",
+        "category":"foodmarket",
+        "addr:housenumber": "14е",
+        "addr:street": "Угорська вулиця",
+        "brand": "Spar",
+        "brand:wikidata": "Q610492",
+        "brand:wikipedia": "en:Spar (retailer)",
+        "name": "Spar",
+        "name:uk": "SPAR",
+        "opening_hours": "Sa-Su 08:00-22:00",
+        "phone:UA": "0 800 501 418",
+        "shop": "convenience",
+        "website": "https://spar.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0426135, 49.809455]
+      },
+      "id": "node/8276558525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8617428057",
+        "category": "pharmacy",
+        "brand": "Аптека Доброго Дня",
+        "brand:en": "Pharmacy Good Day",
+        "brand:ru": "Аптека Доброго Дня",
+        "brand:uk": "Аптека Доброго Дня",
+        "brand:wikidata": "Q102174228",
+        "healthcare": "pharmacy",
+        "level": "1",
+        "name": "Аптека Доброго Дня",
+        "name:en": "Pharmacy Good Day",
+        "name:ru": "Аптека Доброго Дня",
+        "name:uk": "Аптека Доброго Дня",
+        "opening_hours": "Mo-Fr 09:00-22:00; Sa, Su 09:00-21:00",
+        "survey:date": "2021-04-26",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9589869, 49.8227271]
+      },
+      "id": "node/8617428057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8699371260",
+        "category": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Розмарин",
+        "name:uk": "Розмарин",
+        "opening_hours": "24/7",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9612614, 49.8227367]
+      },
+      "id": "node/8699371260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8808945631",
+        "category":"foodmarket",
+        "name": "Овочі та фрукти",
+        "name:uk": "Овочі та фрукти",
+        "opening_hours": "Mo-Sa 09:00-20:00; Su 10:00-19:00",
+        "payment:cash": "yes",
+        "shop": "greengrocer",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9601968, 49.8230222]
+      },
+      "id": "node/8808945631"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8816716743",
+        "category":"foodmarket",
+        "name": "Продукти",
+        "name:uk": "Продукти",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "convenience",
+        "survey:date": "2022-06-19",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9511277, 49.8259256]
+      },
+      "id": "node/8816716743"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9039869423",
+        "category":"foodmarket",
+        "addr:housenumber": "2Б",
+        "addr:street": "Трускавецька вулиця",
+        "contact:email": "off01@mail.sviymarket.com",
+        "contact:facebook": "https://www.facebook.com/sviymarket/",
+        "contact:instagram": "https://www.instagram.com/sviymarket/",
+        "contact:website": "https://sviymarket.com/",
+        "name": "Свiй маркет",
+        "name:uk": "Свiй маркет",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "Рітейл Україна",
+        "phone:UA": "0 800 501 966",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0109144, 49.7974432]
+      },
+      "id": "node/9039869423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9465560444",
+        "category":"foodmarket",
+        "check_date:opening_hours": "2023-02-10",
+        "level": "0",
+        "name": "Продукти",
+        "name:en": "Convenience shop",
+        "name:uk": "Магазин \"Продукти\"",
+        "opening_hours": "Mo-Fr 08:30-21:30; Sa-Su 09:00-21:00",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0722942, 49.7908818]
+      },
+      "id": "node/9465560444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9467904483",
+        "category":"foodmarket",
+        "name": "Фруктовий Сад",
+        "name:uk": "Фруктовий Сад",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "organic": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:cryptocurrencies": "no",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "shop": "greengrocer",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0648329, 49.7929479]
+      },
+      "id": "node/9467904483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9500568766",
+        "category":"foodmarket",
+        "addr:housenumber": "92",
+        "addr:postcode": "79032",
+        "addr:street": "Пасічна вулиця",
+        "name": "Свій маркет",
+        "name:uk": "Свій маркет",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "payment:cash": "yes",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0765414, 49.8171252]
+      },
+      "id": "node/9500568766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9789182852",
+        "category": "bank",
+        "brand": "ПриватБанк",
+        "brand:wikidata": "Q1515015",
+        "name": "ПриватБанк",
+        "name:uk": "ПриватБанк",
+        "opening_hours": "Mo-Sa 08:00-21:00; Su 09:00-21:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9591156, 49.8227757]
+      },
+      "id": "node/9789182852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9831315375",
+        "category": "pharmacy",
+        "name": "D.S.",
+        "name:uk": "D.S.",
+        "opening_hours": "Mo-Fr 09:00-21:00; Sa, Su 09:00-18:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9630565, 49.8299482]
+      },
+      "id": "node/9831315375"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9831359188",
+        "category":"foodmarket",
+        "name": "Продукти",
+        "name:uk": "Продукти",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9642581, 49.8303494]
+      },
+      "id": "node/9831359188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9842236523",
+        "category":"foodmarket",
+        "name": "Родинна Ковбаска",
+        "name:uk": "Родинна Ковбаска",
+        "opening_hours": "Mo-Sa 08:00-20:00; Su 09:00-18:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "shop": "butcher",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9541159, 49.8267479]
+      },
+      "id": "node/9842236523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9887850721",
+        "category":"restaurant",
+        "name": "Кафе-Ринок",
+        "name:uk": "Кафе-Ринок",
+        "opening_hours": "09:00-21:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "shop": "convenience",
+        "survey:date": "2022-07-14",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0424928, 49.8112806]
+      },
+      "id": "node/9887850721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9887884417",
+        "category": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Nutrix",
+        "name:en": "Nutrix",
+        "name:uk": "Nutrix",
+        "survey:date": "2022-07-14",
+        "website": "https://nutrix.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0426796, 49.811219]
+      },
+      "id": "node/9887884417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9887884518",
+        "category": "restaurant",
+        "delivery": "yes",
+        "mobile": "+380 93 438 5403",
+        "addr:housenumber": "12",
+        "addr:street": "вулиця Угорська",
+        "name": "Lviv Croissants",
+        "name:en": "Lviv Croissants",
+        "name:uk": "Львівські круасани",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "takeaway": "yes",
+        "website": "https://www.lviv-croissants.com",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0433188, 49.810993]
+      },
+      "id": "node/9887884518"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9905646236",
+        "category": "restaurant",
+        "check_date": "2022-07-23",
+        "cuisine": "sandwich;international;kebab;coffee_shop",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "0",
+        "name": "Мрія",
+        "name:uk": "Мрія",
+        "outdoor_seating": "no",
+        "payment:cash": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0321561, 49.8546097]
+      },
+      "id": "node/9905646236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918955216",
+        "category": "hospital",
+        "check_date": "2022-07-29",
+        "healthcare": "clinic",
+        "level": "0",
+        "name": "Здоров'я поруч",
+        "name:uk": "Здоров'я поруч",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0235395, 49.8549023]
+      },
+      "id": "node/9918955216"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918961331",
+        "category": "pharmacy",
+        "check_date": "2023-01-12",
+        "healthcare": "pharmacy",
+        "level": "0",
+        "name": "Аптека #3",
+        "name:uk": "Аптека #3",
+        "opening_hours": "Mo-Fr 08:00-20:00; Sa 09:00-16:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0235477, 49.8545801]
+      },
+      "id": "node/9918961331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918961333",
+        "category":"hospital",
+        "check_date": "2022-07-29",
+        "healthcare": "laboratory",
+        "level": "0",
+        "name": "УльтраМед",
+        "name:uk": "УльтраМед",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0239877, 49.8546574]
+      },
+      "id": "node/9918961333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10651118302",
+        "category":"foodmarket",
+        "name": "Молочні продукти",
+        "name:uk": "Молочні продукти",
+        "shop": "dairy",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0654753, 49.7928648]
+      },
+      "id": "node/10651118302"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11072729736",
+        "category":"foodmarket",
+        "brand": "Близенько",
+        "brand:wikidata": "Q117670418",
+        "contact:email": "blyzenko.marketing@gmail.com",
+        "contact:facebook": "https://www.facebook.com/blyzenko",
+        "contact:instagram": "https://www.instagram.com/blyzenko/",
+        "contact:phone": "+380 93 288 6801",
+        "contact:website": "https://blyzenko.com.ua/",
+        "name": "Близенько",
+        "name:uk": "Близенько",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "operator": "Мережа-Сервіс-Львів",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0543024, 49.7995556]
+      },
+      "id": "node/11072729736"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11197709779",
+        "category": "postoffice",
+        "brand": "Нова Пошта",
+        "brand:en": "Nova Poshta",
+        "brand:uk": "Нова Пошта",
+        "brand:wikidata": "Q12133863",
+        "name": "Нова Пошта Поштомат №26611",
+        "name:en": "Nova Poshta parcel locker #26611",
+        "name:uk": "Нова Пошта Поштомат №26611",
+        "opening_hours": "24/7",
+        "operator": "Нова Пошта",
+        "operator:wikidata": "Q12133863",
+        "operator:wikipedia": "uk:Нова Пошта",
+        "parcel_mail_in": "yes",
+        "parcel_pickup": "yes",
+        "ref": "26611",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0089744, 49.802649]
+      },
+      "id": "node/11197709779"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11193182191",
+        "category":"hotel",
+        "addr:housenumber": "15а",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Лемківська",
+        "name": "!FEST hotel",
+        "name:uk": "!FEST hotel",
+        "phone": "+380 67 000 1882",
+        "tourism": "hotel",
+        "website": "https://www.fest-hotel.com",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.02592249327442,49.85375919665581]
+      },
+      "id": "node/11193182191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11153782110",
+        "category":"hotel",
+        "addr:housenumber": "6",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Яна Матейка",
+        "name": "Premier Hotel Dnister",
+        "name:uk": "Premier Hotel Dnister",
+        "phone": "+380 322 974 317",
+        "tourism": "hotel",
+        "website": "https://dnister-hotel.phnr.com/ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.01668078654966,49.83725184782794]
+      },
+      "id": "node/11153782110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12143762342",
+        "category":"hotel",
+        "addr:housenumber": "154Б",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Шевченка",
+        "name": "Готель 'Нтон'",
+        "name:uk": "Готель 'Нтон'",
+        "phone": "+380 322 424 959",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.984309893900964,49.85458140031909]
+      },
+      "id": "node/12143762342"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/17194122173",
+        "category":"hotel",
+        "addr:housenumber": "9",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Олександра Федика",
+        "name": "Атлас Делюкс",
+        "name:uk": "Атлас Делюкс",
+        "phone": "+380 67 200 0005",
+        "tourism": "hotel",
+        "website": "https://atlasdeluxe.com",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.032550294617955,49.83572600519489]
+      },
+      "id": "node/17194122173"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/18141152373",
+        "category":"hotel",
+        "addr:housenumber": "11",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Сербська",
+        "name": "Вінтаж Бутік Готель",
+        "name:uk": "Вінтаж Бутік Готель",
+        "phone": "+380 322 356 834",
+        "tourism": "hotel",
+        "website": "https://vintagehotel.com.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.033284826064182,49.84085187593863]
+      },
+      "id": "node/18141152373"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/15141412352",
+        "category":"hotel",
+        "addr:housenumber": "116",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Княгині Ольги",
+        "name": "Супутник",
+        "name:uk": "Супутник",
+        "phone": "+380 3222 44390",
+        "tourism": "hotel",
+        "website": "https://suputnyk.com.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.99735201166557,49.805480357274476]
+      },
+      "id": "node/15141412352"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12116642252",
+        "category":"hotel",
+        "addr:housenumber": "20",
+        "addr:postcode": "79005",
+        "addr:street": "вулиця Князя Романа",
+        "name": "Швейцарський",
+        "name:uk": "Швейцарський",
+        "phone": "+380 3222 44390",
+        "tourism": "hotel",
+        "website": "https://suputnyk.com.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.03240109327784,49.83810504471271]
+      },
+      "id": "node/12116642252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/14156123682",
+        "category":"hotel",
+        "addr:housenumber": "16",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Театральна",
+        "name": "Leopolis",
+        "name:uk": "Леополіс",
+        "phone": "+380 50 371 3937",
+        "tourism": "hotel",
+        "website": "https://leopolishotel.com/uk/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.02936399876297,49.842214613837214]
+      },
+      "id": "node/14156123682"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/16346153483",
+        "category":"hotel",
+        "addr:housenumber": "2",
+        "addr:postcode": "81330",
+        "addr:street": "вулиця Зубрівська",
+        "name": "Панська гора",
+        "name:uk": "Панська гора",
+        "phone": "+380 3222 78210",
+        "tourism": "hotel",
+        "website": "http://panska-gora.com.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.976987758797083,49.777123375071874]
+      },
+      "id": "node/16346153483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12351233479",
+        "category":"hotel",
+        "addr:housenumber": "6А",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Тершаковців",
+        "name": "Готель Євроготель",
+        "name:uk": "Готель Євроготель",
+        "phone": "+380 73 242 4002",
+        "tourism": "hotel",
+        "website": "https://eurohotel.lviv.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.04108757923604,49.83567863656338]
+      },
+      "id": "node/12351233479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12412361261",
+        "category": "restaurant",
+        "addr:housenumber": "200А",
+        "addr:postcode": "79031",
+        "addr:street": "вулиця Стрийська",
+        "cuisine": "sushi",
+        "indoor_seating": "yes",
+        "name": "Егерзунд Морепродукти",
+        "name:uk": "Егерзунд Морепродукти",
+        "outdoor_seating": "yes",
+        "website": "https://egersund.ua",
+        "wheelchair": "yes",
+        "phone": "+380 67 443 7940"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.01693683524659,49.80025626785009]
+      },
+      "id": "node/12412361261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/14452265273",
+        "category": "restaurant",
+        "addr:housenumber": "202",
+        "addr:postcode": "79031",
+        "addr:street": "вулиця Стрийська",
+        "cuisine": "meat",
+        "name": "Реберня на Стрийській",
+        "name:uk": "Реберня на Стрийській",
+        "outdoor_seating": "yes",
+        "website": "https://www.fest.lviv.ua/uk/restaurants/arsenal.ribs/",
+        "wheelchair": "yes",
+        "phone": "+380 67 471 2066"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.015644216287043,49.79959545738726]
+      },
+      "id": "node/14452265273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12412565112",
+        "category": "museum",
+        "addr:housenumber": "200а",
+        "addr:postcode": "79031",
+        "addr:street": "вулиця Стрийська",
+        "name": "Музей науки Львів",
+        "name:uk": "Музей науки Львів",
+        "website": "https://museumlviv.com",
+        "wheelchair": "yes",
+        "phone": "+380 322 880 488"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.01693683524659,49.80025626785009]
+      },
+      "id": "node/12412565112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12412565116",
+        "category": "museum",
+        "addr:housenumber": "1",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Максима Кривоноса",
+        "name": "Музей Митрополита Андрея Шептицького",
+        "name:uk": "Музей Митрополита Андрея Шептицького",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.037169336683416,49.8451117347777]
+      },
+      "id": "node/12412565116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12511365172",
+        "category": "museum",
+        "addr:housenumber": "2-а",
+        "addr:postcode": "79000",
+        "phone": "+380 98 723 9143",
+        "addr:street": "вулиця Личаківська",
+        "website": "https://lvivgallery.org.ua/museums/muzey-ivana-georgiya-pinzelya",
+        "name": "Музей «Івана Георгія Пінзеля»",
+        "name:uk": "Музей «Івана Георгія Пінзеля»",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.03673686029326,49.83960611265899]
+      },
+      "id": "node/12511365172"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/19123345131",
+        "category": "museum",
+        "addr:housenumber": "18",
+        "addr:postcode": "79000",
+        "phone": "+380 322 948 065",
+        "addr:street": "вулиця Клепарківська",
+        "name": "Музейно-культурний комплекс пивної історії - Львіварня",
+        "name:uk": "Музейно-культурний комплекс пивної історії - Львіварня",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.01561975685665,49.84758125469892]
+      },
+      "id": "node/19123345131"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10181323331",
+        "category": "museum",
+        "addr:housenumber": "1",
+        "addr:postcode": "79000",
+        "phone": "+380 322 975 554",
+        "addr:street": "площа Ринок",
+        "website":"https://citymuseum.lviv.ua",
+        "name": "Музей Міста",
+        "name:uk": "Музей Міста",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.031205355294563,49.841599013903064]
+      },
+      "id": "node/10181323331"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13375445371",
+        "category": "museum",
+        "addr:housenumber": "48-г",
+        "addr:postcode": "79008",
+        "phone": "+380 96 258 0589",
+        "addr:street": "проспект В'ячеслава Чорновола",
+        "website":"https://museumterror.com",
+        "name": "Музей 'Територія терору'",
+        "name:uk": "Музей 'Територія терору'",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.023617477966177,49.85122656609068]
+      },
+      "id": "node/13375445371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/54558160472",
+        "category": "hospital",
+        "addr:housenumber": "45",
+        "addr:postcode": "79040",
+        "addr:street": "вулиця Генерала Чупринки",
+        "phone": "+380 322 383 244",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "5-та міська клінічна лікарня",
+        "name:uk": "5-та міська клінічна лікарня",
+        "website":"https://medlviv.com.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.010058626874002,49.83115281840397]
+      },
+      "id": "node/54558160472"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/52345612343",
+        "category": "hospital",
+        "addr:housenumber": "99",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Повітряна",
+        "phone": "+380 322 530 508",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Комунальна поліклініка №3",
+        "name:uk": "Комунальна поліклініка №3",
+        "website":"https://www.k3mp.org",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.9677234614613,49.84489282259552]
+      },
+      "id": "node/52345612343"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/56143792347",
+        "category": "hospital",
+        "addr:housenumber": "9",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Івана Миколайчука",
+        "phone": "+380 800 333 003",
+        "healthcare": "clinic",
+        "name": "Лікарня Святого Пантелеймона Першого територіального медоб’єднання Львова",
+        "name:uk": "Лікарня Святого Пантелеймона Першого територіального медоб’єднання Львова",
+        "website":"https://emergency-hospital.lviv.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.03960888692511,49.874173003249496]
+      },
+      "id": "node/56143792347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43510622393",
+        "addr:housenumber": "5",
+        "addr:street": "вулиця Підвальна",
+        "category": "restaurant",
+        "contact:mobile": "+380 67 471 2066",
+        "name": "Реберня 'Під Арсеналом'",
+        "name:uk": "Реберня 'Під Арсеналом'",
+        "website": "https://www.facebook.com/rebernia",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.035210507323484,49.8415125983003]
+      },
+      "id": "node/43510622393"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/44431542892",
+        "category": "restaurant",
+        "brand": "KredensCoffee",
+        "addr:housenumber": "5",
+        "addr:street": "вулиця Валова",
+        "contact:facebook": "https://www.facebook.com/kredenscoffee",
+        "contact:instagram": "https://www.instagram.com/kredenscafe/",
+        "contact:website": "https://www.kredens.com.ua",
+        "cuisine": "coffee_shop",
+        "name": "KREDENS CAFE ",
+        "name:en": "KREDENS CAFE ",
+        "opening_hours": "Mo-Fr 08:00-21:00,St-Sn 08:00-22:00",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.031538846646036,49.839669148179134]
+      },
+      "id": "node/44431542892"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43215672895",
+        "air_conditioning": "yes",
+        "category": "restaurant",
+        "brand": "McDonald's",
+        "brand:en": "McDonald's",
+        "addr:housenumber": "35",
+        "addr:street": "проспект Свободи",
+        "brand:ru": "МакДоналдс",
+        "brand:uk": "МакДональдз",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "name": "McDonald's",
+        "name:en": "McDonald's",
+        "name:ru": "МакДоналдс",
+        "name:uk": "МакДональдз",
+        "operator": "McDonald's",
+        "outdoor_seating": "no",
+        "smoking": "no",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.026157303494493,49.842949449506406]
+      },
+      "id": "node/43215672895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43330523141",
+        "addr:housenumber": "62",
+        "addr:street": "вулиця Шевченка",
+        "category": "restaurant",
+        "contact:mobile": "+380 50 449 6500",
+        "name": "Daily Dose of mmm",
+        "name:uk": "Daily Dose of mmm",
+        "website": "https://dailydose.com.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.008106021623014,49.84581725800518]
+      },
+      "id": "node/43330523141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/42723521113",
+        "addr:housenumber": "20",
+        "addr:street": "вулиця Джерельна",
+        "category": "restaurant",
+        "contact:mobile": "+380 73 226 1319",
+        "name": "Селям",
+        "name:uk": "Селям",
+        "website": "https://linktr.ee/selyam.lviv",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.020865019516112,49.84809244155886]
+      },
+      "id": "node/42723521113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43724541572",
+        "addr:housenumber": "1",
+        "addr:street": "вулиця Миколи Пимоненка",
+        "category": "restaurant",
+        "contact:mobile": "+380 73 053 1708",
+        "name": "1708 pizza di Napoli",
+        "name:uk": "1708 pizza di Napoli",
+        "website": "https://1708pizza.com",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.06156714243388,49.809287071505345]
+      },
+      "id": "node/43724541572"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/42257175318",
+        "addr:housenumber": "43А",
+        "addr:street": "вулиця Дмитра Вітовського",
+        "category": "restaurant",
+        "contact:mobile": "+380 67 008 2222",
+        "name": "Park. Art of Rest",
+        "name:uk": "Park. Art of Rest",
+        "website": "https://artofrest.com.ua",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.021057874750767,49.82937028794578]
+      },
+      "id": "node/42257175318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43256178232",
+        "category": "restaurant",
+        "brand": "KredensCoffee",
+        "addr:housenumber": "37",
+        "addr:street": "проспект Свободи",
+        "contact:facebook": "https://www.facebook.com/kredenscoffee",
+        "contact:instagram": "https://www.instagram.com/kredenscafe/",
+        "contact:website": "https://www.kredens.com.ua",
+        "cuisine": "coffee_shop",
+        "name": "KREDENS CAFE ",
+        "name:en": "KREDENS CAFE ",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0260085336929,49.84313072883251]
+      },
+      "id": "node/43256178232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/53216823193",
+        "category": "hospital",
+        "addr:housenumber": "2",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Римлянина",
+        "phone": "+380 67 522 3132",
+        "healthcare": "clinic",
+        "name": "Поліклінічне відділення для дітей 1-ї міської поліклініки",
+        "name:uk": "Поліклінічне відділення для дітей 1-ї міської поліклініки",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.036335449914098,49.83907067395714]
+      },
+      "id": "node/53216823193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/73654125781",
+        "category":"hotel",
+        "addr:housenumber": "3",
+        "addr:postcode": "79005",
+        "addr:street": "вулиця Шухевича",
+        "name": "Ibis Styles Lviv",
+        "name:uk": "Ibis Styles Lviv",
+        "phone": "+380 322 546 767",
+        "stars": "5",
+        "tourism": "hotel",
+        "website": "https://all.accor.com/hotel/9709/index.en.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.034695,49.836994]
+      },
+      "id": "node/73654125781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/72324617281",
+        "category":"hotel",
+        "addr:housenumber": "23A",
+        "addr:postcode": "79005",
+        "addr:street": "вулиця Франка",
+        "name": "ibis Lviv Center",
+        "name:uk": "ibis Lviv Center",
+        "phone": "+380 3222 67900",
+        "stars": "5",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.035092480192752,49.835330121595156]
+      },
+      "id": "node/72324617281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/78311613281",
+        "category":"hotel",
+        "addr:housenumber": "13",
+        "addr:postcode": "79000",
+        "addr:street": "проспект Свободи",
+        "name": "Grand Hotel Lviv Casino & Spar",
+        "name:uk": "Grand Hotel Lviv Casino & Spa",
+        "phone": "+380 93 170 6444",
+        "stars": "5",
+        "website":"https://grand-hotel.com.ua",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.02735544772429,49.840755177968305]
+      },
+      "id": "node/78311613281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/73311613132",
+        "category":"hotel",
+        "addr:housenumber": "11",
+        "addr:postcode": "79000",
+        "addr:street": "проспект Грабовського",
+        "name": "Citadel Inn - Gastro Boutique Hotel (Hotel & Restaurant)",
+        "name:uk": "Citadel Inn - Gastro Boutique Hotel (Hotel & Restaurant)",
+        "phone": "+380 50 431 1054",
+        "website":"https://citadel-inn.com.ua",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.026796767367518,49.833965194589474]
+      },
+      "id": "node/73311613132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/79933613132",
+        "category":"hotel",
+        "addr:housenumber": "4",
+        "addr:postcode": "79000",
+        "addr:street": "проспект Шевська",
+        "name": "Best Western Plus Market Square Lviv",
+        "name:uk": "Best Western Plus Market Square Lviv",
+        "phone": "+380 322 462 344",
+        "website":"https://marketsquarelviv.com",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.030071483512277,49.84227340654128]
+      },
+      "id": "node/79933613132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/72234168216",
+        "category":"hotel",
+        "addr:housenumber": "47а",
+        "addr:postcode": "79021",
+        "addr:street": "вулиця Пантелеймона Куліша",
+        "name": "LOFT7 Hotel",
+        "name:uk": "LOFT7 Hotel",
+        "phone": "+380 67 147 0047",
+        "website":"https://loft7.com.ua",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.023188626508478,49.84899767263829]
+      },
+      "id": "node/72234168216"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/78351534782",
+        "category":"hotel",
+        "addr:housenumber": "154Б",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Шевченка",
+        "name": "Готель 'Нтон'",
+        "name:uk": "Готель 'Нтон'",
+        "phone": "+380 322 424 959",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.984312206658853,49.85455983280385]
+      },
+      "id": "node/78351534782"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/71624668223",
+        "category":"hotel",
+        "addr:housenumber": "5",
+        "addr:postcode": "79021",
+        "addr:street": "вулиця Олександра Фредра",
+        "name": "Нобіліс",
+        "name:uk": "Нобіліс",
+        "phone": "+380 322 952 595",
+        "website":"http://www.nobilis-hotel.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.033174897842454,49.83611675470188]
+      },
+      "id": "node/71624668223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/73326167233",
+        "category":"hotel",
+        "addr:housenumber": "78А",
+        "addr:postcode": "79018",
+        "addr:street": "вулиця Валер'яна Поліщука",
+        "name": "Nota Bene",
+        "name:uk": "Nota Bene",
+        "phone": "+380 50 431 0467",
+        "website":"http://www.notabenehotel.com/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.994024514353452,49.83199555921177]
+      },
+      "id": "node/73326167233"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/79926167299",
+        "category":"hotel",
+        "addr:housenumber": "71",
+        "addr:postcode": "79000",
+        "addr:street": "площа Євгена Петрушевича",
+        "name": "LH Hotel & SPA",
+        "name:uk": "LH Hotel & SPA",
+        "phone": "+380 50 431 0467",
+        "website":"http://lhhotel.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.037175056594933,49.8320521146031]
+      },
+      "id": "node/79926167299"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/76626667263",
+        "category":"hotel",
+        "addr:housenumber": "2a ",
+        "addr:postcode": "81110",
+        "addr:street": "вулиця Яворівська",
+        "name": "Ramada by Wyndham Lviv",
+        "name:uk": "Ramada by Wyndham Lviv",
+        "phone": "+380 67 320 4477",
+        "website":"http://www.ramadalviv.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.913512240869334,49.8232337120269]
+      },
+      "id": "node/76626667263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/73521532163",
+        "category":"hotel",
+        "addr:housenumber": "45 ",
+        "addr:postcode": "79000",
+        "addr:street": "проспект Свободи",
+        "name": "Panorama",
+        "name:uk": "Panorama",
+        "phone": "+380 3222 59000",
+        "website":"https://panorama-hotel.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.02573617724366,49.84372162053127]
+      },
+      "id": "node/73521532163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/71121533311",
+        "category":"hotel",
+        "addr:housenumber": "15 ",
+        "addr:postcode": "79007",
+        "addr:street": "вулиця Городоцька,",
+        "name": "Astoria",
+        "name:uk": "Astoria",
+        "phone": "+380 322 422 701",
+        "website":"https://astoriahotel.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.023960178870826,49.843587164404035]
+      },
+      "id": "node/71121533311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/73211553295",
+        "category":"hotel",
+        "addr:housenumber": "14 ",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Морозна",
+        "name": "Sonata hotel & restaurant",
+        "name:uk": "Sonata hotel & restaurant",
+        "phone": "+380 93 232 50001",
+        "website":"https://sonatahotel.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.06956144180001, 49.79663066028423]
+      },
+      "id": "node/73211553295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/76231543133",
+        "category":"hotel",
+        "addr:housenumber": "1",
+        "addr:postcode": "79000",
+        "addr:street": "площа Міцкевича",
+        "name": "George Hotel",
+        "name:uk": "George Hotel",
+        "phone": "+380 322 326 236",
+        "website":"http://www.georgehotel.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.030707881721842,49.83866236567123]
+      },
+      "id": "node/76231543133"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/73335587623",
+        "category":"hotel",
+        "addr:housenumber": "65",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Городоцька",
+        "name": "Hotel Cisar",
+        "name:uk": "Hotel Cisar",
+        "phone": "+380 66 242 9012",
+        "website":"https://cisar.ua",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.016654860109156,49.84176982616681]
+      },
+      "id": "node/73335587623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/78307552312",
+        "category":"hotel",
+        "addr:housenumber": "7",
+        "addr:postcode": "79000",
+        "addr:street": "проспект В'ячеслава Чорновола",
+        "name": "Готель Львів",
+        "name:uk": "Готель Львів",
+        "phone": "+380 67 675 4322",
+        "website":"http://www.hotel-lviv.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.025056412104824,49.84583619314781]
+      },
+      "id": "node/78307552312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/72347651363",
+        "category":"hotel",
+        "addr:housenumber": "3",
+        "addr:postcode": "79000",
+        "addr:street": "вулиця Весела",
+        "name": "Optima Collection Мурал Львів",
+        "name:uk": "Optima Collection Мурал Львів",
+        "phone": "+380 322 421 001",
+        "website":"https://optimahotels.com.ua/uk/hotels/optima-mural-lviv/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.027009112683647,49.84646383359889]
+      },
+      "id": "node/72347651363"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/71234651374",
+        "category":"hotel",
+        "addr:housenumber": "27",
+        "addr:postcode": "79000",
+        "addr:street": "проспект Свободи",
+        "name": "Opera Passage Apart Hotel",
+        "name:uk": "Opera Passage Apart Hotel",
+        "phone": "+380 50 506 0503",
+        "website":"https://operapassage-hotel.com/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.026464046795372,49.84218341010704]
+      },
+      "id": "node/71234651374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/73254156323",
+        "category":"hotel",
+        "addr:housenumber": "9Б",
+        "addr:postcode": "79495",
+        "addr:street": "вулиця Хмельницького",
+        "name": "Opera Passage Apart Hotel",
+        "name:uk": "Opera Passage Apart Hotel",
+        "phone": "+380 322 422 221",
+        "website":"http://www.emilyresort.com.ua/",
+        "tourism": "hotel",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.115323890804454,49.81226174973584]
+      },
+      "id": "node/73254156323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4355091583",
+        "category": "restaurant",
+        "brand": "Lviv Croissants",
+        "addr:housenumber": "2а",
+        "addr:street": "вулиця Садова",
+        "contact:facebook": "https://www.facebook.com/LvivCroissants/",
+        "contact:instagram": "https://www.instagram.com/LvivCroissants/",
+        "contact:website": "https://www.lviv-croissants.com/",
+        "cuisine": "coffee_shop",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "name": "Lviv Croissants",
+        "name:en": "Lviv Croissants",
+        "name:uk": "Львівські Круасани",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.98256551302745,49.82286713250508]
+      },
+      "id": "node/4355091583"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4335055521",
+        "category": "restaurant",
+        "brand": "Lviv Croissants",
+        "addr:housenumber": "151",
+        "addr:street": "вулиця Зелена",
+        "contact:facebook": "https://www.facebook.com/LvivCroissants/",
+        "contact:instagram": "https://www.instagram.com/LvivCroissants/",
+        "contact:website": "https://www.lviv-croissants.com/",
+        "cuisine": "coffee_shop",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "name": "Lviv Croissants",
+        "name:en": "Lviv Croissants",
+        "name:uk": "Львівські Круасани",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.061522614720246,49.8095682254833]
+      },
+      "id": "node/4335055521"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4111055522",
+        "category": "restaurant",
+        "brand": "Lviv Croissants",
+        "addr:housenumber": "56",
+        "addr:street": "вулиця Григорія Сковороди",
+        "contact:facebook": "https://www.facebook.com/LvivCroissants/",
+        "contact:instagram": "https://www.instagram.com/LvivCroissants/",
+        "contact:website": "https://www.lviv-croissants.com/",
+        "cuisine": "coffee_shop",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "name": "Lviv Croissants",
+        "name:en": "Lviv Croissants",
+        "name:uk": "Львівські Круасани",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.97459171056066,49.77922004687306]
+      },
+      "id": "node/4111055522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4333054312",
+        "category": "restaurant",
+        "brand": "Lviv Croissants",
+        "addr:housenumber": "1б",
+        "addr:street": "вулиця Гетьмана Мазепи",
+        "contact:facebook": "https://www.facebook.com/LvivCroissants/",
+        "contact:instagram": "https://www.instagram.com/LvivCroissants/",
+        "contact:website": "https://www.lviv-croissants.com/",
+        "cuisine": "coffee_shop",
+        "diet:vegan": "no",
+        "diet:vegetarian": "yes",
+        "name": "Lviv Croissants",
+        "name:en": "Lviv Croissants",
+        "name:uk": "Львівські Круасани",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.022909326346465,49.87039681100772]
+      },
+      "id": "node/4333054312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4632056373",
+        "category": "restaurant",
+        "addr:housenumber": "44",
+        "addr:street": "вулиця Академіка Андрія Сахарова",
+        "website":"https://shoco.ua/",
+        "name": "SHOco.",
+        "name:en": "SHOco.",
+        "name:uk": "SHOco.",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.011933564143924,49.827520386480316]
+      },
+      "id": "node/4632056373"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4332551328",
+        "category": "restaurant",
+        "addr:housenumber": "45",
+        "addr:street": "вулиця Стрийська",
+        "name": "SHOco.bakery",
+        "name:uk": "SHOco.bakery",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0216059599785,49.80593225552152]
+      },
+      "id": "node/4332551328"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43324520479",
+        "addr:housenumber": "2a",
+        "addr:street": "вулиця Під Голоском",
+        "category": "restaurant",
+        "contact:mobile": "+380 73 053 1708",
+        "name": "1708 pizza di Napoli",
+        "name:uk": "1708 pizza di Napoli",
+        "website": "https://pidholosko-1708-pizza-di-napoli.choiceqr.com",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.012070552144685,49.86922383091081]
+      },
+      "id": "node/43324520479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/41124420277",
+        "addr:housenumber": "3",
+        "addr:street": "вулиця Миколи Вороного",
+        "category": "restaurant",
+        "contact:mobile": "+380 97 337 9356",
+        "name": "Epic Chicken Cafe",
+        "name:uk": "Epic Chicken Cafe",
+        "website": "http://cukor.lviv.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.030026312345672,49.83829014302503]
+      },
+      "id": "node/41124420277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/42125427223",
+        "addr:housenumber": "35",
+        "addr:street": "вулиця Вірменська",
+        "category": "restaurant",
+        "contact:mobile": "+380 67 672 7464",
+        "name": "Артцентр ДЗИҐА",
+        "name:uk": "Артцентр ДЗИҐА",
+        "website": "http://dzyga.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.033820040260238,49.84334244954768]
+      },
+      "id": "node/42125427223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/42325407612",
+        "addr:housenumber": "20",
+        "addr:street": "вулиця Валова",
+        "category": "restaurant",
+        "contact:mobile": "+380 50 430 2826",
+        "name": "Перша львівська грильова ресторація м’яса та справедливости",
+        "name:uk": "Перша львівська грильова ресторація м’яса та справедливости",
+        "website": "https://www.facebook.com/meatandjustice",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.035590175314585,49.840340108943685]
+      },
+      "id": "node/42325407612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/41125507690",
+        "addr:housenumber": "38",
+        "addr:street": "вулиця Зубрівська",
+        "category": "restaurant",
+        "contact:mobile": "+380 68 007 7977",
+        "name": "П'ятниця",
+        "name:uk": "П'ятниця",
+        "website": "https://pyatnytsya.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.059155271871784,49.79513135533604]
+      },
+      "id": "node/41125507690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43325003651",
+        "addr:housenumber": "200a",
+        "addr:street": "вулиця Стрийська",
+        "category": "restaurant",
+        "contact:mobile": "+380 67 730 4299",
+        "name": "Impero Resto",
+        "name:uk": "Impero Resto",
+        "website": "https://instagram.com/impero.resto?igshid=MzRlODBiNWFlZA==",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.01671510579215,49.79917794782767]
+      },
+      "id": "node/43325003651"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43622363179",
+        "addr:housenumber": "99",
+        "addr:street": "проспект В'ячеслава Чорновола",
+        "category": "restaurant",
+        "contact:mobile": "+380 67 009 9099",
+        "name": "MAMMA modern family restaurant",
+        "name:uk": "MAMMA modern family restaurant",
+        "website": "https://mamma.lviv.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.016433058175288,49.86423918978985]
+      },
+      "id": "node/43622363179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/42633366141",
+        "addr:housenumber": "57",
+        "addr:street": "вулиця Пекарська",
+        "category": "restaurant",
+        "contact:mobile": "+380 98 613 2229",
+        "name": "SyrovarniaCafe",
+        "name:uk": "SyrovarniaCafe",
+        "website": "https://menu.syrovarnia.lviv.ua/cafe",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.04524691839535,49.837164197724945]
+      },
+      "id": "node/42633366141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43461243571",
+        "category": "restaurant",
+        "brand": "KredensCoffee",
+        "addr:housenumber": "151",
+        "addr:street": "вулиця Зелена",
+        "contact:facebook": "https://www.facebook.com/kredenscoffee",
+        "contact:instagram": "https://www.instagram.com/kredenscafe/",
+        "contact:website": "https://www.kredens.com.ua",
+        "contact:mobile": "+380 50 430 0298",
+        "cuisine": "coffee_shop",
+        "name": "KREDENS CAFE ",
+        "name:en": "KREDENS CAFE ",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.061381059710246,49.80948189574021]
+      },
+      "id": "node/43461243571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/43441342185",
+        "category": "restaurant",
+        "brand": "KredensCoffee",
+        "addr:housenumber": "7Б",
+        "addr:street": "вулиця Під Дубом",
+        "contact:facebook": "https://www.facebook.com/kredenscoffee",
+        "contact:instagram": "https://www.instagram.com/kredenscafe/",
+        "contact:website": "https://www.kredens.com.ua",
+        "contact:mobile": "+380 50 423 3211",
+        "cuisine": "coffee_shop",
+        "name": "KREDENS CAFE ",
+        "name:en": "KREDENS CAFE ",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.022310619184196,49.84952155613138]
+      },
+      "id": "node/43441342185"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/42433542642",
+        "category": "restaurant",
+        "brand": "KredensCoffee",
+        "addr:housenumber": "222А",
+        "addr:street": "вулиця Кульпарківська",
+        "contact:facebook": "https://www.facebook.com/kredenscoffee",
+        "contact:instagram": "https://www.instagram.com/kredenscafe/",
+        "contact:website": "https://www.kredens.com.ua",
+        "contact:mobile": "+380 322 988 517",
+        "cuisine": "coffee_shop",
+        "name": "KREDENS CAFE ",
+        "name:en": "KREDENS CAFE ",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.979683173005906,49.80733467880215]
+      },
+      "id": "node/42433542642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2033552116",
+        "category": "entertaiment",
+        "bus": "yes",
+        "addr:housenumber": "226 А",
+        "addr:street": "вул. Кульпарківська",
+        "name": "Victoria Gardens",
+        "name:en": "Victoria Gardens",
+        "name:uk": "Victoria Gardens",
+        "contact:website": "http://www.victoriagardens.com.ua/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.977991503890763,49.80739046300954]
+      },
+      "id": "node/2033552116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2023557112",
+        "category": "entertaiment",
+        "bus": "yes",
+        "addr:housenumber": "1Б",
+        "addr:street": "вулиця Гетьмана Мазепи",
+        "name": "SPARTAK",
+        "name:en": "SPARTAK",
+        "name:uk": "SPARTAK",
+        "contact:website": "http://www.spartak.city/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.022761828437588,49.869923807912315]
+      },
+      "id": "node/2023557112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2033584231",
+        "category": "entertaiment",
+        "bus": "yes",
+        "addr:housenumber": "7Б",
+        "addr:street": "вулиця Під Дубом",
+        "name": "Форум Львів",
+        "name:en": "Форум Львів",
+        "name:uk": "Форум Львів",
+        "contact:website": "https://www.forumlviv.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.022216046971558,49.84985062756384]
+      },
+      "id": "node/2033584231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1315721143",
+        "category": "park",
+        "name": "Стрийський парк",
+        "name:uk": "Стрийський парк",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.02500091685579,49.82303502700553]
+      },
+      "id": "node/1315721143"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1365721347",
+        "category": "park",
+        "name": "Парк імені Івана Франка",
+        "name:uk": "Парк імені Івана Франка",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.01969186840452,49.83837624040711]
+      },
+      "id": "node/1365721347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1863751236",
+        "category": "park",
+        "name": "Парк імені 700-річчя Львова",
+        "name:uk": "Парк імені 700-річчя Львова",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.019835658140916,49.86453636820811]
+      },
+      "id": "node/1863751236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1365721347",
+        "category": "park",
+        "name": "Сквер Святого Юра",
+        "name:uk": "Сквер Святого Юра",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.013565928074048, 49.837075475429174]
+      },
+      "id": "node/1365721347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1765731541",
+        "category": "park",
+        "name": "Левандівський парк",
+        "name:uk": "Левандівський парк",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.978278213130967,49.84725790641355]
+      },
+      "id": "node/1765731541"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1563356181",
+        "category": "park",
+        "name": "Парк 'Знесіння'",
+        "name:uk": "Парк 'Знесіння'",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.0511683354145061,49.845301570685066]
+      },
+      "id": "node/1563356181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2345724346",
+        "category": "park",
+        "name": "Розсадник",
+        "name:uk": "Розсадник",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.036039141694214, 49.82146886080976]
+      },
+      "id": "node/2345724346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1664732623",
+        "category": "park",
+        "name": "Парк Погулянка",
+        "name:uk": "Парк Погулянка",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.065848858377148,49.82453965365897]
+      },
+      "id": "node/1664732623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/56345323693",
+        "category": "hospital",
+        "addr:housenumber": "74",
+        "addr:postcode": "79491",
+        "addr:street": "вулиця Володимира Івасюка",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general",
+        "name": "Центр медичної реабілітації",
+        "name:uk": "Центр медичної реабілітації3",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.927737916438712,49.90612970721113]
+      },
+      "id": "node/56345323693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1537226683",
+        "category": "park",
+        "name": "Меморіал Героїв Небесної Сотні",
+        "name:uk": "Меморіал Героїв Небесної Сотні",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.033601809399514,49.844909522172905]
+      },
+      "id": "node/1537226683"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4337653231",
+        "category": "foodmarket",
+        "brand": "АТБ-маркет",
+        "brand:en": "ATB-Market",
+        "brand:uk": "АТБ-маркет",
+        "brand:wikidata": "Q4054103",
+        "brand:wikipedia": "uk:АТБ-Маркет",
+        "name": "АТБ-маркет",
+        "name:en": "ATB-Market",
+        "name:ru": "АТБ",
+        "name:uk": "АТБ-маркет",
+        "opening_hours": "24/7",
+        "shop": "supermarket",
+        "website": "http://m.atbmarket.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.01760821424396,49.789633511711386]
+      },
+      "id": "node/4337653231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1833554125",
+        "air_conditioning": "yes",
+        "category": "restaurant",
+        "brand": "McDonald's",
+        "brand:en": "McDonald's",
+        "brand:ru": "МакДоналдс",
+        "brand:uk": "МакДональдз",
+        "brand:wikidata": "Q38076",
+        "brand:wikipedia": "en:McDonald's",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "drive_through": "no",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "McDonald's",
+        "name:en": "McDonald's",
+        "name:ru": "МакДоналдс",
+        "name:uk": "МакДональдз",
+        "operator": "McDonald's",
+        "outdoor_seating": "yes",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.998113795259048,49.8108472316933]
+      },
+      "id": "node/1833554125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1616382891",
+        "category": "fuel",
+        "brand": "ОККО",
+        "brand:en": "OKKO",
+        "brand:wikidata": "Q7072617",
+        "brand:wikipedia": "en:OKKO",
+        "fuel:diesel": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "name": "ОККО",
+        "name:en": "OKKO",
+        "name:uk": "ОККО",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.985025170731383,49.812423690832446]
+      },
+      "id": "node/1616382891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4635652291",
+        "category": "foodmarket",
+        "brand": "АТБ-маркет",
+        "brand:en": "ATB-Market",
+        "brand:uk": "АТБ-маркет",
+        "brand:wikidata": "Q4054103",
+        "brand:wikipedia": "uk:АТБ-Маркет",
+        "name": "АТБ-маркет",
+        "name:en": "ATB-Market",
+        "name:ru": "АТБ",
+        "name:uk": "АТБ-маркет",
+        "opening_hours": "24/7",
+        "shop": "supermarket",
+        "website": "http://m.atbmarket.com/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.998185938953004,49.81237951501442]
+      },
+      "id": "node/4635652291"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/17372366253",
+        "category": "park",
+        "name": "Парк імені Івана Виговського",
+        "name:uk": "Парк імені Івана Виговського",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.976704510745467,49.81522334312068]
+      },
+      "id": "node/17372366253"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/42633342213",
+        "category": "restaurant",
+        "addr:housenumber": "7",
+        "addr:street": "вулиця Князя Романа",
+        "contact:website": "https://walviv.choiceqr.com",
+        "name": "Ресторан ВА",
+        "name:en": "Ресторан ВА",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.033955853190005,49.8367649511398]
+      },
+      "id": "node/42633342213"
     }
   ]
 }

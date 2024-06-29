@@ -8,13 +8,16 @@ export class DatabaseFile {
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column({type: "varchar", nullable: false})
+    @Column({ type: "varchar", nullable: false })
     filename: string;
+    
+    @Column({ type: "varchar" })
+    path: string;
+    
+    @Column({ type: "varchar" })
+    mimetype: string;
 
-    @Column({type: "bytea" })
-    data: Uint8Array
-
-    @CreateDateColumn({type: "timestamp", default: () => "CURRENT_TIMESTAMP"})
+    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
 
     @OneToOne(() => User, user => user.file, { onDelete: "CASCADE"})

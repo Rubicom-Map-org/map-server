@@ -1,28 +1,51 @@
-import {Body, Controller, HttpException, HttpStatus, Post, UploadedFile, UseInterceptors} from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    HttpException,
+    HttpStatus,
+    Inject, Patch,
+    Post,
+    Req,
+    UploadedFile, UseGuards,
+    UseInterceptors
+} from '@nestjs/common';
 import {FileInterceptor} from "@nestjs/platform-express";
+import {FilesService} from "./files.service";
+import {DatabaseFile} from "./files.entity";
+import { multerConfig } from "./multer.config";
+import {AuthGuard} from "../auth/auth.guard";
 
 @Controller('files')
 export class FilesController {
-
-    // @Post()
-    // @UseInterceptors(FileInterceptor('file', {
-    //     storage: diskStorage({
-    //         destination: './uploads/files',
-    //         filename: (req, file, cb) => {
-    //             const randomName = Array(32).fill(null).map(() =>
-    //                 (Math.round(Math.random() * 16)).toString(16)).join('');
-    //             return cb(null, `${randomName}${extname(file.originalname)}`);
-    //         },
-    //     }),
-    // }))
-    // create(@UploadedFile() file) {
-    //     try {
-    //
-    //     // } catch (error) {
-    //         return this.certificatesService.create(createCertificateDto, file);
-    //         if (error instanceof HttpException) throw Error
-    //         throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-    //     }
-    // }
-
+    
+    constructor(private readonly filesService: FilesService) {
+    }
+    
+    @UseGuards(AuthGuard)
+    @Patch("/upload-file")
+    @UseInterceptors(FileInterceptor("file", multerConfig))
+    async uploadFile(@Req() request, @UploadedFile() file: any) {
+        try {
+            console.log("FILE: ", file)
+            console.log(file.filename)
+            console.log(file.path)
+            const userId = request.user.id
+            return this.filesService.uploadFile(userId, file)
+        } catch (error) {
+            if (error instanceof HttpException) throw Error
+            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+    }
+    
+    @Post("/create-file")
+    @UseInterceptors(FileInterceptor("file"))
+    async (@UploadedFile("file") file: any): Promise<any> {
+        try {
+            return this.filesService.createFile(file)
+        } catch (error) {
+            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+    }
+    
 }
+

@@ -32,7 +32,7 @@ export class User {
     avatarImageUrl: string;
 
     @Column({type: "boolean", default: false})
-    isAvatarSet: string;
+    isAvatarSet: boolean;
 
     @OneToOne(() => Token, token => token.user, {
         cascade: true

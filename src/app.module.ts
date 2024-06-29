@@ -23,6 +23,9 @@ import {SavedPlacesService} from "./saved-places/saved-places.service";
 import {SavedPlacesController} from "./saved-places/saved-places.controller";
 import { ChatManagerModule } from './chat-manager/chat-manager.module';
 import { FilesModule } from './files/files.module';
+import {MulterModule} from "@nestjs/platform-express";
+import {ServeStaticModule} from "@nestjs/serve-static";
+import * as path from "node:path";
 dotenv.config({path: `.${process.env.NODE_ENV}.env`})
 
 @Module({
@@ -39,6 +42,9 @@ dotenv.config({path: `.${process.env.NODE_ENV}.env`})
               expiresIn: "336h"
           }
       }),
+      ServeStaticModule.forRoot({
+          rootPath: path.join(__dirname, "..", "uploads")
+      }),
       UsersModule,
       AuthModule,
       GoogleAuthModule,
@@ -47,7 +53,8 @@ dotenv.config({path: `.${process.env.NODE_ENV}.env`})
       SavedPlacesModule,
       TokensModule,
       ChatManagerModule,
-      FilesModule
+      FilesModule,
+      MulterModule.register({ dest: "./uploads" })
   ],
     exports: [
         TypeOrmModule

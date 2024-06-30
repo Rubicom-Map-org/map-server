@@ -68,7 +68,7 @@ export class ChatManagerController {
         }
     }
 
-    @Post("/chat-requests/create")
+    @Post("/chat-requests/create/:chatId")
     async createChatRequest(@Req() request,
                             @Param("chatId") chatId: string,
                             @Body() createChatRequestDto: CreateChatRequestDto) 

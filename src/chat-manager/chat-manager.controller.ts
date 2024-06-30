@@ -1,8 +1,10 @@
-import {Controller, Get, HttpException, HttpStatus, Param, Post, Req, UseGuards} from '@nestjs/common';
+import {Controller, Get, HttpException, HttpStatus, Param, Post, Req, UseGuards, Body} from '@nestjs/common';
 import {ChatManagerService} from "./chat-manager.service";
 import {Chat} from "./enitities/chat.entity";
 import {ChatRequest} from "./enitities/chat-request.entity";
 import {AuthGuard} from "../auth/auth.guard";
+import { CreateChatRequestDto } from 'src/open-ai/dto/create-message.dto';
+import { create } from 'domain';
 
 @UseGuards(AuthGuard)
 @Controller('chat-manager')
@@ -57,12 +59,26 @@ export class ChatManagerController {
 
     @Get("/chat-requests/:chatId")
     async getChatRequests(@Req() request,
-                         @Param("chatId") chatId: string): Promise<ChatRequest[]> {
+                        @Param("chatId") chatId: string): Promise<ChatRequest[]> {
         try {
             const userId = request.user.id
             return this.chatManagerService.getChatRequests(userId, chatId)
         } catch (error) {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
+    }
+
+    @Post("/chat-requests/create")
+    async createChatRequest(@Req() request,
+                            @Param("chatId") chatId: string,
+                            @Body() createChatRequestDto: CreateChatRequestDto) 
+    {
+        try {
+            const userid = request.user.id
+            return this.chatManagerService.createChatRequest(userid, chatId, createChatRequestDto)
+        } catch (error) {
+            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+
     }
 }

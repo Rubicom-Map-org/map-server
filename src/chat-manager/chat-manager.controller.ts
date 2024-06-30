@@ -68,17 +68,4 @@ export class ChatManagerController {
         }
     }
 
-    @Post("/chat-requests/create/:chatId")
-    async createChatRequest(@Req() request,
-                            @Param("chatId") chatId: string,
-                            @Body() createChatRequestDto: CreateChatRequestDto) 
-    {
-        try {
-            const userid = request.user.id
-            return this.chatManagerService.createChatRequest(userid, chatId, createChatRequestDto)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
-
-    }
 }

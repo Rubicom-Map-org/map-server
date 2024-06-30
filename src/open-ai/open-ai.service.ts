@@ -32,7 +32,7 @@ export class OpenAiService {
             return {
                 ...message,
                 content: `${message.content}
-                        \n\n${isChatNewlyCreated ? `${JSON.stringify(mapJSON)}` : ""}`
+                        // \n\n${isChatNewlyCreated ? `${JSON.stringify(mapJSON)}` : ""}`
             }
         })
 

@@ -31,8 +31,7 @@ export class OpenAiService {
         const messagesWithJSON = request.messages.map(message => {
             return {
                 ...message,
-                content: `${message.content}
-                        // \n\n${isChatNewlyCreated ? `${JSON.stringify(mapJSON)}` : ""}`
+                content: `${message.content}`
             }
         })
 

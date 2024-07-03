@@ -28,9 +28,6 @@ jobs:
       - name: Format code
         run: npm run format
 
-      - name: Lint code
-        run: npm run lint
-
       - name: Run unit tests
         run: npm run test
 

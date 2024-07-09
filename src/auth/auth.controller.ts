@@ -5,7 +5,7 @@ import {
     HttpException,
     HttpStatus, Patch,
     Post,
-    Req,
+    Req, UseGuards,
     UsePipes,
     ValidationPipe
 } from '@nestjs/common';
@@ -16,13 +16,15 @@ import {User} from "../users/users.entity";
 import {ApiOperation, ApiResponse} from "@nestjs/swagger";
 import {Token} from "../tokens/tokens.entity";
 import {ChangePasswordDto} from "./dto/change-password.dto";
+import {UserId} from "../decorators/user-id.decorator";
+import {AuthGuard} from "./auth.guard";
 
 
 @Controller('auth')
 export class AuthController {
-
-    constructor(private authService: AuthService) {}
-
+    
+    constructor(private readonly authService: AuthService) {}
+    
     @ApiOperation({
         summary: "Registration",
         description: "This function saves USER entity to database according all registration validations, " +
@@ -39,7 +41,7 @@ export class AuthController {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-
+    
     @ApiOperation({
         summary: "Authorization",
         description: "This function returns User entity and token, " +
@@ -58,24 +60,24 @@ export class AuthController {
             throw new HttpException(error.message,HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-
+    
     @ApiOperation({
         summary: "Deleting account",
         description: "This function deletes both entities User and Token and takes only one param - user ID, witch we take from request" +
             ",AKA, from JWT token"
     })
     @ApiResponse({type: Token && User, status: 200})
+    @UseGuards(AuthGuard)
     @Delete("/delete-account")
-    async deleteAccount(@Req() request): Promise<[User, Token]> {
+    async deleteAccount(@UserId() userId: string): Promise<[User, Token]> {
         try {
-            const userId = request.user.id
             return this.authService.deleteAccount(userId)
         } catch (error) {
             if (error instanceof HttpException) throw Error
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-
+    
     @ApiOperation({
         summary: "Changing password",
         description: ""
@@ -90,5 +92,5 @@ export class AuthController {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-
+    
 }

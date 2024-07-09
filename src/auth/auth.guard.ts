@@ -3,14 +3,13 @@ import {JwtService} from "@nestjs/jwt";
 import * as dotenv from "dotenv";
 import {Observable} from "rxjs";
 import * as process from "node:process";
+import {ExceptionMessage} from "../utils/exception-message.enum";
 dotenv.config();
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
     constructor(private readonly jwtService: JwtService) {}
-
-    UNAUTHORIZED_USER_MESSAGE = "user is not authorized"
 
     canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
         const request = context.switchToHttp().getRequest();
@@ -27,7 +26,7 @@ export class AuthGuard implements CanActivate {
             console.log(token)
 
             if (!token || bearer !== "Bearer") {
-                throw new UnauthorizedException("Invalid token format " + this.UNAUTHORIZED_USER_MESSAGE);
+                throw new UnauthorizedException("Invalid token format " + ExceptionMessage.UNAUTHORIZED);
             }
 
             const user = this.jwtService.verify(token, {
@@ -40,7 +39,7 @@ export class AuthGuard implements CanActivate {
             request["user"] = user;
             return true;
         } catch (error) {
-            throw new UnauthorizedException(this.UNAUTHORIZED_USER_MESSAGE);
+            throw new UnauthorizedException(ExceptionMessage.UNAUTHORIZED);
         }
     }
 }

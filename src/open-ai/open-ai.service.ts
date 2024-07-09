@@ -31,7 +31,8 @@ export class OpenAiService {
         const messagesWithJSON = request.messages.map(message => {
             return {
                 ...message,
-                content: `${message.content}`
+                content: `${message.content}
+                \nmap places data: ${JSON.stringify(mapJSON)}`
             }
         })
 

@@ -12,7 +12,7 @@ import {
     UsePipes, ValidationPipe
 } from '@nestjs/common';
 import {SavedPlacesService} from "./saved-places.service";
-import {SaveSaveDto} from "./dto/save-save.dto";
+import {SavePlaceDto} from "./dto/save-place.dto";
 import {SavedPlace} from "./saved-places.entity";
 import {AuthGuard} from "@nestjs/passport";
 import {UserId} from "../decorators/user-id.decorator";
@@ -27,7 +27,7 @@ export class SavedPlacesController {
     @UsePipes(ValidationPipe)
     @Post("/save-place")
     async savePlace(@UserId() userId: string,
-                    @Body() savedPlaceDto: SaveSaveDto): Promise<SavedPlace>
+                    @Body() savedPlaceDto: SavePlaceDto): Promise<SavedPlace>
     {
         try {
             return this.savedPlacesService.savePlace(userId, savedPlaceDto);

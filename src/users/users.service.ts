@@ -4,6 +4,7 @@ import {User} from "./users.entity";
 import {Repository} from "typeorm";
 import {RegisterDto} from "../auth/dto/register.dto";
 import {GetUserProfileDto} from "./dto/get-user-profile.dto";
+import {ExceptionMessage} from "../utils/exception-message.enum";
 
 @Injectable()
 export class UsersService {
@@ -89,6 +90,8 @@ export class UsersService {
                 "chats"
             ]
         })
+        
+        if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
 
         return await this.usersRepository.remove(user)
     }

@@ -4,6 +4,7 @@ import {MailerModule} from "@nestjs-modules/mailer";
 import { EmailController } from './email.controller';
 import * as dotenv from "dotenv"
 import * as process from "node:process";
+import {UsersModule} from "../users/users.module";
 import {JwtModule} from "@nestjs/jwt";
 
 @Module({
@@ -13,7 +14,7 @@ import {JwtModule} from "@nestjs/jwt";
         transport: {
           host: process.env.MAIL_HOST,
           port: Number(process.env.MAIL_PORT),
-          secure: Boolean(process.env.MAIL_SECURE),
+          secure: false,
           auth: {
             user: process.env.MAIL_USER,
             pass: process.env.MAIL_PASSWORD
@@ -26,7 +27,8 @@ import {JwtModule} from "@nestjs/jwt";
           strict: Boolean(process.env.MAIL_OPTIONS_STRICT)
         }
       }),
-      JwtModule
+      UsersModule,
+    JwtModule
   ],
   exports: [EmailService],
   controllers: [EmailController]

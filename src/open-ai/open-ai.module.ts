@@ -4,6 +4,7 @@ import { OpenAiController } from './open-ai.controller';
 import {AuthModule} from "../auth/auth.module";
 import {UsersModule} from "../users/users.module";
 import {ChatManagerModule} from "../chat-manager/chat-manager.module";
+import process from "node:process";
 
 @Module({
   providers: [OpenAiService],
@@ -11,7 +12,7 @@ import {ChatManagerModule} from "../chat-manager/chat-manager.module";
   imports: [
       AuthModule,
       UsersModule,
-      forwardRef(() => ChatManagerModule)
+      forwardRef(() => ChatManagerModule),
   ],
   exports: [OpenAiService]
 })

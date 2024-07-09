@@ -1,6 +1,6 @@
 
 
-export class SaveSaveDto {
+export class SavePlaceDto {
 
     readonly type: string;
 

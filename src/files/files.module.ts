@@ -5,6 +5,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
 import {DatabaseFile} from "./files.entity";
 import {UsersModule} from "../users/users.module";
 import {AuthModule} from "../auth/auth.module";
+import process from "node:process";
 
 @Module({
     providers: [FilesService],
@@ -12,7 +13,7 @@ import {AuthModule} from "../auth/auth.module";
     imports: [
         TypeOrmModule.forFeature([DatabaseFile]),
         UsersModule,
-        AuthModule
+        AuthModule,
     ],
     exports: [
         TypeOrmModule,

@@ -14,6 +14,7 @@ import {FilesService} from "./files.service";
 import {DatabaseFile} from "./files.entity";
 import { multerConfig } from "./multer.config";
 import {AuthGuard} from "../auth/auth.guard";
+import {UserId} from "../decorators/user-id.decorator";
 
 @Controller('files')
 export class FilesController {
@@ -21,15 +22,14 @@ export class FilesController {
     constructor(private readonly filesService: FilesService) {
     }
     
-    @UseGuards(AuthGuard)
+    // @UseGuards(AuthGuard)
     @Patch("/upload-file")
     @UseInterceptors(FileInterceptor("file", multerConfig))
-    async uploadFile(@Req() request, @UploadedFile() file: any) {
+    async uploadFile(@UserId() userId: string, {file}: { file: any }) {
         try {
             console.log("FILE: ", file)
             console.log(file.filename)
             console.log(file.path)
-            const userId = request.user.id
             return this.filesService.uploadFile(userId, file)
         } catch (error) {
             if (error instanceof HttpException) throw Error

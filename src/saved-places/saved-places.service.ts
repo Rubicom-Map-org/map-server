@@ -2,7 +2,7 @@ import {BadRequestException, Injectable} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {SavedPlace} from "./saved-places.entity";
 import {Repository} from "typeorm";
-import {SaveSaveDto} from "./dto/save-save.dto";
+import {SavePlaceDto} from "./dto/save-place.dto";
 import {UsersService} from "../users/users.service";
 
 @Injectable()
@@ -14,7 +14,7 @@ export class SavedPlacesService {
     {
     }
 
-    async savePlace(userId: string, savePlaceDto: SaveSaveDto): Promise<SavedPlace> {
+    async savePlace(userId: string, savePlaceDto: SavePlaceDto): Promise<SavedPlace> {
         const user = await this.usersService.getUserById(userId)
 
         const savedPlace = this.savedPlaceRepository.create({

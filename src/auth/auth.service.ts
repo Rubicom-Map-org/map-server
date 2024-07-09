@@ -1,4 +1,4 @@
-import {BadRequestException, Injectable, UnauthorizedException} from '@nestjs/common';
+import {BadRequestException, Injectable, NotFoundException, UnauthorizedException} from '@nestjs/common';
 import {UsersService} from "../users/users.service";
 import {RegisterDto} from "./dto/register.dto";
 import {TokensService} from "../tokens/tokens.service";
@@ -7,6 +7,7 @@ import {LoginDto} from "./dto/login.dto";
 import * as bcrypt from "bcrypt"
 import {Token} from "../tokens/tokens.entity";
 import {ChangePasswordDto} from "./dto/change-password.dto";
+import {ExceptionMessage} from "../utils/exception-message.enum";
 
 export interface AuthorizationResponse {
     token: string,
@@ -21,19 +22,17 @@ export class AuthService {
     {
     }
 
-    UNAUTHORIZED_USER_MESSAGE = "user is not authorized"
-
     async registration(registerDto: RegisterDto): Promise<AuthorizationResponse> {
 
         const userCheckByEmail = await this.usersService.getUserByEmail(registerDto.email)
         const userCheckUsername = await this.usersService.getUserByUsername(registerDto.username)
 
         if (userCheckByEmail) {
-            throw new BadRequestException("User with that email already exists")
+            throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS)
         }
 
         if (userCheckUsername) {
-            throw new BadRequestException("User with that username already exists")
+            throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS)
         }
 
         const hashedPassword = await bcrypt.hash(registerDto.password, 6)
@@ -57,7 +56,7 @@ export class AuthService {
         const user = await this.usersService.getUserByEmail(loginDto.email)
 
         if (!user) {
-            throw new BadRequestException("User with that email was not found")
+            throw new BadRequestException(ExceptionMessage.USER_NOT_FOUND)
         }
 
         const comparePassword = await bcrypt.compare(loginDto.password, user.password)
@@ -65,7 +64,7 @@ export class AuthService {
             return user
         }
 
-        throw new UnauthorizedException({message: this.UNAUTHORIZED_USER_MESSAGE})
+        throw new UnauthorizedException(ExceptionMessage.UNAUTHORIZED)
     }
 
     async login(loginDto: LoginDto): Promise<AuthorizationResponse> {
@@ -81,6 +80,9 @@ export class AuthService {
     async deleteAccount(userId: string): Promise<[User, Token]> {
 
         const user = await this.usersService.getUserById(userId)
+        
+        if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
+        
         const token = await this.tokensService.findToken(user)
 
         const deletedUser = await this.usersService.deleteAccount(user)
@@ -94,7 +96,7 @@ export class AuthService {
         const user = await this.usersService.getUserByEmail(changePasswordDto.email)
 
         if (!user) {
-            throw new BadRequestException("User with this email was not found")
+            throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
         }
 
         const hashedPassword = await bcrypt.hash(changePasswordDto.password, 5)

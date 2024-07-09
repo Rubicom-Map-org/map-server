@@ -1,0 +1,35 @@
+name: GitHub Server Actions
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+on: [push]
+
+jobs:
+  init:
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Format code
+        run: npm run format
+
+      - name: Run unit tests
+        run: npm run test
+
+      - name: Run tests with coverage
+        run: npm run test:cov

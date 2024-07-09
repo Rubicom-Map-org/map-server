@@ -16,6 +16,7 @@ import {ChatRequest, ChatResponse} from "./interfaces/chat-messaging.interface";
 import OpenAI from "openai";
 import {ChatManagerService} from "../chat-manager/chat-manager.service";
 import {ApiResponse} from "@nestjs/swagger";
+import {UserId} from "../decorators/user-id.decorator";
 
 @Controller('open-ai')
 export class OpenAiController {
@@ -25,15 +26,14 @@ export class OpenAiController {
 
     @UsePipes(ValidationPipe)
     @ApiResponse({status: HttpStatus.CREATED})
-    @UseGuards(AuthGuard)
+    // @UseGuards(AuthGuard)
     @Post('/chat/:chatId')
     @HttpCode(200)
-    async getChatOpenai(@Req() request,
+    async getChatOpenai(@UserId() userId: string,
                         @Param("chatId") chatId: string,
                         @Body() chatRequest: ChatRequest)
     {
         try {
-            const userId = request.user.id
             let isChatNewlyCreated: boolean;
             const chatRequests = await this.chatManagerService.getChatRequests(userId, chatId)
             if (chatRequests.length > 0) isChatNewlyCreated = true
@@ -57,29 +57,5 @@ export class OpenAiController {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-    //
-    // @UsePipes(ValidationPipe)
-    // @ApiResponse({status: HttpStatus.CREATED})
-    // @UseGuards(AuthGuard)
-    // @Post("/chat-prompt")
-    // async getChatOpenaiPromptResponse(@Req() request,
-    //                                   @Body() chatRequest: ChatRequest): Promise<ChatResponse>
-    // {
-    //     try {
-    //         const userId = request.user.id
-    //         const getMessages = (await this.openAiService.getMessagesData(
-    //             userId, chatRequest
-    //         )) as OpenAI.ChatCompletion
-    //         console.log(getMessages)
-    //         const requestAndResponse = {
-    //             request: chatRequest.messages[0].content,
-    //             response: getMessages.choices[0].message.content
-    //         }
-    //         console.log(requestAndResponse)
-    //         return await this.openAiService.getChatOpenaiResponse(getMessages)
-    //     } catch (error) {
-    //         throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-    //     }
-    // }
 
 }

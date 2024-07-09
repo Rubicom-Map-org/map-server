@@ -7,6 +7,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
 import {Chat} from "./enitities/chat.entity";
 import {ChatRequest} from "./enitities/chat-request.entity";
 import {OpenAiModule} from "../open-ai/open-ai.module";
+import process from "node:process";
 
 @Module({
   providers: [ChatManagerService],
@@ -15,7 +16,7 @@ import {OpenAiModule} from "../open-ai/open-ai.module";
       AuthModule,
       UsersModule,
       TypeOrmModule.forFeature([Chat, ChatRequest]),
-      forwardRef(() => OpenAiModule)
+      forwardRef(() => OpenAiModule),
   ],
   exports: [
       TypeOrmModule,

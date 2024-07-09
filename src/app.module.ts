@@ -18,7 +18,7 @@ import * as process from "node:process";
 import {OpenAiService} from "./open-ai/open-ai.service";
 import {OpenAiController} from "./open-ai/open-ai.controller";
 import { TokensModule } from './tokens/tokens.module';
-import {JwtModule} from "@nestjs/jwt";
+import {JwtModule, JwtService} from "@nestjs/jwt";
 import {SavedPlacesService} from "./saved-places/saved-places.service";
 import {SavedPlacesController} from "./saved-places/saved-places.controller";
 import { ChatManagerModule } from './chat-manager/chat-manager.module';
@@ -57,7 +57,8 @@ dotenv.config({path: `.${process.env.NODE_ENV}.env`})
       MulterModule.register({ dest: "./uploads" })
   ],
     exports: [
-        TypeOrmModule
+        TypeOrmModule,
+        JwtModule
     ]
 })
 export class AppModule {}

@@ -11,10 +11,10 @@ dotenv.config()
 
 export const dataSourceOptions: DataSourceOptions = {
     type: 'postgres',
-    host: process.env.POSTGRES_HOST,
-    port: Number(process.env.POSTGRES_PORT),
-    username: process.env.POSTGRES_USER,
-    password: String(process.env.POSTGRES_PASSWORD),
+    host: process.env.PGHOST,
+    port: Number(process.env.PGPORT),
+    username: process.env.PGUSER,
+    password: String(process.env.PGPASSWORD),
     database: process.env.POSTGRES_DB,
     entities: [User, Token, SavedPlace, Chat, ChatRequest, DatabaseFile],
     synchronize: Boolean(process.env.TYPEORM_SYNCHRONIZE),

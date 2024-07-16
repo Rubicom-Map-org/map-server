@@ -7,7 +7,7 @@ import { CreateChatRequestDto } from 'src/open-ai/dto/create-message.dto';
 import { create } from 'domain';
 import {UserId} from "../decorators/user-id.decorator";
 
-// @UseGuards(AuthGuard)
+@UseGuards(AuthGuard)
 @Controller('chat-manager')
 export class ChatManagerController {
 

@@ -17,7 +17,7 @@ import {SavedPlace} from "./saved-places.entity";
 import {AuthGuard} from "@nestjs/passport";
 import {UserId} from "../decorators/user-id.decorator";
 
-// @UseGuards(AuthGuard)
+@UseGuards(AuthGuard)
 @Controller('saved-places')
 export class SavedPlacesController {
 

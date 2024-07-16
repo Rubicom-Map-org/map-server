@@ -22,7 +22,7 @@ export class FilesController {
     constructor(private readonly filesService: FilesService) {
     }
     
-    // @UseGuards(AuthGuard)
+    @UseGuards(AuthGuard)
     @Patch("/upload-file")
     @UseInterceptors(FileInterceptor("file", multerConfig))
     async uploadFile(@UserId() userId: string, {file}: { file: any }) {

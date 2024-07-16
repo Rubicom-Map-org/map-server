@@ -26,7 +26,7 @@ export class OpenAiController {
 
     @UsePipes(ValidationPipe)
     @ApiResponse({status: HttpStatus.CREATED})
-    // @UseGuards(AuthGuard)
+    @UseGuards(AuthGuard)
     @Post('/chat/:chatId')
     @HttpCode(200)
     async getChatOpenai(@UserId() userId: string,

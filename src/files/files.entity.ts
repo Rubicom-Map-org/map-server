@@ -4,10 +4,10 @@ import {User} from "../users/users.entity";
 
 @Entity()
 export class DatabaseFile {
-
+    
     @PrimaryGeneratedColumn("uuid")
     id: string;
-
+    
     @Column({ type: "varchar", nullable: false })
     filename: string;
     

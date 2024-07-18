@@ -6,6 +6,7 @@ import {DatabaseFile} from "./files.entity";
 import {UsersModule} from "../users/users.module";
 import {AuthModule} from "../auth/auth.module";
 import process from "node:process";
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
     providers: [FilesService],

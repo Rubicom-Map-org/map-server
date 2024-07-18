@@ -5,8 +5,6 @@ import {UsersModule} from "../users/users.module";
 import {AuthModule} from "../auth/auth.module";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {SavedPlace} from "./saved-places.entity";
-import {JwtModule, JwtService} from "@nestjs/jwt";
-import process from "node:process";
 
 @Module({
   providers: [SavedPlacesService],

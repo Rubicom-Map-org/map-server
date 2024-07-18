@@ -14,7 +14,7 @@ import {
 import {SavedPlacesService} from "./saved-places.service";
 import {SavePlaceDto} from "./dto/save-place.dto";
 import {SavedPlace} from "./saved-places.entity";
-import {AuthGuard} from "@nestjs/passport";
+import {AuthGuard} from "../auth/auth.guard";
 import {UserId} from "../decorators/user-id.decorator";
 
 @UseGuards(AuthGuard)

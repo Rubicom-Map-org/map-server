@@ -1,9 +1,10 @@
 import {Controller, Delete, Get, HttpException, HttpStatus, Param, Req, UseGuards} from '@nestjs/common';
 import {UsersService} from "./users.service";
 import {User} from "./users.entity";
-import {AuthGuard} from "../auth/auth.guard";
 import {ApiOperation, ApiResponse} from "@nestjs/swagger";
 import {UserId} from "../decorators/user-id.decorator";
+import { AuthGuard } from 'src/auth/auth.guard';
+
 
 @UseGuards(AuthGuard)
 @Controller('users')

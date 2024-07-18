@@ -6,6 +6,7 @@ import * as dotenv from "dotenv"
 import * as process from "node:process";
 import {UsersModule} from "../users/users.module";
 import {JwtModule} from "@nestjs/jwt";
+import {AuthModule} from "../auth/auth.module";
 
 @Module({
   providers: [EmailService],
@@ -28,7 +29,7 @@ import {JwtModule} from "@nestjs/jwt";
         }
       }),
       UsersModule,
-    JwtModule
+      AuthModule
   ],
   exports: [EmailService],
   controllers: [EmailController]

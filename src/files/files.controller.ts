@@ -11,7 +11,6 @@ import {
 } from '@nestjs/common';
 import {FileInterceptor} from "@nestjs/platform-express";
 import {FilesService} from "./files.service";
-import {DatabaseFile} from "./files.entity";
 import { multerConfig } from "./multer.config";
 import {AuthGuard} from "../auth/auth.guard";
 import {UserId} from "../decorators/user-id.decorator";
@@ -19,8 +18,7 @@ import {UserId} from "../decorators/user-id.decorator";
 @Controller('files')
 export class FilesController {
     
-    constructor(private readonly filesService: FilesService) {
-    }
+    constructor(private readonly filesService: FilesService) {}
     
     @UseGuards(AuthGuard)
     @Patch("/upload-file")

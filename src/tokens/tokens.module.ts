@@ -10,12 +10,10 @@ import {JwtModule} from "@nestjs/jwt";
     imports: [
         TypeOrmModule.forFeature([Token]),
         forwardRef(() => JwtModule),
-        JwtModule
     ],
     exports: [
         TokensService,
         TypeOrmModule,
-        JwtModule
     ]
 })
 export class TokensModule {}

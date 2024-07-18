@@ -5,6 +5,7 @@ import {AuthModule} from "../auth/auth.module";
 import {UsersModule} from "../users/users.module";
 import {ChatManagerModule} from "../chat-manager/chat-manager.module";
 import process from "node:process";
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   providers: [OpenAiService],

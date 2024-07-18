@@ -26,11 +26,23 @@ import { FilesModule } from './files/files.module';
 import {MulterModule} from "@nestjs/platform-express";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from "node:path";
-dotenv.config({path: `.${process.env.NODE_ENV}.env`})
+import {APP_GUARD} from "@nestjs/core";
+import {AuthGuard} from "./auth/auth.guard";
+dotenv.config()
 
 @Module({
   controllers: [UsersController, AuthController, OpenAiController, SavedPlacesController],
-  providers: [UsersService, AuthService, TokensService, OpenAiService, SavedPlacesService],
+  providers: [
+      UsersService,
+      AuthService,
+      TokensService,
+      OpenAiService,
+      SavedPlacesService,
+      {
+          provide: APP_GUARD,
+          useClass: AuthGuard
+      }
+  ],
   imports: [
       ConfigModule.forRoot({
         envFilePath: `.${process.env.NODE_ENV}.env`

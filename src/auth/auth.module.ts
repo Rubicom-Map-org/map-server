@@ -10,16 +10,16 @@ dotenv.config();
 
 @Module({
     controllers: [AuthController],
-    providers: [AuthService, JwtService],
+    providers: [AuthService],
     imports: [
         forwardRef(() => UsersModule),
+        TokensModule,
         JwtModule.register({
             secret: process.env.JWT_SECRET_KEY || "secret",
             signOptions: {
-                expiresIn: "336h",
+                expiresIn: "336h"
             }
-        }),
-        TokensModule
+        })
     ],
     exports: [
         AuthService,

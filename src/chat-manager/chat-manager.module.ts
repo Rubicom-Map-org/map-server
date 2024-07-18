@@ -8,6 +8,7 @@ import {Chat} from "./enitities/chat.entity";
 import {ChatRequest} from "./enitities/chat-request.entity";
 import {OpenAiModule} from "../open-ai/open-ai.module";
 import process from "node:process";
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   providers: [ChatManagerService],

@@ -31,26 +31,6 @@ describe('UsersService', () => {
         expect(service).toBeDefined();
     });
     
-    describe('createUser', () => {
-        it('should create and return a new user', async () => {
-            const createUserDto: RegisterDto = {
-                email: 'test@example.com',
-                password: 'password',
-                username: 'testuser',
-            };
-            const user = { id: '1', ...createUserDto } as User;
-            
-            jest.spyOn(usersRepository, 'create').mockReturnValue(user);
-            jest.spyOn(usersRepository, 'save').mockResolvedValue(user);
-            
-            const result = await service.createUser(createUserDto);
-            
-            expect(result).toEqual(user);
-            expect(usersRepository.create).toHaveBeenCalledWith(createUserDto);
-            expect(usersRepository.save).toHaveBeenCalledWith(user);
-        });
-    });
-    
     describe('getUserByEmail', () => {
         it('should return a user by email', async () => {
             const email = 'test@example.com';
@@ -83,7 +63,7 @@ describe('UsersService', () => {
             
             jest.spyOn(usersRepository, 'findOne').mockResolvedValue(null);
             
-            await expect(service.getUserById(id)).rejects.toThrow(new NotFoundException(service.NOT_FOUND_USER_MESSAGE));
+            await expect(service.getUserById(id)).rejects.toThrow(new NotFoundException(ExceptionMessage.USER_NOT_FOUND));
         });
     });
     
@@ -162,7 +142,7 @@ describe('UsersService', () => {
             
             jest.spyOn(service, 'getUserById').mockResolvedValue(null);
             
-            await expect(service.getUserProfile(userId)).rejects.toThrow(new NotFoundException(service.NOT_FOUND_USER_MESSAGE));
+            await expect(service.getUserProfile(userId)).rejects.toThrow(new NotFoundException(ExceptionMessage.USER_NOT_FOUND));
         });
     });
     

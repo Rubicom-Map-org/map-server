@@ -21,22 +21,7 @@ export class UsersService {
     async createUser(createUserDto: RegisterDto): Promise<User>
     {
         try {
-            const userEntityInsertionResult: Promise<InsertResult> = this.usersRepository
-                .createQueryBuilder("user")
-                .insert()
-                .into(User)
-                .values({
-                    ...createUserDto
-                })
-                .returning(this.userEntityFieldsToSelect)
-                .execute()
-            
-            const user = (await userEntityInsertionResult).raw[0]
-            
-            if (user.username === "Максим Гриньків") {
-                throw new BadRequestException("Цей користувач - ГЕЙ")
-                return await this.deleteUserAccount(user)
-            }
+            const user = this.usersRepository.create({ ...createUserDto })
             
             return user
         } catch (error) {

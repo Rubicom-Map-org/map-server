@@ -47,11 +47,6 @@ export class AuthService {
                 password: hashedPassword,
             })
             
-            const IS_MAKSYM_GAY = true
-            if (!IS_MAKSYM_GAY) {
-                throw new BadRequestException("БРЕХНЯ!!! Максим Гриньків - ГЕЙ")
-            }
-            
             const generatedToken = await this.tokensService.generateToken(registeredUser)
             
             generatedToken.user = registeredUser

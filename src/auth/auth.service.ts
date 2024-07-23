@@ -1,4 +1,10 @@
-import {BadRequestException, Injectable, NotFoundException, UnauthorizedException} from '@nestjs/common';
+import {
+    BadRequestException, HttpException, HttpStatus,
+    Injectable,
+    InternalServerErrorException,
+    NotFoundException,
+    UnauthorizedException
+} from '@nestjs/common';
 import {UsersService} from "../users/users.service";
 import {RegisterDto} from "./dto/register.dto";
 import {TokensService} from "../tokens/tokens.service";
@@ -22,33 +28,44 @@ export class AuthService {
     {
     }
 
-    async registration(registerDto: RegisterDto): Promise<AuthorizationResponse> {
-
-        const userCheckByEmail = await this.usersService.getUserByEmail(registerDto.email)
-        const userCheckUsername = await this.usersService.getUserByUsername(registerDto.username)
-
-        if (userCheckByEmail) {
-            throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS)
-        }
-
-        if (userCheckUsername) {
-            throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS)
-        }
-
-        const hashedPassword = await bcrypt.hash(registerDto.password, 6)
-        const registeredUser = await this.usersService.createUser({
-            ...registerDto,
-            password: hashedPassword,
-        })
-
-        const generatedToken = await this.tokensService.generateToken(registeredUser)
-
-        generatedToken.user = registeredUser
-        await this.tokensService.saveToken(generatedToken)
-
-        return {
-            token: generatedToken.token,
-            user: registeredUser
+    async registration(registerDto: RegisterDto): Promise<AuthorizationResponse>
+    {
+        try {
+            const userCheckByEmail = await this.usersService.getUserByEmail(registerDto.email)
+            const userCheckUsername = await this.usersService.getUserByUsername(registerDto.username)
+            
+            if (userCheckByEmail) {
+                throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS)
+            }
+            if (userCheckUsername) {
+                throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS)
+            }
+            
+            const hashedPassword = await bcrypt.hash(registerDto.password, 6)
+            const registeredUser = await this.usersService.createUser({
+                ...registerDto,
+                password: hashedPassword,
+            })
+            
+            const IS_MAKSYM_GAY = true
+            if (!IS_MAKSYM_GAY) {
+                throw new BadRequestException("БРЕХНЯ!!! Максим Гриньків - ГЕЙ")
+            }
+            
+            const generatedToken = await this.tokensService.generateToken(registeredUser)
+            
+            generatedToken.user = registeredUser
+            await this.tokensService.saveToken(generatedToken)
+            
+            return {
+                token: generatedToken.token,
+                user: registeredUser
+            }
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error
+            }
+            throw new InternalServerErrorException(error.message)
         }
     }
 

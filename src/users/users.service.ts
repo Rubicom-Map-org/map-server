@@ -1,25 +1,32 @@
-import {Injectable, NotFoundException} from '@nestjs/common';
+import {BadRequestException, Injectable, InternalServerErrorException, NotFoundException} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {User} from "./users.entity";
-import {Repository} from "typeorm";
+import {InsertResult, Repository} from "typeorm";
 import {RegisterDto} from "../auth/dto/register.dto";
 import {GetUserProfileDto} from "./dto/get-user-profile.dto";
 import {ExceptionMessage} from "../utils/exception-message.enum";
+import {LogMethod} from "../decorators/log-method.decorator";
 
 @Injectable()
 export class UsersService {
-
+    
     constructor(@InjectRepository(User)
                 private readonly usersRepository: Repository<User>)
     {
     }
-
-    NOT_FOUND_USER_MESSAGE = "user was not found"
-
-    async createUser(createUserDto: RegisterDto): Promise<User> {
-        const user = this.usersRepository.create(createUserDto)
-
-        return await this.usersRepository.save(user)
+    
+    private readonly userEntityFieldsToSelect: Array<string> = ["id", "username", "email"]
+    
+    @LogMethod()
+    async createUser(createUserDto: RegisterDto): Promise<User>
+    {
+        try {
+            const user = this.usersRepository.create({ ...createUserDto })
+            
+            return user
+        } catch (error) {
+            throw new InternalServerErrorException(error.message)
+        }
     }
 
     async getUserByEmail(email: string): Promise<User> {
@@ -33,7 +40,7 @@ export class UsersService {
             where: {id: id}
         })
         if (!user) {
-            throw new NotFoundException(this.NOT_FOUND_USER_MESSAGE)
+            throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
         }
 
         return user
@@ -66,7 +73,7 @@ export class UsersService {
         const user = await this.getUserById(userId)
 
         if (!user) {
-            throw new NotFoundException(this.NOT_FOUND_USER_MESSAGE)
+            throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
         }
 
         const getUserProfileDto = {
@@ -95,6 +102,5 @@ export class UsersService {
 
         return await this.usersRepository.remove(user)
     }
-
-
+    
 }

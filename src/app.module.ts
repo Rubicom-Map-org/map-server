@@ -28,6 +28,7 @@ import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from "node:path";
 import {APP_GUARD} from "@nestjs/core";
 import {AuthGuard} from "./auth/auth.guard";
+import {CacheModule} from "@nestjs/common/cache";
 dotenv.config()
 
 @Module({
@@ -38,10 +39,6 @@ dotenv.config()
       TokensService,
       OpenAiService,
       SavedPlacesService,
-      {
-          provide: APP_GUARD,
-          useClass: AuthGuard
-      }
   ],
   imports: [
       ConfigModule.forRoot({

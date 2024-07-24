@@ -22,9 +22,7 @@ export class SavedPlacesService {
             user: user
         })
 
-        if (savedPlace.properties.name) throw new BadRequestException("This place is already saved")
-
-        return savedPlace
+        return await this.savedPlaceRepository.save(savedPlace)
     }
 
     async getSavedPlace(userId: string, savedPlaceId: string): Promise<SavedPlace> {

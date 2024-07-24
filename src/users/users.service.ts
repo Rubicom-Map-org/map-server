@@ -21,9 +21,19 @@ export class UsersService {
     async createUser(createUserDto: RegisterDto): Promise<User>
     {
         try {
-            const user = this.usersRepository.create({ ...createUserDto })
+            const userQueryBuilderResult: InsertResult = await this.usersRepository
+                .createQueryBuilder()
+                .insert()
+                .into(User)
+                .values({
+                    ...createUserDto,
+                })
+                .returning(this.userEntityFieldsToSelect)
+                .execute()
+
+            const user = userQueryBuilderResult.raw[0] as User;
             
-            return user
+            return await this.usersRepository.save(user);
         } catch (error) {
             throw new InternalServerErrorException(error.message)
         }

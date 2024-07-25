@@ -32,7 +32,7 @@ export class SavedPlacesController {
         try {
             return this.savedPlacesService.savePlace(userId, savedPlaceDto);
         } catch (error) {
-            if (error instanceof HttpException) throw Error
+            if (error instanceof HttpException) throw error
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
@@ -60,6 +60,18 @@ export class SavedPlacesController {
     async deletePlaceFromList() {
         try {
             // return this.savedPlacesService.()
+        } catch (error) {
+            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
+    }
+
+    @Get("/")
+    async getSavedPlaceByCoordinates(
+        @UserId() userId: string,
+        @Param("coordinates") coordinates: [ number, number ]
+    ): Promise<SavedPlace> {
+        try {
+            return this.savedPlacesService.getSavedPlaceByCoordinates(userId, coordinates)
         } catch (error) {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }

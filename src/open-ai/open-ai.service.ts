@@ -1,4 +1,4 @@
-import {Injectable  } from '@nestjs/common';
+import {HttpException, Injectable, InternalServerErrorException} from '@nestjs/common';
 import * as dotenv from "dotenv";
 import OpenAI from "openai";
 import * as process from "node:process";
@@ -14,38 +14,58 @@ export class OpenAiService {
 
     private readonly openAIService: OpenAI
 
-    constructor(private readonly usersService: UsersService,
-                private readonly chatManagerService: ChatManagerService)
+    constructor(
+        private readonly usersService: UsersService,
+        private readonly chatManagerService: ChatManagerService
+    )
     {
         this.openAIService = new OpenAI({
             apiKey: process.env.OPENAI_API_KEY,
         });
     }
 
-    async getMessagesData(userId: string,
-                          chatId: string,
-                          request: ChatRequest,
-                          isChatNewlyCreated: boolean = true): Promise<OpenAI.ChatCompletion> {
-        const user = await this.usersService.getUserById(userId)
-
-        const messagesWithJSON = request.messages.map(message => {
-            return {
-                ...message,
-                content: `${message.content}`
+    async getMessagesData(
+        userId: string,
+        chatId: string,
+        request: ChatRequest,
+        isChatNewlyCreated: boolean = true
+    ): Promise<OpenAI.ChatCompletion>
+    
+    {
+        try {
+            const user = await this.usersService.getUserById(userId)
+            const messagesWithJSON = request.messages.map(message => {
+                return {
+                    ...message,
+                    content: `${message.content}`
+                }
+            })
+            
+            return this.openAIService.chat.completions.create({
+                model: process.env.OPENAI_API_MODEL,
+                messages: messagesWithJSON,
+            });
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error
             }
-        })
-
-        return this.openAIService.chat.completions.create({
-            model: process.env.OPENAI_API_MODEL,
-            messages: messagesWithJSON,
-        });
+            throw new InternalServerErrorException(error.message)
+        }
     }
 
-    async getChatOpenaiResponse(message: OpenAI.ChatCompletion): Promise<ChatResponse> {
-        return {
-            success: true,
-            result: message?.choices?.length && message?.choices[0],
-        };
+    async getChatOpenaiResponse(message: OpenAI.ChatCompletion): Promise<ChatResponse>
+    {
+        try {
+            return {
+                success: true,
+                result: message?.choices?.length && message?.choices[0],
+            };
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error
+            }
+            throw new InternalServerErrorException(error.message)
+        }
     }
 
 }

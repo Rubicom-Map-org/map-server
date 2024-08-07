@@ -11,8 +11,7 @@ import {UserId} from "../decorators/user-id.decorator";
 @Controller('chat-manager')
 export class ChatManagerController {
 
-    constructor(private readonly chatManagerService: ChatManagerService) {
-    }
+    constructor(private readonly chatManagerService: ChatManagerService) {}
 
     @Get("/chats/:chatId")
     async getChat(@UserId() userId: string,

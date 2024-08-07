@@ -9,8 +9,7 @@ export class LastVisitedPlacesController {
     
     constructor(
         private readonly lastVisitedPlacesService: LastVisitedPlacesService,
-    ) {
-    }
+    ) {}
     
     
     @Post("cache-place")

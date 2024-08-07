@@ -18,8 +18,7 @@ import {UserEmail} from "../decorators/user-email.decorator";
 @Controller('email')
 export class EmailController {
 
-    constructor(private readonly emailService: EmailService) {
-    }
+    constructor(private readonly emailService: EmailService) {}
 
     @UsePipes(ValidationPipe)
     @Post("/send-email")

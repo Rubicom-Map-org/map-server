@@ -23,10 +23,11 @@ export interface AuthorizationResponse {
 @Injectable()
 export class AuthService {
 
-    constructor(private readonly usersService: UsersService,
-                private readonly tokensService: TokensService)
-    {
-    }
+    constructor(
+        private readonly usersService: UsersService,
+        private readonly tokensService: TokensService
+    )
+    {}
 
     async registration(registerDto: RegisterDto): Promise<AuthorizationResponse>
     {
@@ -64,60 +65,89 @@ export class AuthService {
         }
     }
 
-    async validateUser(loginDto: LoginDto): Promise<User> {
-        const user = await this.usersService.getUserByEmail(loginDto.email)
-
-        if (!user) {
-            throw new BadRequestException(ExceptionMessage.USER_NOT_FOUND)
+    async validateUser(loginDto: LoginDto): Promise<User>
+    {
+        try {
+            const user = await this.usersService.getUserByEmail(loginDto.email)
+            
+            if (!user) {
+                throw new BadRequestException(ExceptionMessage.USER_NOT_FOUND)
+            }
+            
+            const comparePassword = await bcrypt.compare(loginDto.password, user.password)
+            if (user && comparePassword) {
+                return user
+            }
+            
+            throw new UnauthorizedException(ExceptionMessage.UNAUTHORIZED)
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error;
+            }
+            throw new InternalServerErrorException(error.message);
         }
+    }
 
-        const comparePassword = await bcrypt.compare(loginDto.password, user.password)
-        if (user && comparePassword) {
+    async login(loginDto: LoginDto): Promise<AuthorizationResponse>
+    {
+        try {
+            const user = await this.validateUser(loginDto)
+            
+            const generatedToken = await this.tokensService.updateToken(user)
+            return {
+                token: generatedToken.token,
+                user: user
+            }
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error;
+            }
+            throw new InternalServerErrorException(error.message);
+        }
+    }
+
+    async deleteAccount(userId: string): Promise<[User, Token]>
+    {
+        try {
+            const user = await this.usersService.getUserById(userId)
+            
+            if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
+            
+            const token = await this.tokensService.findToken(user)
+            
+            const deletedUser = await this.usersService.deleteAccount(user)
+            const deletedToken = await this.tokensService.deleteToken(token)
+            
+            return [ deletedUser, deletedToken ]
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error;
+            }
+            throw new InternalServerErrorException(error.message);
+        }
+    }
+
+    async changePassword(changePasswordDto: ChangePasswordDto): Promise<User>
+    {
+        try {
+            const user = await this.usersService.getUserByEmail(changePasswordDto.email)
+            
+            if (!user) {
+                throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
+            }
+            
+            const hashedPassword = await bcrypt.hash(changePasswordDto.password, 5)
+            
+            user.password = hashedPassword
+            console.log(changePasswordDto.password)
+            
             return user
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error;
+            }
+            throw new InternalServerErrorException(error.message);
         }
-
-        throw new UnauthorizedException(ExceptionMessage.UNAUTHORIZED)
-    }
-
-    async login(loginDto: LoginDto): Promise<AuthorizationResponse> {
-        const user = await this.validateUser(loginDto)
-
-        const generatedToken = await this.tokensService.updateToken(user)
-        return {
-            token: generatedToken.token,
-            user: user
-        }
-    }
-
-    async deleteAccount(userId: string): Promise<[User, Token]> {
-
-        const user = await this.usersService.getUserById(userId)
-        
-        if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
-        
-        const token = await this.tokensService.findToken(user)
-
-        const deletedUser = await this.usersService.deleteAccount(user)
-        const deletedToken = await this.tokensService.deleteToken(token)
-
-        return [ deletedUser, deletedToken ]
-
-    }
-
-    async changePassword(changePasswordDto: ChangePasswordDto): Promise<User> {
-        const user = await this.usersService.getUserByEmail(changePasswordDto.email)
-
-        if (!user) {
-            throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
-        }
-
-        const hashedPassword = await bcrypt.hash(changePasswordDto.password, 5)
-
-        user.password = hashedPassword
-        console.log(changePasswordDto.password)
-
-        return user
-
     }
 
 }

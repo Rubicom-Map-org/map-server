@@ -21,8 +21,7 @@ import {UserId} from "../decorators/user-id.decorator";
 @Controller('saved-places')
 export class SavedPlacesController {
 
-    constructor(private readonly savedPlacesService: SavedPlacesService) {
-    }
+    constructor(private readonly savedPlacesService: SavedPlacesService) {}
 
     @UsePipes(ValidationPipe)
     @Post("/save-place")

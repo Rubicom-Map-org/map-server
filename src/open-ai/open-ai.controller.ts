@@ -21,8 +21,10 @@ import {UserId} from "../decorators/user-id.decorator";
 @Controller('open-ai')
 export class OpenAiController {
 
-    constructor(private readonly openAiService: OpenAiService,
-                private readonly chatManagerService: ChatManagerService) {}
+    constructor(
+        private readonly openAiService: OpenAiService,
+        private readonly chatManagerService: ChatManagerService
+    ) {}
 
     @UsePipes(ValidationPipe)
     @ApiResponse({status: HttpStatus.CREATED})

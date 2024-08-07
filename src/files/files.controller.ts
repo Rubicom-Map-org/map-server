@@ -30,7 +30,7 @@ export class FilesController {
             console.log(file.path)
             return this.filesService.uploadFile(userId, file)
         } catch (error) {
-            if (error instanceof HttpException) throw Error
+            if (error instanceof HttpException) throw error
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
@@ -41,6 +41,7 @@ export class FilesController {
         try {
             return this.filesService.createFile(file)
         } catch (error) {
+            if (error instanceof HttpException) throw error
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }

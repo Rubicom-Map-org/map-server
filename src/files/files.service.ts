@@ -10,11 +10,12 @@ import * as fs from "node:fs";
 @Injectable()
 export class FilesService {
     
-    constructor(@InjectRepository(DatabaseFile)
-                private readonly databaseFileRepository: Repository<DatabaseFile>,
-                private readonly usersService: UsersService)
-    {
-    }
+    constructor(
+        @InjectRepository(DatabaseFile)
+        private readonly databaseFileRepository: Repository<DatabaseFile>,
+        private readonly usersService: UsersService
+    )
+    {}
     
     async uploadFile(userId: string, file: any): Promise<DatabaseFile> {
         
@@ -44,7 +45,10 @@ export class FilesService {
             return await this.databaseFileRepository.save(newFile)
             
         } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+            if (error instanceof HttpException) {
+                throw error;
+            }
+            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         
     }
@@ -59,7 +63,10 @@ export class FilesService {
             fs.writeFileSync(path.join(filepath, filename), file.buffer)
             return filename
         } catch (error) {
-            throw new Error(error.message)
+            if (error instanceof HttpException) {
+                throw error;
+            }
+            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
     

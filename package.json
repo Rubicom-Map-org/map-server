@@ -23,6 +23,7 @@
     "migration:revert": "npm run typeorm migration:revert -- -d dist/database/data-source.js"
   },
   "dependencies": {
+    "@nestjs-modules/ioredis": "^2.0.2",
     "@nestjs-modules/mailer": "^2.0.2",
     "@nestjs/common": "^10.3.9",
     "@nestjs/config": "^3.2.2",
@@ -35,11 +36,13 @@
     "@nestjs/typeorm": "^10.0.2",
     "bcrypt": "^5.1.1",
     "cache-manager": "^5.7.3",
+    "cache-manager-redis-store": "^3.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
     "ioredis": "^5.4.1",
     "jsonwebtoken": "^9.0.2",
+    "lz-string": "^1.5.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.10.2",
     "nodemailer": "^6.9.13",

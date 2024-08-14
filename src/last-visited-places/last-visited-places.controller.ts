@@ -1,7 +1,9 @@
-import {Body, Controller, Get, HttpException, HttpStatus, Param, Post} from "@nestjs/common";
+import {Body, Controller, Get, HttpException, HttpStatus, Param, Post, UseGuards} from "@nestjs/common";
 import {LastVisitedPlacesService} from "./last-visited-places.service";
 import {SaveLastVisitedPlacesDto} from "./dto/save-last-visited-place.dto";
 import {GetLastVisitedPlaceDto} from "./dto/get-last-visited-place.dto";
+import {AuthGuard} from "../auth/auth.guard";
+import {UserId} from "../decorators/user-id.decorator";
 
 
 @Controller('last-visited-places')
@@ -11,12 +13,15 @@ export class LastVisitedPlacesController {
         private readonly lastVisitedPlacesService: LastVisitedPlacesService,
     ) {}
     
-    
+    @UseGuards(AuthGuard)
     @Post("cache-place")
-    async cacheLastVisitedPlace(@Body() saveLastVisitedPlaceDto: SaveLastVisitedPlacesDto): Promise<void>
+    async cacheLastVisitedPlace(
+        @UserId() userId: string,
+        @Body() saveLastVisitedPlaceDto: SaveLastVisitedPlacesDto
+    ): Promise<void>
     {
         try {
-            return this.lastVisitedPlacesService.cacheLastVisitedPlace(saveLastVisitedPlaceDto)
+            return this.lastVisitedPlacesService.cacheLastVisitedPlace(userId, saveLastVisitedPlaceDto)
         } catch (error) {
             if (error instanceof HttpException) {
                 throw Error

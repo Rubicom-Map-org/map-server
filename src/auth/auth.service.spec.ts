@@ -131,8 +131,6 @@ describe('AuthService', () => {
             const token = {} as Token;
             jest.spyOn(usersService, 'getUserById').mockResolvedValueOnce(user);
             jest.spyOn(tokensService, 'findToken').mockResolvedValueOnce(token);
-            jest.spyOn(usersService, 'deleteAccount').mockResolvedValueOnce(user);
-            jest.spyOn(tokensService, 'deleteToken').mockResolvedValueOnce(token);
             
             const result = await authService.deleteAccount('1');
             

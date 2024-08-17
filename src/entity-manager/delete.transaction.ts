@@ -11,7 +11,7 @@ export class DeleteTransaction {
                 private readonly entityManager: EntityManager) {
     }
 
-    async findEntityById(userId: string): Promise<User | null> {
+    async findEntityById(userId: string, entity: Repository<any>): Promise<User | null> {
         const repository = this.entityManager.getRepository(User);
         return await repository.findOne({ where: {id: userId}})
     }

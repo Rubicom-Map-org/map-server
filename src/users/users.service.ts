@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {User} from "./users.entity";
-import {InsertResult, Repository} from "typeorm";
+import {DeleteResult, InsertResult, Repository} from "typeorm";
 import {RegisterDto} from "../auth/dto/register.dto";
 import {GetUserProfileDto} from "./dto/get-user-profile.dto";
 import {ExceptionMessage} from "../utils/exception-message.enum";
@@ -107,11 +107,11 @@ export class UsersService {
         }
     }
 
-    async deleteAccount(userData: User): Promise<User>
+    async deleteAccount(userData: User): Promise<DeleteResult>
     {
         try {
-            const deletedUser = await this.usersRepository.remove(userData)
-            return deletedUser
+            const deletedUser = await this.usersRepository.delete(userData.id);
+            return deletedUser;
         } catch (error) {
             if (error instanceof HttpException) {
                 throw error

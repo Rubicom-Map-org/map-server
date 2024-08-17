@@ -1,5 +1,5 @@
 import {
-    BadRequestException, HttpException, HttpStatus,
+    BadRequestException, HttpException,
     Injectable,
     InternalServerErrorException,
     NotFoundException,
@@ -11,9 +11,9 @@ import {TokensService} from "../tokens/tokens.service";
 import {User} from "../users/users.entity";
 import {LoginDto} from "./dto/login.dto";
 import * as bcrypt from "bcrypt"
-import {Token} from "../tokens/tokens.entity";
 import {ChangePasswordDto} from "./dto/change-password.dto";
 import {ExceptionMessage} from "../utils/exception-message.enum";
+import {AuthorizationResponseDto} from "./dto/authorization-response.dto";
 
 export interface AuthorizationResponse {
     token: string,
@@ -29,7 +29,7 @@ export class AuthService {
     )
     {}
 
-    async registration(registerDto: RegisterDto): Promise<AuthorizationResponse>
+    async registration(registerDto: RegisterDto): Promise<AuthorizationResponseDto>
     {
         try {
             const userCheckByEmail = await this.usersService.getUserByEmail(registerDto.email)
@@ -88,7 +88,7 @@ export class AuthService {
         }
     }
 
-    async login(loginDto: LoginDto): Promise<AuthorizationResponse>
+    async login(loginDto: LoginDto): Promise<AuthorizationResponseDto>
     {
         try {
             const user = await this.validateUser(loginDto)
@@ -106,7 +106,7 @@ export class AuthService {
         }
     }
 
-    async deleteAccount(userId: string): Promise<[User, Token]>
+    async deleteAccount(userId: string): Promise<void>
     {
         try {
             const user = await this.usersService.getUserById(userId)
@@ -118,7 +118,6 @@ export class AuthService {
             const deletedUser = await this.usersService.deleteAccount(user)
             const deletedToken = await this.tokensService.deleteToken(token)
             
-            return [ deletedUser, deletedToken ]
         } catch (error) {
             if (error instanceof HttpException) {
                 throw error;

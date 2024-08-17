@@ -3,19 +3,22 @@ import {ChatManagerService} from "./chat-manager.service";
 import {Chat} from "./enitities/chat.entity";
 import {ChatRequest} from "./enitities/chat-request.entity";
 import {AuthGuard} from "../auth/auth.guard";
-import { CreateChatRequestDto } from 'src/open-ai/dto/create-message.dto';
-import { create } from 'domain';
 import {UserId} from "../decorators/user-id.decorator";
+import {ApiParam, ApiResponse} from '@nestjs/swagger';
 
 @UseGuards(AuthGuard)
 @Controller('chat-manager')
 export class ChatManagerController {
 
     constructor(private readonly chatManagerService: ChatManagerService) {}
-
-    @Get("/chats/:chatId")
-    async getChat(@UserId() userId: string,
-                  @Param("chatId") chatId: string): Promise<Chat>
+    
+    @ApiParam({ name: "chatId" })
+    @ApiResponse({ status: HttpStatus.CREATED, type: Chat })
+    @Get("chats/:chatId")
+    async getChat(
+        @UserId() userId: string,
+        @Param("chatId") chatId: string
+    ): Promise<Chat>
     {
         try {
             return this.chatManagerService.getChatById(userId, chatId)
@@ -24,7 +27,8 @@ export class ChatManagerController {
         }
     }
 
-    @Get("/chats")
+    @ApiResponse({ status: HttpStatus.OK, type: [Chat] })
+    @Get("chats")
     async getChats(@UserId() userId: string): Promise<Chat[]> {
         try {
             return this.chatManagerService.getChats(userId)
@@ -33,7 +37,8 @@ export class ChatManagerController {
         }
     }
 
-    @Post("/chats/create-chat")
+    @ApiResponse({ status: HttpStatus.OK, type: Chat })
+    @Post("chats/create-chat")
     async createChat(@UserId() userId: string): Promise<Chat> {
         try {
             return this.chatManagerService.createChat(userId)
@@ -43,10 +48,15 @@ export class ChatManagerController {
         }
     }
     
-    @Get("/chat-requests/:chatId/:chatRequestId")
-    async getChatRequest(@UserId() userId: string,
-                         @Param("chatId") chatId: string,
-                         @Param("chatRequestId") chatRequestId: string): Promise<ChatRequest>
+    @ApiParam({ name: "chatId" })
+    @ApiParam({ name: "chatRequestId" })
+    @ApiResponse({ status: HttpStatus.OK, type: ChatRequest })
+    @Get("chat-requests/:chatId/:chatRequestId")
+    async getChatRequest(
+        @UserId() userId: string,
+        @Param("chatId") chatId: string,
+        @Param("chatRequestId") chatRequestId: string
+    ): Promise<ChatRequest>
     {
         try {
             return this.chatManagerService.getChatRequest(userId, chatId, chatId)
@@ -55,9 +65,13 @@ export class ChatManagerController {
         }
     }
 
-    @Get("/chat-requests/:chatId")
-    async getChatRequests(@UserId() userId: string,
-                          @Param("chatId") chatId: string): Promise<ChatRequest[]> {
+    @ApiParam({ name: "chatId" })
+    @ApiResponse({ status: HttpStatus.OK, type: [ChatRequest] })
+    @Get("chat-requests/:chatId")
+    async getChatRequests(
+        @UserId() userId: string,
+        @Param("chatId") chatId: string
+    ): Promise<ChatRequest[]> {
         try {
             return this.chatManagerService.getChatRequests(userId, chatId)
         } catch (error) {

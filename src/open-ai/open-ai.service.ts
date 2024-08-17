@@ -7,6 +7,7 @@ import {UsersService} from "../users/users.service";
 import {ChatManagerService} from "../chat-manager/chat-manager.service";
 const mapJSON = require("../../map.json");
 import { compressToBase64 } from "lz-string";
+import {ChatResponseDto, OpenAiPromptResponseDto} from "./dto/open-ai-request-response.dto";
 dotenv.config();
 
 
@@ -74,7 +75,7 @@ export class OpenAiService {
         }
     }
 
-    async getChatOpenaiResponse(message: OpenAI.ChatCompletion): Promise<ChatResponse>
+    async getChatOpenaiResponse(message: OpenAI.ChatCompletion): Promise<ChatResponseDto>
     {
         try {
             return {

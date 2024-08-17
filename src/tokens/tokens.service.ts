@@ -3,7 +3,7 @@ import {User} from "../users/users.entity";
 import {JwtService} from "@nestjs/jwt";
 import {InjectRepository} from "@nestjs/typeorm";
 import {Token} from "./tokens.entity";
-import {Repository} from "typeorm";
+import {DeleteResult, Repository} from "typeorm";
 
 @Injectable()
 export class TokensService {
@@ -74,8 +74,8 @@ export class TokensService {
 
     }
 
-    async deleteToken(token: Token): Promise<Token> {
-        return await this.tokenRepository.remove(token)
+    async deleteToken(token: Token): Promise<DeleteResult> {
+        return await this.tokenRepository.delete({ id: token.id })
     }
 
 }

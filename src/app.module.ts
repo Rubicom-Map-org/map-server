@@ -26,9 +26,7 @@ import { FilesModule } from './files/files.module';
 import {MulterModule} from "@nestjs/platform-express";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from "node:path";
-import {APP_GUARD} from "@nestjs/core";
-import {AuthGuard} from "./auth/auth.guard";
-import {CacheModule} from "@nestjs/common/cache";
+import {LastVisitedPlacesModule} from "./last-visited-places/last-visited-places.module";
 dotenv.config()
 
 @Module({
@@ -63,6 +61,7 @@ dotenv.config()
       TokensModule,
       ChatManagerModule,
       FilesModule,
+      LastVisitedPlacesModule,
       MulterModule.register({ dest: "./uploads" })
   ],
     exports: [

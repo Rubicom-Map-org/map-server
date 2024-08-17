@@ -10,14 +10,16 @@ import {
     ValidationPipe
 } from '@nestjs/common';
 import {RegisterDto} from "./dto/register.dto";
-import {AuthService} from "./auth.service";
+import {AuthorizationResponse, AuthService} from "./auth.service";
 import {LoginDto} from "./dto/login.dto";
 import {User} from "../users/users.entity";
-import {ApiOperation, ApiResponse} from "@nestjs/swagger";
+import {ApiOperation, ApiResponse, ApiUnauthorizedResponse} from "@nestjs/swagger";
 import {Token} from "../tokens/tokens.entity";
 import {ChangePasswordDto} from "./dto/change-password.dto";
 import {UserId} from "../decorators/user-id.decorator";
 import {AuthGuard} from "./auth.guard";
+import {Auth} from "typeorm";
+import {AuthorizationResponseDto} from "./dto/authorization-response.dto";
 
 
 @Controller('auth')
@@ -30,10 +32,10 @@ export class AuthController {
         description: "This function saves USER entity to database according all registration validations, " +
             "also returns JWT token witch determines whether user is authorized and saves DTO user data"
     })
-    @ApiResponse({type: User, status: HttpStatus.CREATED})
+    @ApiResponse({type: AuthorizationResponseDto, status: HttpStatus.CREATED})
     @Post("/registration")
     @UsePipes(ValidationPipe)
-    async registration(@Body() registerDto: RegisterDto) {
+    async registration(@Body() registerDto: RegisterDto): Promise<AuthorizationResponse> {
         try {
             return this.authService.registration(registerDto)
         } catch (error) {
@@ -49,10 +51,10 @@ export class AuthController {
             "witch determines whether user is authorized, this function takes login body param: " +
             "( username, email, password )"
     })
-    @ApiResponse({type: User, status: HttpStatus.CREATED})
+    @ApiResponse({ status: HttpStatus.CREATED, type: AuthorizationResponseDto})
     @Post("/login")
     @UsePipes(ValidationPipe)
-    async login(@Body() loginDto: LoginDto) {
+    async login(@Body() loginDto: LoginDto): Promise<AuthorizationResponse> {
         try {
             return this.authService.login(loginDto)
         } catch (error) {
@@ -66,10 +68,9 @@ export class AuthController {
         description: "This function deletes both entities User and Token and takes only one param - user ID, witch we take from request" +
             ",AKA, from JWT token"
     })
-    @ApiResponse({type: Token && User, status: 200})
     @UseGuards(AuthGuard)
     @Delete("/delete-account")
-    async deleteAccount(@UserId() userId: string): Promise<[User, Token]> {
+    async deleteAccount(@UserId() userId: string): Promise<void> {
         try {
             return this.authService.deleteAccount(userId)
         } catch (error) {

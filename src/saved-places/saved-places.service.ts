@@ -26,11 +26,10 @@ export class SavedPlacesService {
     async savePlace(userId: string, savePlaceDto: SavePlaceDto): Promise<SavedPlace>
     {
         try {
-            const user = await this.usersService.getUserById(userId)
+            const user = await this.usersService.getUserById(userId);
             
             const insertionResult: InsertResult = await this.savedPlaceRepository
                 .createQueryBuilder()
-                .where("savedPlace.user = :user", { user: user.id })
                 .insert()
                 .into(SavedPlace)
                 .values({
@@ -40,33 +39,33 @@ export class SavedPlacesService {
                 .execute();
             
             const savedPlace = await this.savedPlaceRepository.findOne(insertionResult.raw[0]);
-            console.log("SAVED PLACE: ", savedPlace)
-            
             const checkExistingSavedPlaceInDB = await this.getSavedPlaceByCoordinates(user.id, savedPlace.geometry.coordinates);
-            console.log('Check existing saved place:', checkExistingSavedPlaceInDB);
+
             if (checkExistingSavedPlaceInDB) throw new BadRequestException(ExceptionMessage.PLACE_ALREADY_SAVED);
             
-            return await this.savedPlaceRepository.save(savedPlace)
+            return await this.savedPlaceRepository.save(savedPlace);
         } catch (error) {
             if (error instanceof HttpException) {
-                throw error
+                throw error;
             }
-            throw new InternalServerErrorException(error.message)
+            throw new InternalServerErrorException(error.message);
         }
     }
 
     async getSavedPlace(userId: string, savedPlaceId: string): Promise<SavedPlace>
     {
         try {
-            const user = await this.usersService.getUserById(userId)
-            const savedPlace = await this.savedPlaceRepository.findOne({
-                where: {
+            const user = await this.usersService.getUserById(userId);
+            const savedPlace = await this.savedPlaceRepository
+                .createQueryBuilder()
+                .where("id = :id AND user = :userId", {
                     id: savedPlaceId,
-                    user: user
-                }
-            })
-            
-            return savedPlace
+                    userId: user.id
+                })
+                .getOne();
+
+            if (!savedPlace) throw new NotFoundException(ExceptionMessage.PLACE_NOT_FOUND);
+            return savedPlace;
         } catch (error) {
             if (error instanceof HttpException) {
                 throw error
@@ -78,8 +77,8 @@ export class SavedPlacesService {
     async getSavedPlaceByCoordinates(userId: string, coordinates: [number, number]): Promise<SavedPlace>
     {
         try {
-            const user = await this.usersService.getUserById(userId)
-            if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
+            const user = await this.usersService.getUserById(userId);
+            if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND);
             
             const savedPlace = await this.savedPlaceRepository.findOne({
                 where: {
@@ -89,7 +88,7 @@ export class SavedPlacesService {
                     },
                     user: user
                 }
-            })
+            });
             
             return savedPlace;
         } catch (error) {
@@ -103,12 +102,14 @@ export class SavedPlacesService {
     async getSavedPlaces(userId: string): Promise<SavedPlace[]>
     {
         try {
-            const user = await this.usersService.getUserById(userId)
-            const savedPlaces = await this.savedPlaceRepository.find({
-                where: {user: user}
-            })
-            
-            return savedPlaces
+            const user = await this.usersService.getUserById(userId);
+            const savedPlaces = await this.savedPlaceRepository
+                .createQueryBuilder()
+                .where("user = :userId", { userId: user.id })
+                .getMany();
+
+            if (!savedPlaces) throw new NotFoundException(ExceptionMessage.PLACE_NOT_FOUND);
+            return savedPlaces;
         } catch (error) {
             if (error instanceof HttpException) {
                 throw error
@@ -117,16 +118,20 @@ export class SavedPlacesService {
         }
     }
 
-    async deleteSavedPlace(userId: string, savedPlaceId: string): Promise<DeleteResult>
+    async deleteSavedPlace(userId: string, savedPlaceId: string): Promise<void>
     {
         try {
             const user = await this.usersService.getUserById(userId)
-            const savedPlace = await this.savedPlaceRepository.findOne({
-                where: {id: savedPlaceId, user: user}
-            })
-            
-            const deletedPlace = await this.savedPlaceRepository.delete(savedPlace.id)
-            return deletedPlace
+            const savedPlace = await this.getSavedPlace(user.id, savedPlaceId);
+
+            await this.savedPlaceRepository
+                .createQueryBuilder()
+                .delete()
+                .where("id = :id AND user = :userId", {
+                    id: savedPlaceId,
+                    userId: user.id
+                })
+                .execute();
         } catch (error) {
             if (error instanceof HttpException) {
                 throw error

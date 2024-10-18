@@ -3,6 +3,7 @@ import {MailerService} from "@nestjs-modules/mailer";
 import * as process from "node:process";
 import {UsersService} from "../users/users.service";
 import {ExceptionMessage} from "../utils/exception-message.enum";
+import { SendMessageDto } from './dto/send-message.dto';
 
 @Injectable()
 export class EmailService {
@@ -12,8 +13,7 @@ export class EmailService {
         private readonly userService: UsersService
     ) {}
 
-    async sendMessageToOwners(email: string, message: string)
-    {
+    async sendMessageToOwners(email: string, message: string) {
         try {
             await this.mailerService.sendMail({
                 from: email,
@@ -28,8 +28,7 @@ export class EmailService {
         }
     }
     
-    async sendVerificationCodeByEmail(email: string)
-    {
+    async sendVerificationCodeByEmail(email: string): Promise<any> {
         try {
             const user = await this.userService.getUserByEmail(email)
             if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)

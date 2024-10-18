@@ -13,8 +13,7 @@ export class LastVisitedPlacesService {
         @Inject(CACHE_MANAGER) private readonly cacheManager: Cache
     ) {}
     
-    async cacheLastVisitedPlace(userId: string, saveLastVisitedPlaceDto: SaveLastVisitedPlacesDto): Promise<void>
-    {
+    async cacheLastVisitedPlace(userId: string, saveLastVisitedPlaceDto: SaveLastVisitedPlacesDto): Promise<void> {
         try {
             const user = await this.userService.getUserById(userId);
             const cacheKey = `userId:${user.id}/lastVisitedPlace:${saveLastVisitedPlaceDto.id}`;
@@ -33,8 +32,7 @@ export class LastVisitedPlacesService {
         }
     }
     
-    async getLastVisitedPlace(placeId: string): Promise<GetLastVisitedPlaceDto>
-    {
+    async getLastVisitedPlace(placeId: string): Promise<GetLastVisitedPlaceDto> {
         try {
             const cacheKey = `lastVisitedPlace_${placeId}`
             const cachedValue = await this.cacheManager.get(cacheKey)
@@ -52,8 +50,7 @@ export class LastVisitedPlacesService {
         }
     }
     
-    async clearCache(placeId: string): Promise<void>
-    {
+    async clearCache(placeId: string): Promise<void> {
         try {
             const cacheKey = `lastVisitedPlace_${placeId}`
             await this.cacheManager.del(cacheKey)

@@ -11,19 +11,22 @@ import {DeleteResult, InsertResult, Repository} from "typeorm";
 import {RegisterDto} from "../auth/dto/register.dto";
 import {GetUserProfileDto} from "./dto/get-user-profile.dto";
 import {ExceptionMessage} from "../utils/exception-message.enum";
-import {LogMethod} from "../decorators/log-method.decorator";
+import { UserRepository } from './user-repository.abstract';
+import { PaginationDto } from '../common/dto/pagination.dto';
 
 @Injectable()
-export class UsersService {
+export class UsersService extends UserRepository {
     
     constructor(
         @InjectRepository(User)
         private readonly usersRepository: Repository<User>
-    ) {}
+    )
+    {
+        super();
+    }
     
     private readonly userEntityFieldsToSelect: Array<string> = ["id", "username", "email"]
     
-    @LogMethod()
     async createUser(createUserDto: RegisterDto): Promise<User>
     {
         try {
@@ -48,9 +51,18 @@ export class UsersService {
     async getUserByEmail(email: string): Promise<User>
     {
         try {
-            return  await this.usersRepository.findOne({
-                where: {email: email}
-            })
+            const user = await this.usersRepository
+                .createQueryBuilder()
+                .where("email LIKE :email", {
+                    email: `%${email}%`
+                })
+                .getOne();
+
+            if (!user) {
+                throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND);
+            }
+
+            return user;
         } catch (error) {
             if (error instanceof HttpException) {
                 throw error
@@ -59,12 +71,14 @@ export class UsersService {
         }
     }
 
-    async getUserById(id: string): Promise<User>
+    async getUserById(userId: string): Promise<User>
     {
         try {
-            const user = await this.usersRepository.findOne({
-                where: {id: id}
-            })
+            const user = await this.usersRepository
+                .createQueryBuilder()
+                .where("id = :userId", { userId })
+                .getOne();
+
             if (!user) {
                 throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
             }
@@ -81,9 +95,16 @@ export class UsersService {
     async getUserByUsername(username: string): Promise<User>
     {
         try {
-            const user = await this.usersRepository.findOne({
-                where: {username: username}
-            })
+            const user = await this.usersRepository
+                .createQueryBuilder()
+                .where("username LIKE :username", {
+                    username: `%${username}%`
+                })
+                .getOne();
+
+            if (!user) {
+                throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND);
+            }
             
             return user
         } catch (error) {
@@ -94,10 +115,22 @@ export class UsersService {
         }
     }
 
-    async getUsers(): Promise<User[]>
+    async getUsers(paginationDto: PaginationDto): Promise<User[]>
     {
         try {
-            const users = await this.usersRepository.find()
+            const users = await this.usersRepository
+                .createQueryBuilder()
+                .orderBy("createdAt")
+                .skip(paginationDto.skip)
+                .take(paginationDto.take)
+                .getMany();
+
+            if (!users) {
+                throw new NotFoundException("Not found");
+            }
+
+            console.log(users.length);
+
             return users
         } catch (error) {
             if (error instanceof HttpException) {
@@ -135,19 +168,17 @@ export class UsersService {
     async getUserProfile(userId: string): Promise<GetUserProfileDto>
     {
         try {
-            const user = await this.getUserById(userId)
+            const userProfile = await this.usersRepository
+                .createQueryBuilder()
+                .where("id = :userId", { userId: userId })
+                .select(["id", "username", "email", "avatarImageUrl"])
+                .getOne();
             
-            if (!user) {
+            if (!userProfile) {
                 throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
             }
-            
-            const getUserProfileDto = {
-                username: user.username,
-                email: user.email,
-                avatarImageUrl: user.avatarImageUrl
-            }
-            
-            return getUserProfileDto
+
+            return userProfile;
         } catch (error) {
             if (error instanceof HttpException) {
                 throw error
@@ -180,5 +211,23 @@ export class UsersService {
             throw new InternalServerErrorException(error.message)
         }
     }
+
+    async checkUserExistingByEmail(email: string): Promise<boolean>
+    {
+        try {
+            const user = await this.usersRepository
+                .createQueryBuilder()
+                .where("email = :email", { email })
+                .getOne();
+
+            return !!user;
+        } catch (error) {
+            if (error instanceof HttpException) {
+                throw error;
+            }
+            throw new InternalServerErrorException(error.message);
+        }
+    }
+
     
 }

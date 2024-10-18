@@ -10,5 +10,6 @@ export enum ExceptionMessage {
     CHAT_NOT_FOUND="Chat not found",
     MESSAGE_NOT_FOUND="Message not found",
     FILE_NOT_FOUND="File not found",
-    FILE_TOO_LARGE="File size too large"
+    FILE_TOO_LARGE="File size too large",
+    PASSWORDS_DONT_MATCH="Passwords do not match",
 }

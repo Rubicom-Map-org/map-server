@@ -23,7 +23,7 @@ export class DatabaseFile {
     mimetype: string;
     
     @ApiProperty()
-    @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+    @CreateDateColumn()
     createdAt: Date;
 
     @OneToOne(() => User, user => user.file, { onDelete: "CASCADE"})

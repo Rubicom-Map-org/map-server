@@ -20,11 +20,11 @@ export class ChatRequest {
     response: string;
     
     @ApiProperty()
-    @CreateDateColumn({type: "timestamp", default: () => "CURRENT_TIMESTAMP"})
+    @CreateDateColumn()
     createdAt: Date;
     
     @ApiProperty()
-    @CreateDateColumn({type: "timestamp", default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP"})
+    @CreateDateColumn()
     updatedAt: Date;
     
     @ManyToOne(() => User, user => user.chatRequests, { onDelete: "CASCADE" })

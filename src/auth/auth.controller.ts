@@ -10,7 +10,7 @@ import {
     ValidationPipe
 } from '@nestjs/common';
 import {RegisterDto} from "./dto/register.dto";
-import {AuthorizationResponse, AuthService} from "./auth.service";
+import {AuthService} from "./auth.service";
 import {LoginDto} from "./dto/login.dto";
 import {User} from "../users/users.entity";
 import {ApiOperation, ApiResponse, ApiUnauthorizedResponse} from "@nestjs/swagger";
@@ -20,12 +20,16 @@ import {UserId} from "../decorators/user-id.decorator";
 import {AuthGuard} from "./auth.guard";
 import {Auth} from "typeorm";
 import {AuthorizationResponseDto} from "./dto/authorization-response.dto";
+import { AuthRepository } from './auth-repository.abstract';
 
 
 @Controller('auth')
-export class AuthController {
+export class AuthController extends AuthRepository {
     
-    constructor(private readonly authService: AuthService) {}
+    constructor(private readonly authService: AuthService)
+    {
+        super();
+    }
     
     @ApiOperation({
         summary: "Registration",
@@ -35,7 +39,7 @@ export class AuthController {
     @ApiResponse({type: AuthorizationResponseDto, status: HttpStatus.CREATED})
     @Post("/registration")
     @UsePipes(ValidationPipe)
-    async registration(@Body() registerDto: RegisterDto): Promise<AuthorizationResponse> {
+    async registration(@Body() registerDto: RegisterDto): Promise<AuthorizationResponseDto> {
         try {
             return this.authService.registration(registerDto)
         } catch (error) {
@@ -54,7 +58,7 @@ export class AuthController {
     @ApiResponse({ status: HttpStatus.CREATED, type: AuthorizationResponseDto})
     @Post("/login")
     @UsePipes(ValidationPipe)
-    async login(@Body() loginDto: LoginDto): Promise<AuthorizationResponse> {
+    async login(@Body() loginDto: LoginDto): Promise<AuthorizationResponseDto> {
         try {
             return this.authService.login(loginDto)
         } catch (error) {

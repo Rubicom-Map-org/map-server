@@ -5,12 +5,13 @@ import {ChatRequest} from "./enitities/chat-request.entity";
 import {AuthGuard} from "../auth/auth.guard";
 import {UserId} from "../decorators/user-id.decorator";
 import {ApiParam, ApiResponse} from '@nestjs/swagger';
+import { ChatManagerRepository } from './chat-manager-repository.abstract';
 
 @UseGuards(AuthGuard)
 @Controller('chat-manager')
 export class ChatManagerController {
 
-    constructor(private readonly chatManagerService: ChatManagerService) {}
+    constructor(private readonly chatManagerService: ChatManagerService) {};
     
     @ApiParam({ name: "chatId" })
     @ApiResponse({ status: HttpStatus.CREATED, type: Chat })

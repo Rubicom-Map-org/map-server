@@ -1,11 +1,9 @@
 import {
-    Body,
     Controller,
     HttpException,
     HttpStatus,
-    Inject, Patch,
+    Patch,
     Post,
-    Req,
     UploadedFile, UseGuards,
     UseInterceptors
 } from '@nestjs/common';
@@ -25,9 +23,6 @@ export class FilesController {
     @UseInterceptors(FileInterceptor("file", multerConfig))
     async uploadFile(@UserId() userId: string, {file}: { file: any }) {
         try {
-            console.log("FILE: ", file)
-            console.log(file.filename)
-            console.log(file.path)
             return this.filesService.uploadFile(userId, file)
         } catch (error) {
             if (error instanceof HttpException) throw error

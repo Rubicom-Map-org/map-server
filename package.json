@@ -17,10 +17,10 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "npm run build && npx typeorm -d dist/database/data-source.js",
-    "migration:generate": "npm run typeorm migration:generate -- -d dist/database/data-source.js",
-    "migration:run": "npm run typeorm migration:run -- -d dist/database/data-source.js",
-    "migration:revert": "npm run typeorm migration:revert -- -d dist/database/data-source.js"
+    "migration:run": "nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
+    "migration:generate": "nest build && echo 'Build completed' && ts-node -e 'const readline = require(\"readline-sync\"); const migrationName = readline.question(\"Enter migration name: \"); require(\"child_process\").execSync(\"ts-node ./node_modules/typeorm/cli.js migration:generate ./src/database/migrations/\" + migrationName + \" -d ./src/database/data-source.ts\"); console.log(\"Migration generate completed\");'",
+    "migration:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
+    "migration:revert:all": "for i in {1..100}; do yarn migration:revert; done"
   },
   "dependencies": {
     "@nestjs-modules/ioredis": "^2.0.2",
@@ -50,6 +50,8 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "pg": "^8.12.0",
+    "readline-async": "^0.1.0",
+    "readline-sync": "^1.4.10",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
     "swagger-ui-express": "^5.0.0",

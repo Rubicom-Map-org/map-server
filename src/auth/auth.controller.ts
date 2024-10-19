@@ -3,9 +3,10 @@ import {
     Controller,
     Delete,
     HttpException,
-    HttpStatus, Patch,
+    HttpStatus,
+    Patch,
     Post,
-    Req, UseGuards,
+    UseGuards,
     UsePipes,
     ValidationPipe
 } from '@nestjs/common';
@@ -13,21 +14,17 @@ import {RegisterDto} from "./dto/register.dto";
 import {AuthService} from "./auth.service";
 import {LoginDto} from "./dto/login.dto";
 import {User} from "../users/users.entity";
-import {ApiOperation, ApiResponse, ApiUnauthorizedResponse} from "@nestjs/swagger";
-import {Token} from "../tokens/tokens.entity";
+import {ApiOperation, ApiResponse} from "@nestjs/swagger";
 import {ChangePasswordDto} from "./dto/change-password.dto";
 import {UserId} from "../decorators/user-id.decorator";
 import {AuthGuard} from "./auth.guard";
-import {Auth} from "typeorm";
 import {AuthorizationResponseDto} from "./dto/authorization-response.dto";
 import { AuthRepository } from './auth-repository.abstract';
-
 
 @Controller('auth')
 export class AuthController extends AuthRepository {
     
-    constructor(private readonly authService: AuthService)
-    {
+    constructor(private readonly authService: AuthService) {
         super();
     }
     
@@ -40,12 +37,7 @@ export class AuthController extends AuthRepository {
     @Post("/registration")
     @UsePipes(ValidationPipe)
     async registration(@Body() registerDto: RegisterDto): Promise<AuthorizationResponseDto> {
-        try {
-            return this.authService.registration(registerDto)
-        } catch (error) {
-            if (error instanceof HttpException) throw Error
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.authService.registration(registerDto);
     }
     
     @ApiOperation({
@@ -59,12 +51,7 @@ export class AuthController extends AuthRepository {
     @Post("/login")
     @UsePipes(ValidationPipe)
     async login(@Body() loginDto: LoginDto): Promise<AuthorizationResponseDto> {
-        try {
-            return this.authService.login(loginDto)
-        } catch (error) {
-            if (error instanceof HttpException) throw Error
-            throw new HttpException(error.message,HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.authService.login(loginDto);
     }
     
     @ApiOperation({
@@ -75,12 +62,7 @@ export class AuthController extends AuthRepository {
     @UseGuards(AuthGuard)
     @Delete("/delete-account")
     async deleteAccount(@UserId() userId: string): Promise<void> {
-        try {
-            return this.authService.deleteAccount(userId)
-        } catch (error) {
-            if (error instanceof HttpException) throw Error
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.authService.deleteAccount(userId);
     }
     
     @ApiOperation({
@@ -91,11 +73,7 @@ export class AuthController extends AuthRepository {
     @UsePipes(ValidationPipe)
     @Patch("/change-password")
     async changePassword(@Body() changePasswordDto: ChangePasswordDto): Promise<User> {
-        try {
-            return this.authService.changePassword(changePasswordDto)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.authService.changePassword(changePasswordDto);
     }
     
 }

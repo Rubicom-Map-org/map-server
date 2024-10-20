@@ -33,7 +33,6 @@ export class AuthService extends AuthRepository {
         });
 
         const generatedToken = await this.tokensService.generateToken(registeredUser);
-
         generatedToken.user = registeredUser;
         await this.tokensService.saveToken(generatedToken);
 

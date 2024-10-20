@@ -41,6 +41,9 @@ export class User {
     @Column({type: "boolean", default: false})
     isAvatarSet: boolean;
 
+    @Column({ type: "varchar", nullable: true, default: null })
+    confirmationCode: string;
+
     @OneToOne(() => Token, token => token.user, {
         cascade: true
     })

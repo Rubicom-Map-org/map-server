@@ -25,11 +25,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Format code
-        run: npm run format
+      - name: Run project for development
+        run: npm run start:dev
 
-      - name: Run unit tests
-        run: npm run test
+      - name: Run project for production
+        run: npm run start
 
       - name: Run tests with coverage
         run: npm run test:cov

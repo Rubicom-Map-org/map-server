@@ -1,9 +1,8 @@
 import {
     BadRequestException,
-    HttpException,
     Injectable,
     InternalServerErrorException,
-    NotFoundException
+    NotFoundException,
 } from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {User} from "./users.entity";
@@ -41,7 +40,9 @@ export class UsersService extends UserRepository {
             const user = userQueryBuilderResult.raw[0] as User;
             return await this.usersRepository.save(user);
         } catch (error) {
-            if (error.code === "23055")
+            if (error.code === "23505") {
+                throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS);
+            }
             throw new InternalServerErrorException(error.message);
         }
     }

@@ -36,14 +36,12 @@ export class UsersService extends UserRepository {
                     ...createUserDto,
                 })
                 .returning(this.userEntityFieldsToSelect)
-                .execute();
+                .execute()
 
             const user = userQueryBuilderResult.raw[0] as User;
             return await this.usersRepository.save(user);
         } catch (error) {
-            if (error.code === "23505") {
-                throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS);
-            }
+            if (error.code === "23055")
             throw new InternalServerErrorException(error.message);
         }
     }

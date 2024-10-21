@@ -6,10 +6,10 @@ import {
     HttpException,
     HttpStatus,
     Param,
-    Post,
+    Post, Query,
     Req,
     UseGuards,
-    UsePipes, ValidationPipe
+    UsePipes, ValidationPipe,
 } from '@nestjs/common';
 import {SavedPlacesService} from "./saved-places.service";
 import {SavePlaceDto} from "./dto/save-place.dto";
@@ -47,17 +47,12 @@ export class SavedPlacesController {
     
     @Delete()
     async deletePlaceFromList() {
-        try {
-            // return this.savedPlacesService.()
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
     }
 
-    @Get("/")
+    @Get()
     async getSavedPlaceByCoordinates(
         @UserId() userId: string,
-        @Param("coordinates") coordinates: [ number, number ]
+        @Query("coordinates") coordinates: [ number, number ]
     ): Promise<SavedPlace> {
         return this.savedPlacesService.getSavedPlaceByCoordinates(userId, coordinates)
     }

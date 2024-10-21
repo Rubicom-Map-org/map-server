@@ -23,8 +23,7 @@ export class SavedPlacesService {
         private readonly usersService: UsersService
     ) {}
 
-    async savePlace(userId: string, savePlaceDto: SavePlaceDto): Promise<SavedPlace>
-    {
+    async savePlace(userId: string, savePlaceDto: SavePlaceDto): Promise<SavedPlace> {
         try {
             const user = await this.usersService.getUserById(userId);
             
@@ -52,8 +51,7 @@ export class SavedPlacesService {
         }
     }
 
-    async getSavedPlace(userId: string, savedPlaceId: string): Promise<SavedPlace>
-    {
+    async getSavedPlace(userId: string, savedPlaceId: string): Promise<SavedPlace> {
         try {
             const user = await this.usersService.getUserById(userId);
             const savedPlace = await this.savedPlaceRepository
@@ -74,8 +72,7 @@ export class SavedPlacesService {
         }
     }
 
-    async getSavedPlaceByCoordinates(userId: string, coordinates: [number, number]): Promise<SavedPlace>
-    {
+    async getSavedPlaceByCoordinates(userId: string, coordinates: [number, number]): Promise<SavedPlace> {
         try {
             const user = await this.usersService.getUserById(userId);
             if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND);

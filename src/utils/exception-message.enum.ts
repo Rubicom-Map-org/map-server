@@ -12,4 +12,5 @@ export enum ExceptionMessage {
     FILE_NOT_FOUND="File not found",
     FILE_TOO_LARGE="File size too large",
     PASSWORDS_DONT_MATCH="Passwords do not match",
+    TOKEN_NOT_FOUND="Token not found",
 }

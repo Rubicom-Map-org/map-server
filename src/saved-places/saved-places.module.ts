@@ -5,13 +5,14 @@ import {UsersModule} from "../users/users.module";
 import {AuthModule} from "../auth/auth.module";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {SavedPlace} from "./saved-places.entity";
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   providers: [SavedPlacesService],
   controllers: [SavedPlacesController],
   imports: [
       UsersModule,
-      AuthModule,
+      JwtModule,
       TypeOrmModule.forFeature([SavedPlace]),
   ],
   exports: [

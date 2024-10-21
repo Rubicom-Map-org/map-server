@@ -14,7 +14,7 @@ import { JwtModule } from '@nestjs/jwt';
   providers: [ChatManagerService],
   controllers: [ChatManagerController],
   imports: [
-      AuthModule,
+      JwtModule,
       UsersModule,
       TypeOrmModule.forFeature([Chat, ChatRequest]),
       forwardRef(() => OpenAiModule),

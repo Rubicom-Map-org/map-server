@@ -14,16 +14,8 @@ dotenv.config();
     imports: [
         forwardRef(() => UsersModule),
         TokensModule,
-        JwtModule.register({
-            secret: process.env.JWT_SECRET_KEY || "secret",
-            signOptions: {
-                expiresIn: "336h"
-            }
-        })
-    ],
-    exports: [
-        AuthService,
         JwtModule
-    ]
+    ],
+    exports: [AuthService]
 })
 export class AuthModule {}

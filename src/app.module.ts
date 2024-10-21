@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { ConfigModule } from "@nestjs/config";
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import {dataSourceOptions} from "./database/data-source";
@@ -27,11 +27,15 @@ dotenv.config();
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
         TypeOrmModule.forRoot(dataSourceOptions),
-        JwtModule.register({
-            secret: process.env.JWT_SECRET_KEY || "secret",
-            signOptions: {
-                expiresIn: "336h"
-            }
+        JwtModule.registerAsync({
+            imports: [ConfigModule],
+            inject: [ConfigService],
+            useFactory: (configService: ConfigService) => ({
+                secret: configService.get<string>("JWT_SECRET_KEY") || "secret",
+                signOptions: {
+                    expiresIn: "336h"
+                }
+            })
         }),
         ServeStaticModule.forRoot({
             rootPath: path.join(__dirname, "..", "uploads")

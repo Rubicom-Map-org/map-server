@@ -27,18 +27,25 @@ export class UsersService extends UserRepository {
     private readonly userEntityFieldsToSelect: Array<string> = ["id", "username", "email"];
     
     async createUser(createUserDto: RegisterDto): Promise<User> {
-        const userQueryBuilderResult: InsertResult = await this.usersRepository
-            .createQueryBuilder()
-            .insert()
-            .into(User)
-            .values({
-                ...createUserDto,
-            })
-            .returning(this.userEntityFieldsToSelect)
-            .execute()
+        try {
+            const userQueryBuilderResult: InsertResult = await this.usersRepository
+                .createQueryBuilder()
+                .insert()
+                .into(User)
+                .values({
+                    ...createUserDto,
+                })
+                .returning(this.userEntityFieldsToSelect)
+                .execute();
 
-        const user = userQueryBuilderResult.raw[0] as User;
-        return await this.usersRepository.save(user);
+            const user = userQueryBuilderResult.raw[0] as User;
+            return await this.usersRepository.save(user);
+        } catch (error) {
+            if (error.code === "23505") {
+                throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS);
+            }
+            throw new InternalServerErrorException(error.message);
+        }
     }
 
     private async getUserByField(field: string, value: string | number): Promise<User> {

@@ -21,11 +21,6 @@ export class AuthService extends AuthRepository {
     }
 
     async registration(registerDto: RegisterDto): Promise<AuthorizationResponseDto> {
-        const userCheckByEmail = await this.usersService.checkUserExistingByEmail(registerDto.email);
-        if (userCheckByEmail) {
-            throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS);
-        }
-
         const hashedPassword = await bcrypt.hash(registerDto.password, 6);
         const registeredUser = await this.usersService.createUser({
             ...registerDto,

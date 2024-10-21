@@ -19,7 +19,7 @@ export const dataSourceOptions: DataSourceOptions = {
     password: "register",
     database: process.env.PGDATABASE,
     entities: [User, Token, SavedPlace, Chat, ChatRequest, DatabaseFile],
-    synchronize: false,
+    synchronize: true,
     migrations: [migrationPath],
     logging: true
 }

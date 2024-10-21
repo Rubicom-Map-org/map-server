@@ -5,7 +5,7 @@ import {
     JoinColumn,
     OneToMany,
     OneToOne,
-    PrimaryGeneratedColumn, UpdateDateColumn,
+    PrimaryGeneratedColumn, Unique, UpdateDateColumn,
 } from 'typeorm';
 import {Token} from "../tokens/tokens.entity";
 import {ApiProperty} from "@nestjs/swagger";
@@ -15,20 +15,21 @@ import {Chat} from "../chat-manager/enitities/chat.entity";
 import {ChatRequest} from "../chat-manager/enitities/chat-request.entity";
 import {DatabaseFile} from "../files/files.entity";
 
-@Entity()
+@Entity({ name: "user" })
+@Unique(["email"])
 export class User {
 
     @ApiProperty({example: "432er2-4234-423e34-2342e"})
     @PrimaryGeneratedColumn("uuid")
-    id: string
+    id: string;
 
     @ApiProperty({example: "yura"})
-    @Column({type: "varchar", nullable: false, unique: true})
-    username: string
+    @Column({type: "varchar", nullable: false})
+    username: string;
 
     @ApiProperty({example: "yura.ilchyshyn06@gmail.com"})
-    @Column({type: "varchar", nullable: false})
-    email: string
+    @Column({type: "varchar", nullable: false, unique: true})
+    email: string;
 
     @ApiProperty({example: "favok3kockwrk0a3rpka;kr;oc3w;klklkewlkflkasdfa4f"})
     @Column({type: "varchar", nullable: false})

@@ -35,9 +35,6 @@ export class FilesService {
             } as User);
             return await this.databaseFileRepository.save(newFile);
         } catch (error) {
-            if (error instanceof HttpException) {
-                throw error;
-            }
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -52,9 +49,6 @@ export class FilesService {
             fs.writeFileSync(path.join(filepath, filename), file.buffer);
             return filename;
         } catch (error) {
-            if (error instanceof HttpException) {
-                throw error;
-            }
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

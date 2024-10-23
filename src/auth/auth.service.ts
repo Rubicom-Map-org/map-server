@@ -21,11 +21,6 @@ export class AuthService extends AuthRepository {
     }
 
     async registration(registerDto: RegisterDto): Promise<AuthorizationResponseDto> {
-        const userCheckByEmail = await this.usersService.checkUserExistingByEmail(registerDto.email);
-        if (userCheckByEmail) {
-            throw new BadRequestException(ExceptionMessage.USER_ALREADY_EXISTS);
-        }
-
         const hashedPassword = await bcrypt.hash(registerDto.password, 6);
         const registeredUser = await this.usersService.createUser({
             ...registerDto,
@@ -33,22 +28,21 @@ export class AuthService extends AuthRepository {
         });
 
         const generatedToken = await this.tokensService.generateToken(registeredUser);
-
         generatedToken.user = registeredUser;
         await this.tokensService.saveToken(generatedToken);
 
-        return { token: generatedToken.token, user: registeredUser }
+        return { token: generatedToken.token, user: registeredUser };
     }
 
     private async validateUser(loginDto: LoginDto): Promise<User> {
-        const user = await this.usersService.getUserByEmail(loginDto.email)
+        const user = await this.usersService.getUserByEmail(loginDto.email);
         if (!user) {
-            throw new BadRequestException(ExceptionMessage.USER_NOT_FOUND)
+            throw new BadRequestException(ExceptionMessage.USER_NOT_FOUND);
         }
             
-        const comparePassword = await bcrypt.compare(loginDto.password, user.password)
+        const comparePassword = await bcrypt.compare(loginDto.password, user.password);
         if (user && comparePassword) {
-            return user
+            return user;
         }
 
         throw new BadRequestException(ExceptionMessage.PASSWORDS_DONT_MATCH);

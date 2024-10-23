@@ -7,6 +7,7 @@ import {UsersModule} from "../users/users.module";
 import {AuthModule} from "../auth/auth.module";
 import process from "node:process";
 import { JwtModule } from '@nestjs/jwt';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
     providers: [FilesService],
@@ -14,7 +15,8 @@ import { JwtModule } from '@nestjs/jwt';
     imports: [
         TypeOrmModule.forFeature([DatabaseFile]),
         UsersModule,
-        AuthModule,
+        JwtModule,
+        ConfigModule
     ],
     exports: [
         TypeOrmModule,

@@ -35,34 +35,24 @@ export class OpenAiController {
     async getChatOpenai(
         @UserId() userId: string,
         @Param("chatId") chatId: string,
-        @Body() chatRequest: ChatRequest): Promise<OpenAiPromptResponseDto>
-    {
-        try {
-            let isChatNewlyCreated: boolean;
-            const chatRequests = await this.chatManagerService.getChatRequests(userId, chatId)
-            if (chatRequests.length > 0) isChatNewlyCreated = true
-            
-            const getMessages = (await this.openAiService.getMessagesData(
-                userId,
-                chatId,
-                chatRequest,
-                isChatNewlyCreated
-            )) as OpenAI.ChatCompletion;
-            console.log("GET MESSAGES: ", getMessages)
-            
-            const requestAndResponse = {
-                request: chatRequest.messages[0].content,
-                response: getMessages.choices[0].message.content
-            }
-            console.log(requestAndResponse)
-            
-            return {
-                creatingChatRequest: await this.chatManagerService.createChatRequest(userId, chatId, requestAndResponse),
-                openAIResponse: await this.openAiService.getChatOpenaiResponse(getMessages)
-            }
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+        @Body() chatRequest: ChatRequest
+    ): Promise<OpenAiPromptResponseDto> {
+        let isChatNewlyCreated: boolean;
+        const chatRequests = await this.chatManagerService.getChatRequests(userId, chatId);
+        if (chatRequests.length > 0) isChatNewlyCreated = true;
+
+        const getMessages = (await this.openAiService.getMessagesData(
+            userId,
+            chatId,
+            chatRequest,
+            isChatNewlyCreated
+        )) as OpenAI.ChatCompletion;
+
+        const requestAndResponse = { request: chatRequest.messages[0].content, response: getMessages.choices[0].message.content };
+
+        return {
+            creatingChatRequest: await this.chatManagerService.createChatRequest(userId, chatId, requestAndResponse),
+            openAIResponse: await this.openAiService.getChatOpenaiResponse(getMessages)
         }
     }
-
 }

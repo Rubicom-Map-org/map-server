@@ -6,10 +6,10 @@ import {
     HttpException,
     HttpStatus,
     Param,
-    Post,
+    Post, Query,
     Req,
     UseGuards,
-    UsePipes, ValidationPipe
+    UsePipes, ValidationPipe,
 } from '@nestjs/common';
 import {SavedPlacesService} from "./saved-places.service";
 import {SavePlaceDto} from "./dto/save-place.dto";
@@ -25,55 +25,35 @@ export class SavedPlacesController {
 
     @UsePipes(ValidationPipe)
     @Post("/save-place")
-    async savePlace(@UserId() userId: string,
-                    @Body() savedPlaceDto: SavePlaceDto): Promise<SavedPlace>
-    {
-        try {
-            return this.savedPlacesService.savePlace(userId, savedPlaceDto);
-        } catch (error) {
-            if (error instanceof HttpException) throw error
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+    async savePlace(
+        @UserId() userId: string,
+        @Body() savedPlaceDto: SavePlaceDto
+    ): Promise<SavedPlace> {
+        return this.savedPlacesService.savePlace(userId, savedPlaceDto);
     }
     
     @Get("/:savedPlaceId")
-    async getSavedPlace(@UserId() userId: string,
-                        @Param("savedPlaceId") savedPlaceId: string): Promise<SavedPlace> {
-        try {
-            return this.savedPlacesService.getSavedPlace(userId, savedPlaceId);
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+    async getSavedPlace(
+        @UserId() userId: string,
+        @Param("savedPlaceId") savedPlaceId: string
+    ): Promise<SavedPlace> {
+        return this.savedPlacesService.getSavedPlace(userId, savedPlaceId);
     }
     
-    @Get("/")
+    @Get()
     async getSavedPlaces(@UserId() userId: string): Promise<SavedPlace[]> {
-        try {
-            return this.savedPlacesService.getSavedPlaces(userId)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.savedPlacesService.getSavedPlaces(userId)
     }
     
-    @Delete("")
+    @Delete()
     async deletePlaceFromList() {
-        try {
-            // return this.savedPlacesService.()
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
     }
 
-    @Get("/")
+    @Get()
     async getSavedPlaceByCoordinates(
         @UserId() userId: string,
-        @Param("coordinates") coordinates: [ number, number ]
+        @Query("coordinates") coordinates: [ number, number ]
     ): Promise<SavedPlace> {
-        try {
-            return this.savedPlacesService.getSavedPlaceByCoordinates(userId, coordinates)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.savedPlacesService.getSavedPlaceByCoordinates(userId, coordinates)
     }
-
 }

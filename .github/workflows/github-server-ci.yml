@@ -20,16 +20,22 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
+
+      - name: Print environment variables
+        run: |
+            echo DATABASE_PUBLIC_URL=$DATABASE_PUBLIC_URL
+
+      - name: Test DB connection
+        run: |
+          sudo apt-get update && sudo apt-get install -y netcat
+          nc -zv postgres.railway.internal 5432    
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
-      - name: Format code
-        run: npm run format
-
-      - name: Run unit tests
-        run: npm run test
+      - name: Run project for production
+        run: yarn start
 
       - name: Run tests with coverage
-        run: npm run test:cov
+        run: yarn test:cov

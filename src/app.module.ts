@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { ConfigModule } from "@nestjs/config";
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import {dataSourceOptions} from "./database/data-source";
@@ -17,21 +17,24 @@ import {MulterModule} from "@nestjs/platform-express";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from "node:path";
 import {LastVisitedPlacesModule} from "./last-visited-places/last-visited-places.module";
+import { jwtConstants } from './utils/constants';
 dotenv.config();
 
 @Module({
     controllers: [],
-    providers: [],
+    providers: []   ,
     imports: [
         ConfigModule.forRoot({
+            isGlobal: true,
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
         TypeOrmModule.forRoot(dataSourceOptions),
+        ConfigModule.forRoot(),
         JwtModule.register({
-            secret: process.env.JWT_SECRET_KEY || "secret",
-            signOptions: {
-                expiresIn: "336h"
-            }
+            secret: jwtConstants.secretKey,
+            secretOrPrivateKey: jwtConstants.secretKey,
+            signOptions: { expiresIn: jwtConstants.signOptions.expiresIn },
+            global: true
         }),
         ServeStaticModule.forRoot({
             rootPath: path.join(__dirname, "..", "uploads")

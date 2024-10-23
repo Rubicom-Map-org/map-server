@@ -8,19 +8,29 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+
+    "env-check": "node -e 'require(\"dotenv\").config({ path: `.${process.env.NODE_ENV}.env` }); console.log(process.env);'",
+
     "start:dev": "cross-env NODE_ENV=development nest start --watch",
     "start": "cross-env NODE_ENV=production nest start",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
+
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "migration:run": "nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
-    "migration:generate": "nest build && echo 'Build completed' && ts-node -e 'const readline = require(\"readline-sync\"); const migrationName = readline.question(\"Enter migration name: \"); require(\"child_process\").execSync(\"ts-node ./node_modules/typeorm/cli.js migration:generate ./src/database/migrations/\" + migrationName + \" -d ./src/database/data-source.ts\"); console.log(\"Migration generate completed\");'",
-    "migration:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
-    "migration:revert:all": "for i in {1..100}; do yarn migration:revert; done"
+
+    "migration:run:dev": "cross-env NODE_ENV=development nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
+    "migration:generate:dev": "cross-env NODE=development nest build && echo 'Build completed' && ts-node -e 'const readline = require(\"readline-sync\"); const migrationName = readline.question(\"Enter migration name: \"); require(\"child_process\").execSync(\"ts-node ./node_modules/typeorm/cli.js migration:generate ./src/database/migrations/\" + migrationName + \" -d ./src/database/data-source.ts\"); console.log(\"Migration generate completed\");'",
+    "migration:revert:dev": "cross-env NODE=development ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
+    "migration:revert:all:dev": "cross-env NODE_ENV=development bash -c 'for i in {1..100}; do yarn migration:revert:dev; done'",
+
+    "migration:run:prod": "NODE=production nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
+    "migration:generate:prod": "NODE=production nest build && echo 'Build completed' && ts-node -e 'const readline = require(\"readline-sync\"); const migrationName = readline.question(\"Enter migration name: \"); require(\"child_process\").execSync(\"ts-node ./node_modules/typeorm/cli.js migration:generate ./src/database/migrations/\" + migrationName + \" -d ./src/database/data-source.ts\"); console.log(\"Migration generate completed\");'",
+    "migration:revert:prod": "NODE=production ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
+    "migration:revert:all:prod": "cross-env NODE_ENV=production bash -c 'for i in {1..100}; do yarn migration:revert:dev; done'"
   },
   "dependencies": {
     "@nestjs-modules/ioredis": "^2.0.2",
@@ -81,7 +91,7 @@
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
   },

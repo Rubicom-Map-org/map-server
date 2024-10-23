@@ -16,15 +16,11 @@ export class AuthGuard implements CanActivate {
 
         try {
             const tokenParams = request.headers.authorization;
-
             if (!tokenParams) {
                 throw new UnauthorizedException("Authorization header is missing");
             }
 
-            const bearer = tokenParams.split(" ")[0];
-            const token = tokenParams.split(" ")[1];
-            console.log(token)
-
+            const [bearer, token] = tokenParams.split(" ");
             if (!token || bearer !== "Bearer") {
                 throw new UnauthorizedException("Invalid token format " + ExceptionMessage.UNAUTHORIZED);
             }
@@ -32,10 +28,8 @@ export class AuthGuard implements CanActivate {
             const user = this.jwtService.verify(token, {
                 secret: process.env.JWT_SECRET_KEY || "secret"
             });
-            console.log(user)
 
-            request.user = user
-            
+            request.user = user;
             return true;
         } catch (error) {
             throw new UnauthorizedException(ExceptionMessage.UNAUTHORIZED);

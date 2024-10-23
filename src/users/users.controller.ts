@@ -8,7 +8,6 @@ import { UserRepository } from './user-repository.abstract';
 import { GetUserProfileDto } from './dto/get-user-profile.dto';
 import { PaginationDto } from '../common/dto/pagination.dto';
 
-
 @UseGuards(AuthGuard)
 @Controller('users')
 export class UsersController {
@@ -22,11 +21,7 @@ export class UsersController {
     @ApiResponse({type: [User], status: 200})
     @Get("/get-users")
     async getUsers(@Query() paginationDto: PaginationDto): Promise<User[]> {
-        try {
-            return this.usersService.getUsers(paginationDto);
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.usersService.getUsers(paginationDto);
     }
 
     @ApiOperation({
@@ -34,14 +29,9 @@ export class UsersController {
         description: "This function returns USER entity "
     })
     @ApiResponse({type: User, status: 200})
-    @Get("/get-user")
-    async getUserById(@UserId() userId:string): Promise<User>
-    {
-        try {
-            return this.usersService.getUserByUsername(userId);
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+    @Get()
+    async getUserById(@UserId() userId:string): Promise<User> {
+        return this.usersService.getUserByUsername(userId);
     }
     
     @ApiOperation({
@@ -50,14 +40,9 @@ export class UsersController {
             "you have to take this param in your API url"
     })
     @ApiResponse({type: User, status: 200})
-    @Get("/get-user-by-username")
-    async getUserByUsername(@Query("username") username: string): Promise<User>
-    {
-        try {
-            return this.usersService.getUserByUsername(username)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+    @Get("/by-username")
+    async getUserByUsername(@Query("username") username: string): Promise<User> {
+        return this.usersService.getUserByUsername(username)
     }
     
     @ApiOperation({
@@ -66,14 +51,9 @@ export class UsersController {
             "you have to take this param in your API url"
     })
     @ApiResponse({type: User, status: 200})
-    @Get("/get-user-by-email")
-    async getUserByEmail(@Query("email") email: string): Promise<User>
-    {
-        try {
-            return this.usersService.getUserByEmail(email)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+    @Get("/by-email")
+    async getUserByEmail(@Query("email") email: string): Promise<User> {
+        return this.usersService.getUserByEmail(email)
     }
     
     @ApiOperation({
@@ -83,22 +63,13 @@ export class UsersController {
     })
     @ApiResponse({type: User, status: 200})
     @Get("/get-user-profile")
-    async getUserProfile(@UserId() userId: string): Promise<GetUserProfileDto>
-    {
-        try {
-            return this.usersService.getUserProfile(userId)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+    async getUserProfile(@UserId() userId: string): Promise<GetUserProfileDto> {
+        return this.usersService.getUserProfile(userId)
     }
 
     @Delete("/delete-account")
     async deleteUserAccount(@UserId() userId: string): Promise<User> {
-        try {
-            return this.usersService.deleteUserAccount(userId)
-        } catch (error) {
-            throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+        return this.usersService.deleteUserAccount(userId)
     }
 
 }

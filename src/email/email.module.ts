@@ -7,29 +7,35 @@ import * as process from "node:process";
 import {UsersModule} from "../users/users.module";
 import {JwtModule} from "@nestjs/jwt";
 import {AuthModule} from "../auth/auth.module";
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   providers: [EmailService],
   imports: [
-      MailerModule.forRoot({
-        transport: {
-          host: process.env.MAIL_HOST,
-          port: Number(process.env.MAIL_PORT),
-          secure: false,
-          auth: {
-            user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASSWORD
-          },
-        },
-        defaults: {
-          from: '"No Reply" <noreply@example.com>',
-        },
-        options: {
-          strict: Boolean(process.env.MAIL_OPTIONS_STRICT)
-        }
+      ConfigModule,
+      MailerModule.forRootAsync({
+          imports: [ConfigModule],
+          inject: [ConfigService],
+          useFactory: (configService: ConfigService) => ({
+              transport: {
+                  host: configService.get<string>("MAIL_HOST"),
+                  port: configService.get<number>("MAIL_PORT"),
+                  secure: false,
+                  auth: {
+                     user: configService.get<string>("MAIL_USER"),
+                      pass: configService.get<string>("MAIL_PASSWORD")
+                  },
+              },
+              defaults: {
+                  from: '"No Reply" <noreply@example.com>',
+              },
+              options: {
+                  strict: Boolean(configService.get<string>("MAIL_OPTIONS_STRICT"))
+              }
+          })
       }),
       UsersModule,
-      AuthModule
+      JwtModule
   ],
   exports: [EmailService],
   controllers: [EmailController]

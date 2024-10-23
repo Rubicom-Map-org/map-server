@@ -23,8 +23,10 @@ jobs:
         run: yarn install
 
       - name: Print environment variables
+        env:
+          DATABASE_PUBLIC_URL: ${{ secrets.DATABASE_URL }}
         run: |
-            echo DATABASE_PUBLIC_URL=$DATABASE_PUBLIC_URL
+          echo DATABASE_URL=$DATABASE_URL
 
       - name: Build project
         run: yarn build

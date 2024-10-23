@@ -24,12 +24,7 @@ jobs:
 
       - name: Print environment variables
         run: |
-            echo ENTITY_MANAGER=$ENTITY_MANAGER
-            echo PGHOST=$PGHOST
-            echo PGUSER=$PGUSER
-            echo PGDATABASE=$PGDATABASE
-            echo PGPASSWORD=$PGPASSWORD
-            echo PGPORT=$PGPORT
+            echo DATABASE_PUBLIC_URL=$DATABASE_PUBLIC_URL
 
       - name: Build project
         run: yarn build

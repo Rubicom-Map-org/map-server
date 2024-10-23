@@ -9,9 +9,16 @@ import {DatabaseFile} from "../files/files.entity";
 import { join } from 'path';
 import { Client } from "pg";
 
+console.log(process.env.PGHOST);
+
 export const dataSourceOptions: DataSourceOptions = {
     type: 'postgres',
     url: process.env.DATABASE_URL,
+    // host: process.env.PGHOST,
+    // port: +process.env.PGPORT,
+    // username: process.env.PGUSER,
+    // password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE,
     entities: [User, Token, SavedPlace, Chat, ChatRequest, DatabaseFile],
     synchronize: false,
     migrations: [join(__dirname, 'migrations/*.{js,ts}')],

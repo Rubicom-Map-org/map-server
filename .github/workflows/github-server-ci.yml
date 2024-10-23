@@ -22,11 +22,16 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Print environment variables
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - name: Load .production.env
         run: |
-          echo DATABASE_URL=$DATABASE_URL
+            echo "Loading environment variables from .production.env"
+            if [ -f .production.env ]; then
+            export $(cat .production.env | xargs)
+            fi
+
+      - name: Print environment variables
+        run: |
+            echo DATABASE_URL=$DATABASE_URL
 
       - name: Build project
         run: yarn build

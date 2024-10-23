@@ -30,7 +30,7 @@
     "migration:run:prod": "NODE=production nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
     "migration:generate:prod": "NODE=production nest build && echo 'Build completed' && ts-node -e 'const readline = require(\"readline-sync\"); const migrationName = readline.question(\"Enter migration name: \"); require(\"child_process\").execSync(\"ts-node ./node_modules/typeorm/cli.js migration:generate ./src/database/migrations/\" + migrationName + \" -d ./src/database/data-source.ts\"); console.log(\"Migration generate completed\");'",
     "migration:revert:prod": "NODE=production ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
-    "migration:revert:all:prod": "NODE=production for i in {1..100}; do yarn migration:revert; done"
+    "migration:revert:all:prod": "cross-env NODE_ENV=production bash -c 'for i in {1..100}; do yarn migration:revert:dev; done'"
   },
   "dependencies": {
     "@nestjs-modules/ioredis": "^2.0.2",

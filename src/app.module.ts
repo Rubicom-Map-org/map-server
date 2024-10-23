@@ -17,6 +17,7 @@ import {MulterModule} from "@nestjs/platform-express";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from "node:path";
 import {LastVisitedPlacesModule} from "./last-visited-places/last-visited-places.module";
+import { jwtConstants } from './utils/constants';
 dotenv.config();
 
 @Module({
@@ -29,13 +30,11 @@ dotenv.config();
         }),
         TypeOrmModule.forRoot(dataSourceOptions),
         ConfigModule.forRoot(),
-        JwtModule.registerAsync({
-            imports: [ConfigModule],
-            inject: [ConfigService],
-            useFactory: (configService: ConfigService) => ({
-                secret: configService.get<string>('JWT_SECRET_KEY') || 'secret',
-                signOptions: { expiresIn: '336h' },
-            }),
+        JwtModule.register({
+            secret: jwtConstants.secretKey,
+            secretOrPrivateKey: jwtConstants.secretKey,
+            signOptions: { expiresIn: jwtConstants.signOptions.expiresIn },
+            global: true
         }),
         ServeStaticModule.forRoot({
             rootPath: path.join(__dirname, "..", "uploads")

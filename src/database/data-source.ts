@@ -10,11 +10,7 @@ import { join } from 'path';
 
 export const dataSourceOptions: DataSourceOptions = {
     type: 'postgres',
-    host: process.env.PGHOST,
-    port: Number(process.env.PGPORT),
-    username: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    database: process.env.PGDATABASE,
+    url: process.env.DATABASE_PUBLIC_URL,
     entities: [User, Token, SavedPlace, Chat, ChatRequest, DatabaseFile],
     synchronize: false,
     migrations: [join(__dirname, 'migrations/*.{js,ts}')],

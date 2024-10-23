@@ -74,7 +74,6 @@ export class UsersService extends UserRepository {
     async getUsers(paginationDto: PaginationDto): Promise<User[]> {
         const users = await this.usersRepository
             .createQueryBuilder()
-            .orderBy("createdAt")
             .skip(paginationDto.skip)
             .take(paginationDto.take)
             .getMany();

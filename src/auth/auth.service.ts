@@ -31,7 +31,7 @@ export class AuthService extends AuthRepository {
         generatedToken.user = registeredUser;
         await this.tokensService.saveToken(generatedToken);
 
-        return { token: generatedToken.token, user: registeredUser }
+        return { token: generatedToken.token, user: registeredUser };
     }
 
     private async validateUser(loginDto: LoginDto): Promise<User> {

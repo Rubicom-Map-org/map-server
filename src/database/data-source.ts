@@ -7,17 +7,13 @@ import {Chat} from "../chat-manager/enitities/chat.entity";
 import {ChatRequest} from "../chat-manager/enitities/chat-request.entity";
 import {DatabaseFile} from "../files/files.entity";
 import { join } from 'path';
-import { Client } from "pg";
-
-console.log(process.env.PGHOST);
 
 export const dataSourceOptions: DataSourceOptions = {
     type: 'postgres',
-    url: process.env.DATABASE_URL,
-    // host: process.env.PGHOST,
-    // port: +process.env.PGPORT,
-    // username: process.env.PGUSER,
-    // password: process.env.PGPASSWORD,
+    host: process.env.PGHOST,
+    port: Number(process.env.PGPORT),
+    username: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
     database: process.env.PGDATABASE,
     entities: [User, Token, SavedPlace, Chat, ChatRequest, DatabaseFile],
     synchronize: false,
@@ -27,18 +23,6 @@ export const dataSourceOptions: DataSourceOptions = {
         rejectUnauthorized: false,
     }
 }
-
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false,
-    },
-});
-
-client.connect()
-    .then(() => console.log('Connected successfully'))
-    .catch(e => console.error('Connection error', e.stack))
-    .finally(() => client.end());
 
 const dataSource = new DataSource(dataSourceOptions);
 export default dataSource;

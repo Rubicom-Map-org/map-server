@@ -22,11 +22,20 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Print environment variables
+        run: |
+            echo ENTITY_MANAGER=$ENTITY_MANAGER
+            echo PGHOST=$PGHOST
+            echo PGUSER=$PGUSER
+            echo PGDATABASE=$PGDATABASE
+            echo PGPASSWORD=$PGPASSWORD
+            echo PGPORT=$PGPORT
+
       - name: Build project
         run: yarn build
 
       - name: Run project for production
-        run: yarn start:dev
+        run: yarn start
 
       - name: Run tests with coverage
         run: yarn test:cov

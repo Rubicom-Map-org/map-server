@@ -35,7 +35,7 @@ export class UsersService extends UserRepository {
                     ...createUserDto,
                 })
                 .returning(this.userEntityFieldsToSelect)
-                .execute()
+                .execute();
 
             const user = userQueryBuilderResult.raw[0] as User;
             return await this.usersRepository.save(user);

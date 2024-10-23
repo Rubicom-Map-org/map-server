@@ -8,8 +8,7 @@ import { UserRepository } from './user-repository.abstract';
 import { GetUserProfileDto } from './dto/get-user-profile.dto';
 import { PaginationDto } from '../common/dto/pagination.dto';
 
-
-// @UseGuards(AuthGuard)
+@UseGuards(AuthGuard)
 @Controller('users')
 export class UsersController {
     

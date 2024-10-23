@@ -24,14 +24,20 @@ jobs:
 
       - name: Load .production.env
         run: |
-            echo "Loading environment variables from .production.env"
-            if [ -f .production.env ]; then
+          echo "Loading environment variables from .production.env"
+          if [ -f .production.env ]; then
             export $(cat .production.env | xargs)
-            fi
+          fi
 
       - name: Print environment variables
         run: |
-            echo DATABASE_URL=$DATABASE_URL
+          echo DATABASE_URL=$DATABASE_URL
+
+      - name: Debug connection
+        run: |
+          echo "Checking connection details:"
+          echo "DATABASE_URL=$DATABASE_URL"
+          nc -zv autorack.proxy.rlwy.net 53629
 
       - name: Build project
         run: yarn build

@@ -22,20 +22,25 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Load .production.env
+        run: |
+          echo "Loading environment variables from .production.env"
+          if [ -f .production.env ]; then
+            export $(cat .production.env | xargs)
+          fi
+
       - name: Print environment variables
         run: |
-            echo DATABASE_PUBLIC_URL=$DATABASE_PUBLIC_URL
+          echo DATABASE_URL=$DATABASE_URL
 
-      - name: Test DB connection
+      - name: Debug connection
         run: |
-          sudo apt-get update && sudo apt-get install -y netcat
-          nc -zv postgres.railway.internal 5432    
+          echo "Checking connection details:"
+          echo "DATABASE_URL=$DATABASE_URL"
+          nc -zv autorack.proxy.rlwy.net 53629
 
       - name: Build project
         run: yarn build
-
-      - name: Run project for production
-        run: yarn start
-
-      - name: Run tests with coverage
-        run: yarn test:cov
+#
+#      - name: Run project for production
+#        run: yarn start

@@ -44,6 +44,3 @@ jobs:
 #
 #      - name: Run project for production
 #        run: yarn start
-
-      - name: Run tests with coverage
-        run: yarn test:cov

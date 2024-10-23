@@ -15,23 +15,21 @@ export class TokensService {
         private readonly jwtService: JwtService
     ) {}
 
-    async generateToken(userData?: User) {
+    async generateToken(userData?: User): Promise<Token> {
         const payload = {
             id: userData.id,
             username: userData.username,
             email: userData.email,
-            password: userData.password
         }
 
         const tokenValue = this.jwtService.sign(payload);
+        console.log("TOKEN VALUE: ", tokenValue);
         const token = this.tokenRepository.create({token: tokenValue});
         return await this.tokenRepository.save(token);
     }
 
     async updateToken(userData?: User): Promise<Token | null> {
-        const token = await this.tokenRepository.findOne({
-            where: {user: userData}
-        });
+        const token = await this.tokenRepository.findOne({ where: { user: userData } });
 
         if (!token) {
             throw new NotFoundException(ExceptionMessage.TOKEN_NOT_FOUND);

@@ -35,14 +35,14 @@ export class AuthService extends AuthRepository {
     }
 
     private async validateUser(loginDto: LoginDto): Promise<User> {
-        const user = await this.usersService.getUserByEmail(loginDto.email)
+        const user = await this.usersService.getUserByEmail(loginDto.email);
         if (!user) {
-            throw new BadRequestException(ExceptionMessage.USER_NOT_FOUND)
+            throw new BadRequestException(ExceptionMessage.USER_NOT_FOUND);
         }
             
-        const comparePassword = await bcrypt.compare(loginDto.password, user.password)
+        const comparePassword = await bcrypt.compare(loginDto.password, user.password);
         if (user && comparePassword) {
-            return user
+            return user;
         }
 
         throw new BadRequestException(ExceptionMessage.PASSWORDS_DONT_MATCH);

@@ -21,21 +21,21 @@ dotenv.config();
 
 @Module({
     controllers: [],
-    providers: [],
+    providers: []   ,
     imports: [
         ConfigModule.forRoot({
+            isGlobal: true,
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
         TypeOrmModule.forRoot(dataSourceOptions),
+        ConfigModule.forRoot(),
         JwtModule.registerAsync({
             imports: [ConfigModule],
             inject: [ConfigService],
             useFactory: (configService: ConfigService) => ({
-                secret: configService.get<string>("JWT_SECRET_KEY") || "secret",
-                signOptions: {
-                    expiresIn: "336h"
-                }
-            })
+                secret: configService.get<string>('JWT_SECRET_KEY') || 'secret',
+                signOptions: { expiresIn: '336h' },
+            }),
         }),
         ServeStaticModule.forRoot({
             rootPath: path.join(__dirname, "..", "uploads")

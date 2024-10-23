@@ -26,6 +26,11 @@ jobs:
         run: |
             echo DATABASE_PUBLIC_URL=$DATABASE_PUBLIC_URL
 
+      - name: Test DB connection
+        run: |
+          sudo apt-get update && sudo apt-get install -y netcat
+          nc -zv postgres.railway.internal 5432    
+
       - name: Build project
         run: yarn build
 

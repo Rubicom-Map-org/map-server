@@ -6,6 +6,8 @@ import { join } from "path";
 import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
+    await new Promise(resolve => setTimeout(resolve, 10000));
+
     const configService = new ConfigService();
     const PORT = configService.get<string>("PORT") || 9000;
     const app = await NestFactory.create<NestExpressApplication>(AppModule);

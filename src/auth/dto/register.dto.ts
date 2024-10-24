@@ -1,12 +1,11 @@
-import {IsEmail, IsNotEmpty, Length} from "class-validator";
+import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
 import {ApiProperty} from "@nestjs/swagger";
 
 
 export class RegisterDto {
-
     @ApiProperty({example: "yura"})
     @IsNotEmpty({message: "username can not be empty"})
-    readonly username: string
+    readonly username: string;
 
     @ApiProperty({example: "yura.ilchyshyn06@gmail.com"})
     @IsEmail()
@@ -19,5 +18,4 @@ export class RegisterDto {
     })
     @Length(6, 100)
     readonly password: string;
-
 }

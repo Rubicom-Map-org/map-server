@@ -21,16 +21,12 @@ export class TokensService {
             secret: jwtConstants.secretKey,
             expiresIn: jwtConstants.signOptions.expiresIn
         });
-
     }
 
     async generateToken(userData?: User): Promise<Token> {
         try {
-            const payload = {
-                id: userData.id,
-                username: userData.username,
-                email: userData.email,
-            }
+            const { id, username, email } = userData;
+            const payload = { id, username, email };
 
             const tokenValue = this.assignToken(payload);
 
@@ -51,7 +47,6 @@ export class TokensService {
             
         const payload = { id, username, email };
         token.token = this.assignToken(payload);
-
         return this.saveToken(token);
     }
 

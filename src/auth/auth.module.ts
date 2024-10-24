@@ -5,6 +5,7 @@ import {UsersModule} from "../users/users.module";
 import {JwtModule} from "@nestjs/jwt";
 import {TokensModule} from "../tokens/tokens.module";
 import * as dotenv from "dotenv";
+import { EmailModule } from '../email/email.module';
 dotenv.config();
 
 @Module({
@@ -14,6 +15,7 @@ dotenv.config();
         forwardRef(() => UsersModule),
         TokensModule,
         JwtModule,
+        EmailModule
     ],
     exports: [AuthService]
 })

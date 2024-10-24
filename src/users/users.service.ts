@@ -12,6 +12,7 @@ import {GetUserProfileDto} from "./dto/get-user-profile.dto";
 import {ExceptionMessage} from "../utils/exception-message.enum";
 import { UserRepository } from './user-repository.abstract';
 import { PaginationDto } from '../common/dto/pagination.dto';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UsersService extends UserRepository {
@@ -25,7 +26,7 @@ export class UsersService extends UserRepository {
     
     private readonly userEntityFieldsToSelect: Array<string> = ["id", "username", "email"];
     
-    async createUser(createUserDto: RegisterDto): Promise<User> {
+    async createUser(createUserDto: CreateUserDto): Promise<User> {
         try {
             const userQueryBuilderResult: InsertResult = await this.usersRepository
                 .createQueryBuilder()

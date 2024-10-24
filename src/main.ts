@@ -6,7 +6,7 @@ import { join } from "path";
 import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
-    await new Promise(resolve => setTimeout(resolve, 10000));
+    await new Promise(resolve => setTimeout(resolve, 4000));
 
     const configService = new ConfigService();
     const PORT = configService.get<string>("PORT") || 9000;

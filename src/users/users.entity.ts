@@ -39,11 +39,17 @@ export class User {
     @Column({type: "varchar", nullable: true})
     avatarImageUrl: string;
 
+    @ApiProperty()
     @Column({type: "boolean", default: false})
     isAvatarSet: boolean;
 
+    @ApiProperty()
     @Column({ type: "varchar", nullable: true, default: null })
     confirmationCode: string;
+
+    @ApiProperty()
+    @Column({ type: "boolean", default: false })
+    isAccountVerified: boolean;
 
     @OneToOne(() => Token, token => token.user, {
         cascade: true

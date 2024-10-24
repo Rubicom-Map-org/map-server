@@ -29,19 +29,17 @@ export class EmailService extends EmailRepository {
         }
     }
     
-    async sendVerificationCodeByEmail(email: string): Promise<any> {
+    async sendVerificationCodeByEmail(email: string): Promise<void> {
         try {
-            const user = await this.userService.getUserByEmail(email)
-            if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
+            const user = await this.userService.getUserByEmail(email);
+            if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND);
 
             const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
-            const sendingResult = await this.mailerService.sendMail({
+            await this.mailerService.sendMail({
                 from: this.configService.get<string>("MAIL_SENDER"),
                 to: email,
                 subject: `Your verification code is: ${verificationCode}`
             })
-
-            return sendingResult;
         } catch (error) {
             throw new InternalServerErrorException(error.message);
         }

@@ -16,15 +16,17 @@ import {SavePlaceDto} from "./dto/save-place.dto";
 import {SavedPlace} from "./saved-places.entity";
 import {AuthGuard} from "../auth/auth.guard";
 import {UserId} from "../decorators/user-id.decorator";
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 @UseGuards(AuthGuard)
+@ApiBearerAuth()
 @Controller('saved-places')
 export class SavedPlacesController {
 
     constructor(private readonly savedPlacesService: SavedPlacesService) {}
 
     @UsePipes(ValidationPipe)
-    @Post("/save-place")
+    @Post("save-place")
     async savePlace(
         @UserId() userId: string,
         @Body() savedPlaceDto: SavePlaceDto
@@ -32,7 +34,7 @@ export class SavedPlacesController {
         return this.savedPlacesService.savePlace(userId, savedPlaceDto);
     }
     
-    @Get("/:savedPlaceId")
+    @Get(":savedPlaceId")
     async getSavedPlace(
         @UserId() userId: string,
         @Param("savedPlaceId") savedPlaceId: string

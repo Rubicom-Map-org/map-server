@@ -18,6 +18,7 @@ import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from "node:path";
 import {LastVisitedPlacesModule} from "./last-visited-places/last-visited-places.module";
 import { jwtConstants } from './utils/constants';
+import { FirebaseModule } from './firebase/firebase.module';
 dotenv.config();
 
 @Module({
@@ -28,6 +29,7 @@ dotenv.config();
             isGlobal: true,
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
+        FirebaseModule,
         TypeOrmModule.forRoot(dataSourceOptions),
         ConfigModule.forRoot(),
         JwtModule.register({

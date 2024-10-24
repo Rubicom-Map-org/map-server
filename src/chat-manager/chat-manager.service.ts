@@ -22,8 +22,7 @@ export class ChatManagerService extends ChatManagerRepository {
     }
 
     async createChat(userId: string): Promise<Chat> {
-        const user = await this.usersService.getUserById(userId)
-        if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND)
+        const user = await this.usersService.getUserById(userId);
 
         const chatInsertionResult: InsertResult = await this.chatRepository
             .createQueryBuilder()
@@ -38,14 +37,11 @@ export class ChatManagerService extends ChatManagerRepository {
     }
 
     async getChatById(userId: string, chatId: string): Promise<Chat> {
-        const user = await this.usersService.getUserById(userId);
-
         const chat =  await this.chatRepository
-            .createQueryBuilder()
-            .where("user.id = :userId AND chat.id = :chatId", {
-                userId: user.id,
-                chatId: chatId
-            })
+            .createQueryBuilder("chat")
+            .innerJoin("chat.user", "user")
+            .where("user.id = :userId", { userId })
+            .andWhere("chat.id = :chatId", { chatId: chatId })
             .getOne();
 
         if (!chat) throw new NotFoundException(ExceptionMessage.CHAT_NOT_FOUND);
@@ -53,11 +49,10 @@ export class ChatManagerService extends ChatManagerRepository {
     }
 
     async getChats(userId: string): Promise<Chat[]> {
-        const user = await this.usersService.getUserById(userId)
-
         const chats =  await this.chatRepository
-            .createQueryBuilder()
-            .where("user.id = :userId", { userId: user.id, })
+            .createQueryBuilder("chat")
+            .innerJoin("chat.user", "user")
+            .where("user.id = :userId", { userId })
             .getMany();
 
         if (!chats) {
@@ -94,16 +89,13 @@ export class ChatManagerService extends ChatManagerRepository {
         chatId: string,
         chatRequestId: string
     ): Promise<ChatRequest> {
-        const user = await this.usersService.getUserById(userId)
-        const chat = await this.getChatById(userId, chatId)
-
         const chatRequest = await this.chatRequestRepository
-            .createQueryBuilder()
-            .where("id =: id AND user.id = :userId AND chat.id = :chatId", {
-                id: chatRequestId,
-                userId: user.id,
-                chatId: chat.id
-            })
+            .createQueryBuilder("chatRequest")
+            .innerJoin("chatRequest.user", "user")
+            .innerJoin("chatRequest.chat", "chat")
+            .where("chatRequest.id = :id", { id: chatRequestId })
+            .andWhere("chatRequest.chat.id = :chatId", { chatId })
+            .andWhere("chatRequest.user.id = :userId", { userId })
             .getOne();
 
         if (!chatRequest) {
@@ -113,15 +105,12 @@ export class ChatManagerService extends ChatManagerRepository {
     }
 
     async getChatRequests(userId: string, chatId: string): Promise<ChatRequest[]> {
-        const user = await this.usersService.getUserById(userId);
-        const chat = await this.getChatById(userId, chatId);
-
         const chatRequests =  await this.chatRequestRepository
-            .createQueryBuilder()
-            .where("user.id = :userId AND chat.id = :chatId", {
-                userId: user.id,
-                chatId: chat.id
-            })
+            .createQueryBuilder("chatRequest")
+            .innerJoin("chatRequest.chat", "chat")
+            .innerJoin("chatRequest.user", "user")
+            .where("chatRequest.user.id = :userId", { userId })
+            .andWhere("chatRequest.chat.id = :chatId", { chatId })
             .getMany();
 
         if (!chatRequests) {

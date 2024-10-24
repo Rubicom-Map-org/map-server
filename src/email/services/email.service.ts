@@ -1,18 +1,15 @@
 import {Injectable} from '@nestjs/common';
-import { EmailRepository } from '../email-repository.abstract';
 import { ConfigService } from '@nestjs/config';
 import { SendgridClientService } from './send-grid.service';
 import { MailDataRequired } from '@sendgrid/mail';
 
 @Injectable()
-export class EmailService extends EmailRepository {
+export class EmailService {
     
     constructor(
         private readonly configService: ConfigService,
         private readonly sendgridClientService: SendgridClientService
-    ) {
-        super();
-    }
+    ) {}
 
     async sendVerificationCodeByEmail(email: string, verificationCode: string): Promise<void> {
         const mail: MailDataRequired = {

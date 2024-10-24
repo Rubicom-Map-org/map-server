@@ -15,9 +15,6 @@ import process from "node:process";
         TypeOrmModule.forFeature([User]),
         JwtModule
     ],
-    exports: [
-        UsersService,
-        TypeOrmModule,
-    ]
+    exports: [UsersService]
 })
 export class UsersModule {}

@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, HttpException, HttpStatus, Param, Query, Req, UseGuards } from '@nestjs/common';
 import {UsersService} from "./users.service";
 import {User} from "./users.entity";
-import {ApiOperation, ApiResponse} from "@nestjs/swagger";
+import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import {UserId} from "../decorators/user-id.decorator";
 import { AuthGuard } from 'src/auth/auth.guard';
 import { UserRepository } from './user-repository.abstract';
@@ -9,6 +9,7 @@ import { GetUserProfileDto } from './dto/get-user-profile.dto';
 import { PaginationDto } from '../common/dto/pagination.dto';
 
 @UseGuards(AuthGuard)
+@ApiBearerAuth()
 @Controller('users')
 export class UsersController {
     

@@ -81,7 +81,9 @@ export class AuthService {
 
     async deleteAccount(userId: string): Promise<void> {
         const user = await this.usersService.getUserById(userId);
-        if (!user) throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND);
+        if (!user) {
+            throw new NotFoundException(ExceptionMessage.USER_NOT_FOUND);
+        }
 
         const token = await this.tokensService.findToken(user);
 
@@ -97,8 +99,6 @@ export class AuthService {
             
         const hashedPassword = await bcrypt.hash(changePasswordDto.password, 5);
         user.password = hashedPassword;
-        console.log(changePasswordDto.password);
-            
         return user;
     }
 }

@@ -1,4 +1,4 @@
-import {HttpException, Injectable, InternalServerErrorException, NotFoundException} from '@nestjs/common';
+import {Injectable, NotFoundException} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {Chat} from "./enitities/chat.entity";
 import { InsertResult, Repository } from 'typeorm';
@@ -6,10 +6,9 @@ import {ChatRequest} from "./enitities/chat-request.entity";
 import {CreateChatRequestDto} from "../open-ai/dto/create-message.dto";
 import {UsersService} from "../users/users.service";
 import {ExceptionMessage} from "../utils/exception-message.enum";
-import { ChatManagerRepository } from './chat-manager-repository.abstract';
 
 @Injectable()
-export class ChatManagerService extends ChatManagerRepository {
+export class ChatManagerService {
 
     constructor(
         @InjectRepository(Chat)
@@ -17,9 +16,7 @@ export class ChatManagerService extends ChatManagerRepository {
         @InjectRepository(ChatRequest)
         private readonly chatRequestRepository: Repository<ChatRequest>,
         private readonly usersService: UsersService
-    ) {
-        super();
-    }
+    ) {}
 
     async createChat(userId: string): Promise<Chat> {
         const user = await this.usersService.getUserById(userId);

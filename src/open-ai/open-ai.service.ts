@@ -1,37 +1,46 @@
-import {BadRequestException, Injectable, Logger} from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import OpenAI from "openai";
 import * as process from "node:process";
 import * as dotenv from "dotenv";
 import {ChatRequest} from "./interfaces/chat-messaging.interface";
-import {UsersService} from "../users/users.service";
 const mapJSON = require("../../map.json");
 import { compressToBase64 } from "lz-string";
-import {ChatResponseDto} from "./dto/open-ai-request-response.dto";
+import { ChatResponseDto, OpenAiPromptResponseDto } from './dto/open-ai-request-response.dto';
 import { ConfigService } from '@nestjs/config';
+import { ChatManagerService } from '../chat-manager/chat-manager.service';
 dotenv.config();
 
 @Injectable()
 export class OpenAiService {
-
-    private readonly openAIService: OpenAI
-    private readonly logger = new Logger(OpenAiService.name);
+    private readonly openAIService: OpenAI;
 
     constructor(
-        private readonly usersService: UsersService,
         private readonly configService: ConfigService,
+        private readonly chatManagerService: ChatManagerService,
     ) {
         this.openAIService = new OpenAI({
             apiKey: this.configService.get<string>("OPENAI_API_KEY"),
         });
     }
 
-    async getMessagesData(
+    async createOpenAIPrompt(
         userId: string,
         chatId: string,
-        request: ChatRequest,
-        isChatNewlyCreated: boolean = true
-    ): Promise<OpenAI.ChatCompletion> {
-        const user = await this.usersService.getUserById(userId)
+        chatRequest: ChatRequest
+    ): Promise<OpenAiPromptResponseDto> {
+        const getMessages = await this.getMessagesData(chatRequest) as OpenAI.ChatCompletion;
+
+        const requestAndResponse = {
+            request: chatRequest.messages[0].content,
+            response: getMessages.choices[0].message.content
+        };
+        const creatingChatRequest = await this.chatManagerService.createChatRequest(userId, chatId, requestAndResponse);
+        const openAIResponse = await this.getChatOpenaiResponse(getMessages);
+
+        return { creatingChatRequest, openAIResponse };
+    }
+
+    private async getMessagesData(request: ChatRequest): Promise<OpenAI.ChatCompletion> {
         const compressedMapJSONData = compressToBase64(JSON.stringify(mapJSON.features));
             
         const messagesWithJSON = request.messages.map(message => {
@@ -52,7 +61,6 @@ export class OpenAiService {
         const MAX_TOKENS = 16385;
             
         if (totalTokens > MAX_TOKENS) {
-            this.logger.error(`Message length exceeds the token limit. Total tokens: ${totalTokens}`);
             throw new BadRequestException("Message length exceeds the token limit.");
         }
             
@@ -62,7 +70,7 @@ export class OpenAiService {
         });
     }
 
-    async getChatOpenaiResponse(message: OpenAI.ChatCompletion): Promise<ChatResponseDto> {
+    private async getChatOpenaiResponse(message: OpenAI.ChatCompletion): Promise<ChatResponseDto> {
         return { success: true, result: message?.choices?.length && message?.choices[0] };
     }
     

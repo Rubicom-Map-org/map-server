@@ -17,7 +17,6 @@ import { JwtModule } from '@nestjs/jwt';
       JwtModule,
       UsersModule,
       TypeOrmModule.forFeature([Chat, ChatRequest]),
-      forwardRef(() => OpenAiModule),
   ],
   exports: [
       TypeOrmModule,

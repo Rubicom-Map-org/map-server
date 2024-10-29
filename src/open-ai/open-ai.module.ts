@@ -1,7 +1,6 @@
-import { forwardRef, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { OpenAiService } from './open-ai.service';
 import { OpenAiController } from './open-ai.controller';
-import {UsersModule} from "../users/users.module";
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule } from '@nestjs/config';
 import { ChatManagerModule } from '../chat-manager/chat-manager.module';
@@ -11,9 +10,8 @@ import { ChatManagerModule } from '../chat-manager/chat-manager.module';
   controllers: [OpenAiController],
   imports: [
       JwtModule,
-      UsersModule,
-      forwardRef(() => ChatManagerModule),
-      ConfigModule
+      ConfigModule,
+      ChatManagerModule
   ],
   exports: [OpenAiService]
 })

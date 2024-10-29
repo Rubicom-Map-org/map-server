@@ -5,7 +5,6 @@ import {ChatRequest} from "./enitities/chat-request.entity";
 import {AuthGuard} from "../auth/auth.guard";
 import {UserId} from "../decorators/user-id.decorator";
 import { ApiBearerAuth, ApiOperation, ApiParam, ApiResponse } from '@nestjs/swagger';
-import { ChatManagerRepository } from './chat-manager-repository.abstract';
 
 @UseGuards(AuthGuard)
 @ApiBearerAuth()

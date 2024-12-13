@@ -22,12 +22,12 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migration:generate": "nest build && echo 'Build completed' && ts-node -e 'const readline = require(\"readline-sync\"); const migrationName = readline.question(\"Enter migration name: \"); require(\"child_process\").execSync(\"ts-node ./node_modules/typeorm/cli.js migration:generate ./src/database/migrations/\" + migrationName + \" -d ./src/database/data-source.ts\"); console.log(\"Migration generate completed\");'",
-    "migration:run:dev": "cross-env NODE_ENV=development nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
-    "migration:revert:dev": "cross-env NODE=development ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
-    "migration:revert:all:dev": "cross-env NODE_ENV=development bash -c 'for i in {1..100}; do yarn migration:revert:dev; done'",
+    "migration:run:dev": "NODE_ENV=development nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
+    "migration:revert:dev": "NODE=development ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
+    "migration:revert:all:dev": "NODE_ENV=development bash -c 'for i in {1..100}; do yarn migration:revert:dev; done'",
     "migration:run:prod": "NODE=production nest build && echo 'Build completed' && node ./node_modules/typeorm/cli.js migration:run -d ./dist/database/data-source.js && echo 'Migration run completed'",
     "migration:revert:prod": "NODE=production ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/database/data-source.ts",
-    "migration:revert:all:prod": "cross-env NODE_ENV=production bash -c 'for i in {1..100}; do yarn migration:revert:dev; done'"
+    "migration:revert:all:prod": "NODE_ENV=production bash -c 'for i in {1..100}; do yarn migration:revert:dev; done'"
   },
   "dependencies": {
     "@nestjs-modules/ioredis": "^2.0.2",

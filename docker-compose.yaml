@@ -1,0 +1,52 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres:14
+    restart: always
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=${PGPASSWORD}
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_DB=${PGDATABASE}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "${PGPORT}:5432"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest-docker-postgres
+    environment:
+      - PORT=${PORT}
+      - DATABASE_PUBLIC_URL=${DATABASE_PUBLIC_URL}
+      - PGUSER=${PGUSER}
+      - PGPASSWORD=${PGPASSWORD}
+      - PGHOST=${PGHOST}
+      - PGPORT=${PGPORT}
+      - PGDATABASE=${PGDATABASE}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+    ports:
+      - "${PORT}:${PORT}"
+    depends_on:
+      - db
+    volumes:
+      - ./src:/app/src
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    container_name: nest-pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "yura.ilchyshyn06@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "register"
+    ports:
+      - '5050:80'
+    depends_on:
+      - db
+
+networks:
+  default:
+    driver: bridge

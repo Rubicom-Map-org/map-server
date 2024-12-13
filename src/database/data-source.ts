@@ -18,11 +18,11 @@ export const dataSourceOptions: DataSourceOptions = {
     entities: [User, Token, SavedPlace, Chat, ChatRequest, DatabaseFile],
     synchronize: false,
     migrations: [join(__dirname, 'migrations/*.{js,ts}')],
-    logging: true,
-    ssl: {
-        rejectUnauthorized: false,
-    }
+    logging: false,
+    ssl: false
 }
+
+console.log("DATASOURCE OPTIONS:", dataSourceOptions);
 
 const dataSource = new DataSource(dataSourceOptions);
 export default dataSource;

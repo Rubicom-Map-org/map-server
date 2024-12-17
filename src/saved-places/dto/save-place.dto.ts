@@ -1,14 +1,21 @@
+import { ApiProperty } from '@nestjs/swagger';
 
-
-export class SavePlaceDto {
-
+class GeometryDto {
+    @ApiProperty()
     readonly type: string;
 
+    @ApiProperty()
+    readonly coordinates: [number, number];
+}
+
+export class SavePlaceDto {
+    @ApiProperty()
+    readonly type: string;
+
+    @ApiProperty()
     readonly properties: object;
 
-    readonly geometry: {
-        readonly type: string;
-        readonly coordinates: [number, number];
-    }
+    @ApiProperty()
+    readonly geometry: GeometryDto;
 
 }

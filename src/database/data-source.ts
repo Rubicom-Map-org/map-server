@@ -13,7 +13,7 @@ export const dataSourceOptions: DataSourceOptions = {
     host: process.env.PGHOST,
     port: Number(process.env.PGPORT),
     username: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
+    password: String(process.env.PGPASSWORD),
     database: process.env.PGDATABASE,
     entities: [User, Token, SavedPlace, Chat, ChatRequest, DatabaseFile],
     synchronize: false,

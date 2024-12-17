@@ -1,13 +1,13 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import {UsersService} from "../users/users.service";
-import {RegisterDto} from "./dto/register.dto";
-import {TokensService} from "../tokens/tokens.service";
-import {User} from "../users/users.entity";
-import {LoginDto} from "./dto/login.dto";
+import { UsersService } from "../users/users.service";
+import { RegisterDto } from "./dto/register.dto";
+import { TokensService } from "../tokens/tokens.service";
+import { User} from "../users/users.entity";
+import { LoginDto } from "./dto/login.dto";
 import * as bcrypt from "bcrypt"
-import {ChangePasswordDto} from "./dto/change-password.dto";
-import {ExceptionMessage} from "../utils/exception-message.enum";
-import {AuthorizationResponseDto} from "./dto/authorization-response.dto";
+import { ChangePasswordDto } from "./dto/change-password.dto";
+import { ExceptionMessage} from "../utils/exception-message.enum";
+import { AuthorizationResponseDto } from "./dto/authorization-response.dto";
 import { EmailService } from '../email/services/email.service';
 import { ConfirmAuthDto } from './dto/confirm-auth.dto';
 

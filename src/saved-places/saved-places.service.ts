@@ -74,8 +74,7 @@ export class SavedPlacesService {
         return savedPlace;
     }
 
-    async getSavedPlaces(userId: string): Promise<SavedPlace[]>
-    {
+    async getSavedPlaces(userId: string): Promise<SavedPlace[]> {
         const user = await this.usersService.getUserById(userId);
         const savedPlaces = await this.savedPlaceRepository
             .createQueryBuilder()
@@ -86,8 +85,7 @@ export class SavedPlacesService {
         return savedPlaces;
     }
 
-    async deleteSavedPlace(userId: string, savedPlaceId: string): Promise<void>
-    {
+    async deleteSavedPlace(userId: string, savedPlaceId: string): Promise<void> {
         const user = await this.usersService.getUserById(userId)
 
         await this.savedPlaceRepository

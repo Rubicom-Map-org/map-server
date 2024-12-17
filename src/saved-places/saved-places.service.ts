@@ -36,7 +36,7 @@ export class SavedPlacesService {
             })
             .execute();
             
-        const savedPlace = await this.savedPlaceRepository.findOne(insertionResult.raw[0]);
+        const savedPlace = await this.getSavedPlace(user.id, insertionResult.raw[0]);
         const checkExistingSavedPlaceInDB = await this.getSavedPlaceByCoordinates(user.id, savedPlace.geometry.coordinates);
 
         if (checkExistingSavedPlaceInDB) {

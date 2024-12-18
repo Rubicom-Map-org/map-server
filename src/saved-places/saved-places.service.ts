@@ -36,7 +36,7 @@ export class SavedPlacesService {
             })
             .execute();
             
-        const savedPlace = await this.getSavedPlace(user.id, insertionResult.raw[0]);
+        const savedPlace = await this.getSavedPlace(user.id, insertionResult.raw[0].id);
         return await this.savedPlaceRepository.save(savedPlace);
     }
 
